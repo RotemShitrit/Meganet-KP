@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         //ADD DISABLE TO ITEM WORK ORDER
 
+
         exitButton = (Button) findViewById(R.id.buttonCloseApp);
         pairButtorn = (Button) findViewById(R.id.buttonPair);
 

@@ -32,8 +32,8 @@ dependencies {
     compile 'com.android.support:support-v4:23.4.0'
     compile 'com.android.support:design:23.4.0'
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
-    compile files('C:/Users/rotem/Desktop/Mi.Net Licensed Mobile 15.12.19/Version 1.7/Phase 2 Mueller 15.12.19/MeganetKP/libs/apache-commons-net.jar')
-    compile files('C:/Users/rotem/Desktop/Mi.Net Licensed Mobile 15.12.19/Version 1.7/Phase 2 Mueller 15.12.19/MeganetKP/libs/simple-xml-2.7.1.jar')
+    compile files('C:/MeganetKP/libs/apache-commons-net.jar')
+    compile files('C:/MeganetKP/libs/simple-xml-2.7.1.jar')
 
     //add this dependency
     compile 'com.journeyapps:zxing-android-embedded:3.4.0'
