@@ -253,7 +253,6 @@ public class MainActivity extends AppCompatActivity
 
             Intent intent;
 
-
             if (id == R.id.nav_field_verif_1) {
                 OpenNewActivity(1);
             } else if (id == R.id.nav_read_meter) {
@@ -268,6 +267,8 @@ public class MainActivity extends AppCompatActivity
                 OpenNewActivity(8);
             }  else if (id == R.id.nav_log) {
                 OpenNewActivity(10);
+            } else if (id == R.id.nav_consumption) {
+                OpenNewActivity(7);
             }
         }
 
@@ -375,7 +376,7 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(getApplicationContext(), "Programming", Toast.LENGTH_LONG).show();
 
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
-                intent = new Intent(MainActivity.this, QrCodeActivity.class);
+                intent = new Intent(MainActivity.this, ChooseDeviceActivity.class);
                 startActivity(intent);
                 // TODO Something
                 break;

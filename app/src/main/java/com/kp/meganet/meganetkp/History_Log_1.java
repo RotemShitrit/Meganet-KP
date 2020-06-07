@@ -7,16 +7,19 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import org.apache.commons.net.ftp.FTP;
@@ -56,8 +59,25 @@ public class History_Log_1 extends AppCompatActivity {
             // Click on get history button open the option to choose the device and insert unitID manually or scan QR code
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(History_Log_1.this, History_Log_1_1.class);
-                startActivity(intent);
+                //Intent intent = new Intent(History_Log_1.this, History_Log_1_1.class);
+                //startActivity(intent);
+                LayoutInflater layoutInflater = LayoutInflater.from(History_Log_1.this);
+                View promptView = layoutInflater.inflate(R.layout.enter_id, null);
+                final EditText input = (EditText) promptView.findViewById(R.id.edittext); // Set an EditText view to get the user input
+                input.getBackground().setColorFilter(Color.GRAY, PorterDuff.Mode.SRC_IN);
+
+                AlertDialog dialog = new AlertDialog.Builder(History_Log_1.this) //Alert dialog for inserting unitID of pit
+                        .setView(promptView)
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                String id = input.getText().toString();
+                                MeganetInstances.getInstance().GetMeganetEngine().SetQrAddress(id);
+                                Intent intent = new Intent(History_Log_1.this, History_Log_2.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }).show();
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.RED);
             }
         });
 

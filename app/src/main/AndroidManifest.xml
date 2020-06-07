@@ -127,6 +127,9 @@
         <activity android:name=".WorkOrderSelect_9"
             android:label="Work Order"
             android:screenOrientation="portrait"/>
+        <activity android:name=".ChooseDeviceActivity"
+            android:label="Choose device"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

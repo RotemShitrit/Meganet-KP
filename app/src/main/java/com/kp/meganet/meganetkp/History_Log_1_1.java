@@ -30,8 +30,8 @@ public class History_Log_1_1 extends AppCompatActivity { //Present 2 option for 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         qr_scan_intent = new IntentIntegrator(this); //for activate the QR code
-        pitBtn = (Button) findViewById(R.id.button3);
-        wallBtn = (Button) findViewById(R.id.button4);
+        pitBtn = (Button) findViewById(R.id.pit_device);
+        wallBtn = (Button) findViewById(R.id.wall_device);
         qrScanBtn = (Button) findViewById(R.id.buttonScan);
 
         pitBtn.setOnClickListener(new View.OnClickListener() {

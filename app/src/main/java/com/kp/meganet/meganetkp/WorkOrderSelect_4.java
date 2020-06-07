@@ -28,8 +28,8 @@ public class WorkOrderSelect_4 extends AppCompatActivity {
         fileName = getIntent().getStringExtra("file name");
         dataFile = getIntent().getStringExtra("data file");
 
-        pit = (Button) findViewById(R.id.button3);
-        wall = (Button) findViewById(R.id.button4);
+        pit = (Button) findViewById(R.id.pit_device);
+        wall = (Button) findViewById(R.id.wall_device);
         qr = (Button) findViewById(R.id.buttonScan);
 
         pit.setOnClickListener(new View.OnClickListener() {
