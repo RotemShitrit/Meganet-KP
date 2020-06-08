@@ -263,13 +263,13 @@ public class MainActivity extends AppCompatActivity
                 OpenNewActivity(6);
             } else if (id == R.id.nav_rdm) {
                 OpenNewActivity(7);
-            } else if (id == R.id.nav_orders) {
-                OpenNewActivity(8);
-            }  else if (id == R.id.nav_log) {
+            } else if (id == R.id.nav_log) {
                 OpenNewActivity(10);
             } else if (id == R.id.nav_consumption) {
                 OpenNewActivity(7);
             }
+            //else if (id == R.id.nav_orders) {
+            //  OpenNewActivity(8);}
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

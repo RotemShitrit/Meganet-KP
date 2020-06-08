@@ -95,48 +95,48 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
         String dev_name_txt = "";
         if (MeganetInstances.getInstance().GetMeganetEngine().GetCurrentProgrammType() == 1)
         {
-            dev_name_txt = "MTPIT \n MN-P1x-xxxx-xx (P)";
+            dev_name_txt = "MTPIT";
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("MTPIT")));
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("MTPIT")));
 
         }
         else if(MeganetInstances.getInstance().GetMeganetEngine().GetCurrentProgrammType() == 2)
         {
-            dev_name_txt = "MT2PIT (8 dig) \n MN-P2x-xxxx-xx (M)";
+            dev_name_txt = "MT2PIT (8 dig)";
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("MT2W\\MT2PIT\\MC")));
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("MT2W\\MT2PIT\\MC")));
         }
         else if(MeganetInstances.getInstance().GetMeganetEngine().GetCurrentProgrammType() == 22)
         {
-            dev_name_txt = "MT2PIT (10 dig) \n MN-P3x-xxxx-xx (E)";
+            dev_name_txt = "MT2PIT (10 dig)";
 
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("E")));
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("E")));
         }
         else if(MeganetInstances.getInstance().GetMeganetEngine().GetCurrentProgrammType() == 3)
         {
-            dev_name_txt = "MT1W \n MN-W1x-xxxE-xx (W)";
+            dev_name_txt = "MT1W";
 
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("MT1W")));
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("MT1W")));
         }
         else if(MeganetInstances.getInstance().GetMeganetEngine().GetCurrentProgrammType() == 4)
         {
-            dev_name_txt = "MT2W (8 dig) \n MN-W2x-xxxx-xx (M)";
+            dev_name_txt = "MT2W (8 dig)";
 
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("MT1W")));
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("MT1W")));
         }
         else if(MeganetInstances.getInstance().GetMeganetEngine().GetCurrentProgrammType() == 44)
         {
-            dev_name_txt = "MT2W (10 dig) \n MN-W3x-xxxx-xx (E)";
+            dev_name_txt = "MT2W (10 dig)";
 
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("E")));
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("E")));
         }
         else if(MeganetInstances.getInstance().GetMeganetEngine().GetCurrentProgrammType() == 5)
         {
-            dev_name_txt = "MTWP1 \n MN-W1x-xxxD-xx (MTWP)";
+            dev_name_txt = "MTWP1";
             //
 
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("MT1W")));

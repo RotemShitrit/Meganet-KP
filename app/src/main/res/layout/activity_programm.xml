@@ -161,7 +161,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="-174dp"
-        android:text="Please Magnet Swipe Node"
+        android:text="Please Magnet Swipe MTU"
         android:textAlignment="center"
         android:textSize="18sp" />
 
