@@ -28,7 +28,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="25dp"
-        android:text="Please click CONNECT and swipe a magnet on the Node"
+        android:text="Please click CONNECT and swipe a magnet on the MTU"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="26sp"
         android:textStyle="bold" />

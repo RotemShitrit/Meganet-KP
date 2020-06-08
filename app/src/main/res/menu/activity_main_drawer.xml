@@ -19,17 +19,18 @@
             android:id="@+id/nav_rdm"
             android:icon="@drawable/ic_rdm"
             android:title="RDM Control" />
-        <item
+        <!-- <item
             android:id="@+id/nav_orders"
             android:icon="@drawable/ic_wo"
             android:title="Work Order"
-            android:enabled="false" />
+            android:enabled="false" /> -->
         <item
             android:id="@+id/nav_log"
             android:icon="@drawable/ic_history"
             android:title="History Log" />
         <item
             android:id="@+id/nav_consumption"
+            android:layout_height="wrap_content"
             android:icon="@drawable/ic_consumption"
             android:title="Consumption" />
 

@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: ./libs/apache-commons-net.jar">
+  <library name="Gradle: __local_aars__:C.\MeganetKP\libs\apache-commons-net.jar:unspecified@jar">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/libs/apache-commons-net.jar!/" />
     </CLASSES>
