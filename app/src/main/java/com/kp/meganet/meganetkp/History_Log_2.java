@@ -141,7 +141,7 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
         _pairDialogIsON = false;
         start = 1; // the first read of a package
         current_length = 0; // indicate how much reads were received
-        total = 2880; // total of reads
+        total = 4000; // total of reads
         length = 360; // quantity of reads in one package
 
         MeganetInstances.getInstance().GetMeganetEngine().InitReadMeter(this);
@@ -227,7 +227,8 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
                                     tv16.setVisibility(View.INVISIBLE);
                                     input.setVisibility(View.INVISIBLE);
                                     pb.setVisibility(View.VISIBLE);
-                                    MeganetInstances.getInstance().GetMeganetEngine().GetMeterSN(input_num);
+                                    //MeganetInstances.getInstance().GetMeganetEngine().GetMeterSN(input_num);
+                                    MeganetInstances.getInstance().GetMeganetEngine().TimeRequest(); // send time request
                                 }
                             });
                             dialog.dismiss();
@@ -453,7 +454,7 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
                         len = 5;
                     MeganetInstances.getInstance().GetMeganetEngine().GetLog(input_num, index, len, true);
                     break;
-                } else if (index == 2875) {
+                } else if (index == 3995) {
                     len = 5;
                     MeganetInstances.getInstance().GetMeganetEngine().GetLog(input_num, index, len, true);
                     break;

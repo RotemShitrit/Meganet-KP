@@ -72,6 +72,7 @@ public class History_Log_1 extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 String id = input.getText().toString();
                                 MeganetInstances.getInstance().GetMeganetEngine().SetQrAddress(id);
+                                MeganetInstances.getInstance().GetMeganetEngine().SetCurrentProgrammType(44); // ???????
                                 Intent intent = new Intent(History_Log_1.this, History_Log_2.class);
                                 startActivity(intent);
                                 finish();

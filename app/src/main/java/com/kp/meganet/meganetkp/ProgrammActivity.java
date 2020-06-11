@@ -146,7 +146,7 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
         // Replace "Please magnet swipe node"
         // to "Please Click on READ button and Swipe a magnet on the Node"
         // on 21.11.2019.
-        dev_name_txt += "\n\nPlease Click on READ button \nand Swipe a magnet on the Node";
+        dev_name_txt += "\n\nPlease Click on READ button \nand Swipe a magnet on the MTU";
         txtView.setText(dev_name_txt);
         promptButton.setOnClickListener(new View.OnClickListener() {
             @Override
