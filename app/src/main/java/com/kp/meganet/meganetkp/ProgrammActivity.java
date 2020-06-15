@@ -671,8 +671,7 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Toast.makeText(getApplicationContext(), "Unit Paired",
-                                Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Unit Paired", Toast.LENGTH_SHORT).show();
                         MeganetInstances.getInstance().GetMeganetEngine().PairingDevice(true, false);
                         dialog.dismiss();
                         _pairDialogIsON = false;

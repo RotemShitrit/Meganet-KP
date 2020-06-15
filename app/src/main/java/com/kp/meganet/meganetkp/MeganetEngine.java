@@ -290,10 +290,10 @@ public class MeganetEngine extends BTengine {
         writeArr[1] = 7;
         writeArr[2] = 82;//Asc("R");
         writeArr[3] = 4;
-        writeArr[4] = (byte)Integer.parseInt(freqTmp1.substring(0, 2), 16);
-        writeArr[5] = (byte)Integer.parseInt(freqTmp1.substring(2, 4), 16);
-        writeArr[6] = (byte)Integer.parseInt(freqTmp1.substring(4, 6), 16);
-        writeArr[7] = (byte)Integer.parseInt(freqTmp1.substring(6, 8), 16);
+        writeArr[4] = convertToByte(Integer.parseInt(freqTmp1.substring(0, 2), 16));
+        writeArr[5] = convertToByte(Integer.parseInt(freqTmp1.substring(2, 4), 16));
+        writeArr[6] = convertToByte(Integer.parseInt(freqTmp1.substring(4, 6), 16));
+        writeArr[7] = convertToByte(Integer.parseInt(freqTmp1.substring(6, 8), 16));
         if((_useKpack.equals("1")) && ((_currentReadType == eReadType.READ_METER) || (_currentReadType == eReadType.FIELD_VERIF_1) || (_currentReadType == eReadType.FIELD_VERIF_2) || (_currentReadType == eReadType.RDM)))
             writeArr[8] = 0;
         else
@@ -314,8 +314,8 @@ public class MeganetEngine extends BTengine {
         arr[2] = 82;
 
         arr[3] = 11;
-        arr[4] = (byte)255;
-        arr[5] = (byte)255;
+        arr[4] = convertToByte(255);
+        arr[5] = convertToByte(255);
 
         _currentCommand = commandType.COLLECT_READS;
         StartCollectData(true, true);
@@ -331,8 +331,8 @@ public class MeganetEngine extends BTengine {
         arr[2] = 82;
 
         arr[3] = 12;
-        arr[4] = (byte)255;
-        arr[5] = (byte)255;
+        arr[4] = convertToByte(255);
+        arr[5] = convertToByte(255);
 
         _currentCommand = commandType.SCAN_LISTENING_MCS;
         StartCollectData(true, true);
@@ -348,8 +348,8 @@ public class MeganetEngine extends BTengine {
         arr[2] = 82;
 
         arr[3] = 13;
-        arr[4] = (byte)255;
-        arr[5] = (byte)255;
+        arr[4] = convertToByte(255);
+        arr[5] = convertToByte(255);
 
         _currentCommand = commandType.SCAN_LISTENING_MCS;
         StartCollectData(true, true);
@@ -509,9 +509,9 @@ public class MeganetEngine extends BTengine {
             arr[2] = 82;
 
             arr[3] = 3;
-            arr[4] = (byte)Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(mtuAddress_prm)), 6, "0", true).substring(0, 2), 16);
-            arr[5] = (byte)Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(mtuAddress_prm)), 6, "0", true).substring(2, 4), 16);
-            arr[6] = (byte)Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(mtuAddress_prm)), 6, "0", true).substring(4, 6), 16);
+            arr[4] = convertToByte(Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(mtuAddress_prm)), 6, "0", true).substring(0, 2), 16));
+            arr[5] = convertToByte(Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(mtuAddress_prm)), 6, "0", true).substring(2, 4), 16));
+            arr[6] = convertToByte(Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(mtuAddress_prm)), 6, "0", true).substring(4, 6), 16));
         }
         else
         {
@@ -522,8 +522,8 @@ public class MeganetEngine extends BTengine {
             arr[2] = 82;
 
             arr[3] = 3;
-            arr[4] = (byte)Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(mtuAddress_prm)), 4, "0", true).substring(0, 2), 16);
-            arr[5] = (byte)Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(mtuAddress_prm)), 4, "0", true).substring(2, 4), 16);
+            arr[4] = convertToByte(Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(mtuAddress_prm)), 4, "0", true).substring(0, 2), 16));
+            arr[5] = convertToByte(Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(mtuAddress_prm)), 4, "0", true).substring(2, 4), 16));
         }
 
         _currentCommand = commandType.SET_RF_FILTER;
@@ -545,13 +545,13 @@ public class MeganetEngine extends BTengine {
             arr[2] = 82;
 
             arr[3] = 7;
-            arr[4] = (byte)Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(start_prm)), 6, "0", true).substring(0, 2), 16);
-            arr[5] = (byte)Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(start_prm)), 6, "0", true).substring(2, 4), 16);
-            arr[6] = (byte)Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(start_prm)), 6, "0", true).substring(4, 6), 16);
+            arr[4] = convertToByte(Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(start_prm)), 6, "0", true).substring(0, 2), 16));
+            arr[5] = convertToByte(Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(start_prm)), 6, "0", true).substring(2, 4), 16));
+            arr[6] = convertToByte(Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(start_prm)), 6, "0", true).substring(4, 6), 16));
 
-            arr[7] = (byte)Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(end_prm)), 6, "0", true).substring(0, 2), 16);
-            arr[8] = (byte)Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(end_prm)), 6, "0", true).substring(2, 4), 16);
-            arr[9] = (byte)Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(end_prm)), 6, "0", true).substring(4, 6), 16);
+            arr[7] = convertToByte(Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(end_prm)), 6, "0", true).substring(0, 2), 16));
+            arr[8] = convertToByte(Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(end_prm)), 6, "0", true).substring(2, 4), 16));
+            arr[9] = convertToByte(Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(end_prm)), 6, "0", true).substring(4, 6), 16));
         }
         else {
             arr = new byte[8];
@@ -562,11 +562,11 @@ public class MeganetEngine extends BTengine {
             arr[2] = 82;
 
             arr[3] = 7;
-            arr[4] = (byte)Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(start_prm)), 4, "0", true).substring(0, 2), 16);
-            arr[5] = (byte)Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(start_prm)), 4, "0", true).substring(2, 4), 16);
+            arr[4] = convertToByte(Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(start_prm)), 4, "0", true).substring(0, 2), 16));
+            arr[5] = convertToByte(Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(start_prm)), 4, "0", true).substring(2, 4), 16));
 
-            arr[6] = (byte)Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(end_prm)), 4, "0", true).substring(0, 2), 16);
-            arr[7] = (byte)Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(end_prm)), 4, "0", true).substring(2, 4), 16);
+            arr[6] = convertToByte(Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(end_prm)), 4, "0", true).substring(0, 2), 16));
+            arr[7] = convertToByte(Integer.parseInt(Utilities.StringCompleter(Integer.toHexString(Integer.parseInt(end_prm)), 4, "0", true).substring(2, 4), 16));
         }
 
 
@@ -739,7 +739,7 @@ public class MeganetEngine extends BTengine {
                 _is_extended = false;
                 promptArr = new byte[2 + promptName_prm.length() + 1];
                 promptArr[0] = (byte) 0xe02; // Start sign
-                promptArr[1] = (byte)(promptNameArr.length + 1); // Length of message
+                promptArr[1] = convertToByte(promptNameArr.length + 1); // Length of message
                 for(int i = 0; i < promptNameArr.length; i++)
                 {
                     promptArr[i+2] = promptNameArr[i];
@@ -755,7 +755,7 @@ public class MeganetEngine extends BTengine {
 
                 promptArr = new byte[2 + promptName_prm.length() + 5]; // 1,2 начало и размерб 3... промпт имя. 2 байта FF-FF адрес юнита. 2 байта мой адрес 00-01 и команда 8 - промпт. И тго 2+размер промпта + 5
                 promptArr[0] = (byte) 0xe02;  // Start sign
-                promptArr[1] = (byte) (promptNameArr.length + 5); // Length of message
+                promptArr[1] = convertToByte(promptNameArr.length + 5); // Length of message
                 for (int i = 0; i < promptNameArr.length; i++) {
                     promptArr[i + 2] = promptNameArr[i];
                 }
@@ -774,8 +774,8 @@ public class MeganetEngine extends BTengine {
                 } catch (NumberFormatException nfe) {
 
                 }
-                promptArr[4 + promptNameArr.length] = (byte) s1;
-                promptArr[5 + promptNameArr.length] = (byte) s2;
+                promptArr[4 + promptNameArr.length] =convertToByte(s1);
+                promptArr[5 + promptNameArr.length] = convertToByte(s2);
 
                 promptArr[6 + promptNameArr.length] = (byte) 0xe08; // Prompt (Command Type)
 
@@ -789,7 +789,7 @@ public class MeganetEngine extends BTengine {
 
                 promptArr = new byte[2 + promptName_prm.length() + 5]; // 1,2 начало и размерб 3... промпт имя. 2 байта FF-FF адрес юнита. 2 байта мой адрес 00-01 и команда 8 - промпт. И тго 2+размер промпта + 5
                 promptArr[0] = (byte) 0xe02; // Start sign
-                promptArr[1] = (byte) (promptNameArr.length + 5);  // Length of message
+                promptArr[1] = convertToByte(promptNameArr.length + 5);  // Length of message
                 for (int i = 0; i < promptNameArr.length; i++) {
                     promptArr[i + 2] = promptNameArr[i];
                 }
@@ -808,7 +808,7 @@ public class MeganetEngine extends BTengine {
                 } catch (NumberFormatException nfe) {
 
                 }
-                promptArr[5 + promptNameArr.length] = (byte) s1;
+                promptArr[5 + promptNameArr.length] = convertToByte(s1);
                 promptArr[6 + promptNameArr.length] = (byte) 0xe08; // Prompt (Command Type)
 
                 _startPrompt = true;
@@ -875,7 +875,7 @@ public class MeganetEngine extends BTengine {
                 _currentCommand = commandType.PROMPT;
                 promptArr = new byte[2 + promptName_prm.length() + 1];
                 promptArr[0] = (byte) 0xe02; // Start sign
-                promptArr[1] = (byte)(promptNameArr.length + 1); // Length of message
+                promptArr[1] = convertToByte(promptNameArr.length + 1); // Length of message
                 for(int i = 0; i < promptNameArr.length; i++)
                 {
                     promptArr[i+2] = promptNameArr[i];
@@ -891,7 +891,7 @@ public class MeganetEngine extends BTengine {
 
                 promptArr = new byte[2 + promptName_prm.length() + 5]; // 1,2 начало и размерб 3... промпт имя. 2 байта FF-FF адрес юнита. 2 байта мой адрес 00-01 и команда 8 - промпт. И тго 2+размер промпта + 5
                 promptArr[0] = (byte) 0xe02;  // Start sign
-                promptArr[1] = (byte) (promptNameArr.length + 5); // Length of message
+                promptArr[1] = convertToByte(promptNameArr.length + 5); // Length of message
                 for (int i = 0; i < promptNameArr.length; i++) {
                     promptArr[i + 2] = promptNameArr[i];
                 }
@@ -910,8 +910,8 @@ public class MeganetEngine extends BTengine {
                 } catch (NumberFormatException nfe) {
 
                 }
-                promptArr[4 + promptNameArr.length] = (byte) s1;
-                promptArr[5 + promptNameArr.length] = (byte) s2;
+                promptArr[4 + promptNameArr.length] = convertToByte(s1);
+                promptArr[5 + promptNameArr.length] = convertToByte(s2);
 
                 promptArr[6 + promptNameArr.length] = (byte) 0xe08; // Prompt (Command Type)
 
@@ -927,7 +927,7 @@ public class MeganetEngine extends BTengine {
 
                 promptArr = new byte[2 + promptName_prm.length() + 5]; // 1,2 начало и размерб 3... промпт имя. 2 байта FF-FF адрес юнита. 2 байта мой адрес 00-01 и команда 8 - промпт. И тго 2+размер промпта + 5
                 promptArr[0] = (byte) 0xe02; // Start sign
-                promptArr[1] = (byte) (promptNameArr.length + 5);  // Length of message
+                promptArr[1] = convertToByte(promptNameArr.length + 5);  // Length of message
                 for (int i = 0; i < promptNameArr.length; i++) {
                     promptArr[i + 2] = promptNameArr[i];
                 }
@@ -946,7 +946,7 @@ public class MeganetEngine extends BTengine {
                 } catch (NumberFormatException nfe) {
 
                 }
-                promptArr[5 + promptNameArr.length] = (byte) s1;
+                promptArr[5 + promptNameArr.length] = convertToByte(s1);
                 promptArr[6 + promptNameArr.length] = (byte) 0xe08; // Prompt (Command Type)
 
                 _startPrompt = true;
@@ -968,7 +968,7 @@ public class MeganetEngine extends BTengine {
 
             ReadArr = new byte[2 + _promptName.length() + 5]; // 1,2 начало и размерб 3... промпт имя. 2 байта FF-FF адрес юнита. 2 байта мой адрес 00-01 и команда 8 - промпт. И тго 2+размер промпта + 5
             ReadArr[0] = (byte) 0xe02; // Start sign
-            ReadArr[1] = (byte) (promptNameArr.length + 5);  // Length of message
+            ReadArr[1] = convertToByte(promptNameArr.length + 5);  // Length of message
             for (int i = 0; i < promptNameArr.length; i++) {
                 ReadArr[i + 2] = promptNameArr[i];
             }
@@ -980,27 +980,27 @@ public class MeganetEngine extends BTengine {
             {
                 hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 6, "0", true);
-                ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
-                ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(4, 6), 16);
+                ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
+                ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(4, 6), 16));
                 /////////////////
                 hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 2, "0", true);
 
-                ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
+                ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
             }
             else
             {
                 hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
-                ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
                 /////////////////
                 hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
 
-                ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
             }
 
             ReadArr[6 + promptNameArr.length] = (byte) 0xe97; // Disconnect (Command Type)
@@ -1014,7 +1014,7 @@ public class MeganetEngine extends BTengine {
         {
             ReadArr = new byte[2 + promptNameArr.length + 1];
             ReadArr[0] = (byte) 0xe02; // Start sign
-            ReadArr[1] = (byte)(promptNameArr.length + 1); // Length of message
+            ReadArr[1] = convertToByte(promptNameArr.length + 1); // Length of message
             for(int i = 0; i < promptNameArr.length; i++)
             {
                 ReadArr[i+2] = promptNameArr[i];
@@ -1038,7 +1038,7 @@ public class MeganetEngine extends BTengine {
         if(_isPair) {
             ReadArr = new byte[2 + _promptName.length() + 5]; // 1,2 начало и размерб 3... промпт имя. 2 байта FF-FF адрес юнита. 2 байта мой адрес 00-01 и команда 8 - промпт. И тго 2+размер промпта + 5
             ReadArr[0] = (byte) 0xe02;
-            ReadArr[1] = (byte) (promptNameArr.length + 5);
+            ReadArr[1] = convertToByte(promptNameArr.length + 5);
             for (int i = 0; i < promptNameArr.length; i++) {
                 ReadArr[i + 2] = promptNameArr[i];
             }
@@ -1048,27 +1048,27 @@ public class MeganetEngine extends BTengine {
             {
                 hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 6, "0", true);
-                ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
-                ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(4, 6), 16);
+                ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
+                ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(4, 6), 16));
                 /////////////////
                 hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 2, "0", true);
 
-                ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
+                ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
             }
             else
             {
                 hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
-                ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
                 /////////////////
                 hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
 
-                ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
             }
 
             ReadArr[6 + promptNameArr.length] = (byte) 0xe93;
@@ -1118,9 +1118,9 @@ public class MeganetEngine extends BTengine {
                 ReadArr[4] = (byte) 0xe02;
             hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
             hexAddress = Utilities.StringCompleter(hexAddress, 6, "0", true);
-            ReadArr[5] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-            ReadArr[6] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
-            ReadArr[7] = (byte)Integer.parseInt(hexAddress.substring(4, 6), 16);
+            ReadArr[5] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+            ReadArr[6] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
+            ReadArr[7] = convertToByte(Integer.parseInt(hexAddress.substring(4, 6), 16));
 
         }
         else
@@ -1136,8 +1136,8 @@ public class MeganetEngine extends BTengine {
                 ReadArr[4] = (byte) 0xe02;
             hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
             hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
-            ReadArr[5] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-            ReadArr[6] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+            ReadArr[5] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+            ReadArr[6] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
 
         }
 
@@ -1159,12 +1159,12 @@ public class MeganetEngine extends BTengine {
         byte [] PulseArr;
         PulseArr = new byte[2 + promptNameArr.length + 1];
         PulseArr[0] = (byte) 0xe02;
-        PulseArr[1] = (byte)(promptNameArr.length + 1);
+        PulseArr[1] = convertToByte(promptNameArr.length + 1);
         for(int i = 0; i < promptNameArr.length; i++)
         {
             PulseArr[i+2] = promptNameArr[i];
         }
-        PulseArr[2 + promptNameArr.length] = (byte)(port_num + 16);
+        PulseArr[2 + promptNameArr.length] = convertToByte(port_num + 16);
         _startCollectDateTag = System.currentTimeMillis();
         _startCollect = true;
         _currentCommand = commandType.PULSE_READ;
@@ -1178,12 +1178,12 @@ public class MeganetEngine extends BTengine {
         byte [] PulseArr;
         PulseArr = new byte[2 + promptNameArr.length + 1];
         PulseArr[0] = (byte) 0xe02;
-        PulseArr[1] = (byte)(promptNameArr.length + 1);
+        PulseArr[1] = convertToByte(promptNameArr.length + 1);
         for(int i = 0; i < promptNameArr.length; i++)
         {
             PulseArr[i+2] = promptNameArr[i];
         }
-        PulseArr[2 + promptNameArr.length] = (byte)(port_num + 16);
+        PulseArr[2 + promptNameArr.length] = convertToByte(port_num + 16);
         _startCollectDateTag = System.currentTimeMillis();
         _startCollect = true;
         _currentCommand = commandType.PULSE_READ;
@@ -1202,12 +1202,12 @@ public class MeganetEngine extends BTengine {
         byte [] PulseArr;
         PulseArr = new byte[2 + promptNameArr.length + 1];
         PulseArr[0] = (byte) 0xe02;
-        PulseArr[1] = (byte)(promptNameArr.length + 1);
+        PulseArr[1] = convertToByte(promptNameArr.length + 1);
         for(int i = 0; i < promptNameArr.length; i++)
         {
             PulseArr[i+2] = promptNameArr[i];
         }
-        PulseArr[2 + promptNameArr.length] = (byte)(port_num + 112);
+        PulseArr[2 + promptNameArr.length] = convertToByte(port_num + 112);
         _startCollectDateTag = System.currentTimeMillis();
         _startCollect = true;
         _currentCommand = commandType.PULSE_WRITE_REQ;
@@ -1243,7 +1243,7 @@ public class MeganetEngine extends BTengine {
         {
             ReadArr = new byte[2 + _promptName.length() + 5]; // 1,2 начало и размерб 3... промпт имя. 2 байта FF-FF адрес юнита. 2 байта мой адрес 00-01 и команда 8 - промпт. И тго 2+размер промпта + 5
             ReadArr[0] = (byte) 0xe02;
-            ReadArr[1] = (byte)(promptNameArr.length + 5);
+            ReadArr[1] = convertToByte(promptNameArr.length + 5);
             for(int i = 0; i < promptNameArr.length; i++)
             {
                 ReadArr[i+2] = promptNameArr[i];
@@ -1254,27 +1254,27 @@ public class MeganetEngine extends BTengine {
             {
                 hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 6, "0", true);
-                ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
-                ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(4, 6), 16);
+                ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
+                ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(4, 6), 16));
                 /////////////////
                 hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 2, "0", true);
 
-                ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
+                ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
             }
             else
             {
                 hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
-                ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
                 /////////////////
                 hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
 
-                ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
             }
 
             ReadArr[6 + promptNameArr.length] = (byte) 0xe07; // Program request (Command Type)
@@ -1288,7 +1288,7 @@ public class MeganetEngine extends BTengine {
         {
             ReadArr = new byte[2 + promptNameArr.length + 1];
             ReadArr[0] = (byte) 0xe02;
-            ReadArr[1] = (byte)(promptNameArr.length + 1);
+            ReadArr[1] = convertToByte(promptNameArr.length + 1);
             for(int i = 0; i < promptNameArr.length; i++)
             {
                 ReadArr[i+2] = promptNameArr[i];
@@ -1551,7 +1551,7 @@ public class MeganetEngine extends BTengine {
 
                                 promptArr = new byte[2 + _promptName.length() + 1];
                                 promptArr[0] = (byte) 0xe02;
-                                promptArr[1] = (byte)(promptNameArr.length + 1);
+                                promptArr[1] = convertToByte(promptNameArr.length + 1);
                                 for(int i = 0; i < promptNameArr.length; i++)
                                 {
                                     promptArr[i+2] = promptNameArr[i];
@@ -1646,7 +1646,7 @@ public class MeganetEngine extends BTengine {
                                 //promptArr = new byte[2 + _promptName.length() + 2];
                                 promptArr = new byte[2 + _promptName.length() + 1];
                                 promptArr[0] = (byte) 0xe02;
-                                promptArr[1] = (byte)(promptNameArr.length + 1);
+                                promptArr[1] = convertToByte(promptNameArr.length + 1);
                                 for(int i = 0; i < promptNameArr.length; i++)
                                 {
                                     promptArr[i+2] = promptNameArr[i];
@@ -1823,7 +1823,7 @@ public class MeganetEngine extends BTengine {
 
                                 ReadArr = new byte[2 + _promptName.length() + 5]; // 1,2 начало и размерб 3... промпт имя. 2 байта FF-FF адрес юнита. 2 байта мой адрес 00-01 и команда 8 - промпт. И тго 2+размер промпта + 5
                                 ReadArr[0] = (byte) 0xe02;
-                                ReadArr[1] = (byte)(promptNameArr.length + 5);
+                                ReadArr[1] = convertToByte(promptNameArr.length + 5);
                                 for(int i = 0; i < promptNameArr.length; i++)
                                 {
                                     ReadArr[i+2] = promptNameArr[i];
@@ -1834,27 +1834,27 @@ public class MeganetEngine extends BTengine {
                                 {
                                     hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                                     hexAddress = Utilities.StringCompleter(hexAddress, 6, "0", true);
-                                    ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                                    ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
-                                    ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(4, 6), 16);
+                                    ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                                    ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
+                                    ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(4, 6), 16));
                                     /////////////////
                                     hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                                     hexAddress = Utilities.StringCompleter(hexAddress, 2, "0", true);
 
-                                    ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
+                                    ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
                                 }
                                 else
                                 {
                                     hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                                     hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
-                                    ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                                    ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                                    ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                                    ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
                                     /////////////////
                                     hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                                     hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
 
-                                    ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                                    ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                                    ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                                    ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
                                 }
 
                                 ReadArr[6 + promptNameArr.length] = (byte) 0xe01;
@@ -1871,7 +1871,7 @@ public class MeganetEngine extends BTengine {
 
                                 promptArr = new byte[2 + _promptName.length() + 1];
                                 promptArr[0] = (byte) 0xe02;
-                                promptArr[1] = (byte)(promptNameArr.length + 1);
+                                promptArr[1] = convertToByte(promptNameArr.length + 1);
                                 for(int i = 0; i < promptNameArr.length; i++)
                                 {
                                     promptArr[i+2] = promptNameArr[i];
@@ -1974,22 +1974,22 @@ public class MeganetEngine extends BTengine {
                                 byte [] PulseArr;
                                 PulseArr = new byte[2 + promptNameArr.length + 1 + 8 + 1];
                                 PulseArr[0] = (byte) 0xe02;
-                                PulseArr[1] = (byte)(promptNameArr.length + 1 + 8);
+                                PulseArr[1] = convertToByte(promptNameArr.length + 1 + 8);
 
                                 for(int i = 0; i < promptNameArr.length; i++)
                                 {
                                     PulseArr[i+2] = promptNameArr[i];
                                 }
 
-                                PulseArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexstrSn.substring(0, 2), 16);
-                                PulseArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexstrSn.substring(2, 4), 16);
-                                PulseArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexstrSn.substring(4, 6), 16);
-                                PulseArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexstrSn.substring(6, 8), 16);
+                                PulseArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexstrSn.substring(0, 2), 16));
+                                PulseArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexstrSn.substring(2, 4), 16));
+                                PulseArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexstrSn.substring(4, 6), 16));
+                                PulseArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexstrSn.substring(6, 8), 16));
 
-                                PulseArr[6 + promptNameArr.length] = (byte)Integer.parseInt(hexstrRead.substring(0, 2), 16);
-                                PulseArr[7 + promptNameArr.length] = (byte)Integer.parseInt(hexstrRead.substring(2, 4), 16);
-                                PulseArr[8 + promptNameArr.length] = (byte)Integer.parseInt(hexstrRead.substring(4, 6), 16);
-                                PulseArr[9 + promptNameArr.length] = (byte)Integer.parseInt(hexstrRead.substring(6, 8), 16);
+                                PulseArr[6 + promptNameArr.length] = convertToByte(Integer.parseInt(hexstrRead.substring(0, 2), 16));
+                                PulseArr[7 + promptNameArr.length] = convertToByte(Integer.parseInt(hexstrRead.substring(2, 4), 16));
+                                PulseArr[8 + promptNameArr.length] = convertToByte(Integer.parseInt(hexstrRead.substring(4, 6), 16));
+                                PulseArr[9 + promptNameArr.length] = convertToByte(Integer.parseInt(hexstrRead.substring(6, 8), 16));
                                 byte[] calcChSum = new byte[PulseArr.length - 1 + promptNameArr.length ];
                                 int idx = 0;
                                 for(int i =2 + promptNameArr.length; i <  PulseArr.length; i++)
@@ -2053,27 +2053,27 @@ public class MeganetEngine extends BTengine {
             {
                 hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 6, "0", true);
-                ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
-                ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(4, 6), 16);
+                ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
+                ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(4, 6), 16));
                 /////////////////
                 hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 2, "0", true);
 
-                ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
+                ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
             }
             else
             {
                 hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
-                ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
                 /////////////////
                 hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
 
-                ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
             }
             android.os.SystemClock.sleep(500);
             ReadArr[6 + promptNameArr.length] = (byte) 0xe97; // Disconnect command
@@ -2107,27 +2107,27 @@ public class MeganetEngine extends BTengine {
             {
                 hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 6, "0", true);
-                ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
-                ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(4, 6), 16);
+                ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
+                ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(4, 6), 16));
                 /////////////////
                 hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 2, "0", true);
 
-                ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
+                ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
             }
             else
             {
                 hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
-                ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                ReadArr[2 + promptNameArr.length] =convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
                 /////////////////
                 hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
 
-                ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
             }
             android.os.SystemClock.sleep(500);
             ReadArr[6 + promptNameArr.length] = (byte) 0xe11; // Time request command\
@@ -2160,25 +2160,25 @@ public class MeganetEngine extends BTengine {
             if (_is_extended) {
                 hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 6, "0", true);
-                ReadArr[2 + promptNameArr.length] = (byte) Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[3 + promptNameArr.length] = (byte) Integer.parseInt(hexAddress.substring(2, 4), 16);
-                ReadArr[4 + promptNameArr.length] = (byte) Integer.parseInt(hexAddress.substring(4, 6), 16);
+                ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
+                ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(4, 6), 16));
                 /////////////////
                 hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 2, "0", true);
 
-                ReadArr[5 + promptNameArr.length] = (byte) Integer.parseInt(hexAddress.substring(0, 2), 16);
+                ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
             } else {
                 hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
-                ReadArr[2 + promptNameArr.length] = (byte) Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[3 + promptNameArr.length] = (byte) Integer.parseInt(hexAddress.substring(2, 4), 16);
+                ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
                 /////////////////
                 hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
 
-                ReadArr[4 + promptNameArr.length] = (byte) Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[5 + promptNameArr.length] = (byte) Integer.parseInt(hexAddress.substring(2, 4), 16);
+                ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
             }
 
             android.os.SystemClock.sleep(500);
@@ -2223,27 +2223,27 @@ public class MeganetEngine extends BTengine {
             {
                 hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 6, "0", true);
-                ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
-                ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(4, 6), 16);
+                ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
+                ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(4, 6), 16));
                 /////////////////
                 hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 2, "0", true);
 
-                ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
+                ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
             }
             else
             {
                 hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
-                ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
                 /////////////////
                 hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                 hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
 
-                ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
             }
 
             ReadArr[6 + promptNameArr.length] = (byte) 0xe10; // Log request command
@@ -2292,7 +2292,7 @@ public class MeganetEngine extends BTengine {
                 // 6,7 - Unit address
                 //
                 ReadArr[0] = (byte) 0xe02; // Start sign
-                ReadArr[1] = (byte)(promptNameArr.length + 5); // Length of message
+                ReadArr[1] = convertToByte(promptNameArr.length + 5); // Length of message
                 for(int i = 0; i < promptNameArr.length; i++)
                 {
                     ReadArr[i+2] = promptNameArr[i];
@@ -2303,27 +2303,27 @@ public class MeganetEngine extends BTengine {
                 {
                     hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                     hexAddress = Utilities.StringCompleter(hexAddress, 6, "0", true);
-                    ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                    ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
-                    ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(4, 6), 16);
+                    ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                    ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
+                    ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(4, 6), 16));
                     /////////////////
                     hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                     hexAddress = Utilities.StringCompleter(hexAddress, 2, "0", true);
 
-                    ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
+                    ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
                 }
                 else
                 {
                     hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                     hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
-                    ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                    ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                    ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                    ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
                     /////////////////
                     hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                     hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
 
-                    ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                    ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                    ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                    ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
                 }
 
                 android.os.SystemClock.sleep(500);
@@ -2420,27 +2420,27 @@ public class MeganetEngine extends BTengine {
                 {
                     hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                     hexAddress = Utilities.StringCompleter(hexAddress, 6, "0", true);
-                    ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                    ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
-                    ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(4, 6), 16);
+                    ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                    ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
+                    ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(4, 6), 16));
                     /////////////////
                     hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                     hexAddress = Utilities.StringCompleter(hexAddress, 2, "0", true);
 
-                    ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
+                    ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
                 }
                 else
                 {
                     hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
                     hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
-                    ReadArr[2 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                    ReadArr[3 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                    ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                    ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
                     /////////////////
                     hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
                     hexAddress = Utilities.StringCompleter(hexAddress, 4, "0", true);
 
-                    ReadArr[4 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(0, 2), 16);
-                    ReadArr[5 + promptNameArr.length] = (byte)Integer.parseInt(hexAddress.substring(2, 4), 16);
+                    ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+                    ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
                 }
 
                 android.os.SystemClock.sleep(500);
@@ -2496,6 +2496,11 @@ public class MeganetEngine extends BTengine {
             return false;
         }
         return true;
+    }
+
+    public byte convertToByte(Integer x)
+    {
+        return (byte)(x & 0xFF);
     }
 
 }
