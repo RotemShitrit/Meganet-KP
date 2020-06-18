@@ -31,9 +31,9 @@ public class WorkOrderSelect_4_1 extends AppCompatActivity {
 
         fileName = getIntent().getStringExtra("file name");
         dataFile = getIntent().getStringExtra("data file");
-        buttonScan1 = (Button) findViewById(R.id.buttonScan);
-        buttonScan2 = (Button) findViewById(R.id.buttonScan3);
-        buttonScan3 = (Button) findViewById(R.id.buttonScan5);
+        buttonScan1 = (Button) findViewById(R.id.button_mtpit);
+        buttonScan2 = (Button) findViewById(R.id.button_mt2pit8);
+        buttonScan3 = (Button) findViewById(R.id.button_mt2pit10);
 
         buttonScan1.setOnClickListener(new View.OnClickListener() {
             @Override

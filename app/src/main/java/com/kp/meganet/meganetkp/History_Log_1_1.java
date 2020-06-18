@@ -32,7 +32,7 @@ public class History_Log_1_1 extends AppCompatActivity { //Present 2 option for 
         qr_scan_intent = new IntentIntegrator(this); //for activate the QR code
         pitBtn = (Button) findViewById(R.id.pit_device);
         wallBtn = (Button) findViewById(R.id.wall_device);
-        qrScanBtn = (Button) findViewById(R.id.buttonScan);
+        qrScanBtn = (Button) findViewById(R.id.button_mtpit);
 
         pitBtn.setOnClickListener(new View.OnClickListener() {
             // The option to set unitID manually for pit device

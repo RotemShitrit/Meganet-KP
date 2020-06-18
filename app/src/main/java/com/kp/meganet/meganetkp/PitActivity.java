@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class PitActivity extends AppCompatActivity {
 
@@ -20,9 +19,9 @@ public class PitActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pit);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        buttonScan1 = (Button) findViewById(R.id.buttonScan);
-        buttonScan2 = (Button) findViewById(R.id.buttonScan3);
-        buttonScan3 = (Button) findViewById(R.id.buttonScan5);
+        buttonScan1 = (Button) findViewById(R.id.button_mtpit);
+        buttonScan2 = (Button) findViewById(R.id.button_mt2pit8);
+        buttonScan3 = (Button) findViewById(R.id.button_mt2pit10);
 
         buttonScan1.setOnClickListener(new View.OnClickListener() {
             @Override

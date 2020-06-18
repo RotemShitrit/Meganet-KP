@@ -33,8 +33,8 @@ public class QrCodeActivity extends AppCompatActivity   implements View.OnClickL
         buttonScan = (Button) findViewById(R.id.buttonScan);
         textViewName = (TextView) findViewById(R.id.textViewName);
         textViewAddress = (TextView) findViewById(R.id.textViewAddress);
-        buttonScan3 = (Button) findViewById(R.id.button3);
-        buttonScan4 = (Button) findViewById(R.id.button4);
+        buttonScan3 = (Button) findViewById(R.id.button_pit);
+        buttonScan4 = (Button) findViewById(R.id.button_wall);
         //intializing scan object
         qrScan = new IntentIntegrator(this);
 

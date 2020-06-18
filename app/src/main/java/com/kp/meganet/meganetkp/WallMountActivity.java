@@ -6,14 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class WallMountActivity extends AppCompatActivity {
 
-    private Button buttonScan1;
-    private Button buttonScan2;
-    private Button buttonScan3;
-    private Button buttonScan4;
+    private Button mt1w;
+    private Button mt2w8;
+    private Button mt2w10;
+    private Button mtwp1;
+    private Button mtwp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +21,13 @@ public class WallMountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_wall_mount);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        buttonScan1 = (Button) findViewById(R.id.buttonScan4);
-        buttonScan2 = (Button) findViewById(R.id.buttonScan);
-        buttonScan3 = (Button) findViewById(R.id.buttonScan6);
-        buttonScan4 = (Button) findViewById(R.id.buttonScan2);
+        mt1w = (Button) findViewById(R.id.button_mt1w);
+        mt2w8 = (Button) findViewById(R.id.button_mt2w8);
+        mt2w10 = (Button) findViewById(R.id.button_mt2w10);
+        mtwp1 = (Button) findViewById(R.id.button_mtwp1);
+        mtwp = (Button) findViewById(R.id.button_mtwp);
 
-        buttonScan1.setOnClickListener(new View.OnClickListener() {
+        mt1w.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -42,7 +43,7 @@ public class WallMountActivity extends AppCompatActivity {
             }
         });
 
-        buttonScan2.setOnClickListener(new View.OnClickListener() {
+        mt2w8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -58,7 +59,7 @@ public class WallMountActivity extends AppCompatActivity {
             }
         });
 
-        buttonScan3.setOnClickListener(new View.OnClickListener() {
+        mt2w10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -74,7 +75,7 @@ public class WallMountActivity extends AppCompatActivity {
             }
         });
 
-        buttonScan4.setOnClickListener(new View.OnClickListener() {
+        mtwp1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -84,6 +85,21 @@ public class WallMountActivity extends AppCompatActivity {
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
 
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentProgrammType(5);
+
+                intent = new Intent(WallMountActivity.this, ProgrammActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mtwp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent;
+                //super.onBackPressed();
+
+                MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
+
+                MeganetInstances.getInstance().GetMeganetEngine().SetCurrentProgrammType(6);
 
                 intent = new Intent(WallMountActivity.this, ProgrammActivity.class);
                 startActivity(intent);

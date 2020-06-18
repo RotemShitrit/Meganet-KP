@@ -45,7 +45,7 @@ tools:context=".QrCodeActivity">
         android:text="Mueller Barcode Scan" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button_pit"
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:layout_below="@+id/editText"
@@ -56,7 +56,7 @@ tools:context=".QrCodeActivity">
         android:text="PIT" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button_wall"
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:layout_below="@+id/editText"

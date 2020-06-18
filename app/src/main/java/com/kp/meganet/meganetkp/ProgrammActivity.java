@@ -142,6 +142,14 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("MT1W")));
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("MT1W")));
         }
+        else if (MeganetInstances.getInstance().GetMeganetEngine().GetCurrentProgrammType() == 6)
+        {
+            dev_name_txt = "MTWP";
+
+            promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("MTWP")));
+            promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("MTWP")));
+        }
+
 
         // Replace "Please magnet swipe node"
         // to "Please Click on READ button and Swipe a magnet on the Node"
@@ -229,6 +237,10 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                 else if(MeganetInstances.getInstance().GetMeganetEngine().GetCurrentProgrammType() == 5)
                 {
                     MeganetInstances.getInstance().GetMeganetEngine().Prompt(MeganetEngine.ePromptType.PAIRING, PromptConvert("MT1W"));
+                }
+                else if(MeganetInstances.getInstance().GetMeganetEngine().GetCurrentProgrammType() == 6)
+                {
+                    MeganetInstances.getInstance().GetMeganetEngine().Prompt(MeganetEngine.ePromptType.REGULAR, PromptConvert("MTWP"));
                 }
 
 
