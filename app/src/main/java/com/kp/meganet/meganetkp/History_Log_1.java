@@ -75,7 +75,6 @@ public class History_Log_1 extends AppCompatActivity {
                                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentProgrammType(44); // ???????
                                 Intent intent = new Intent(History_Log_1.this, History_Log_2.class);
                                 startActivity(intent);
-                                finish();
                             }
                         }).show();
                 dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.RED);

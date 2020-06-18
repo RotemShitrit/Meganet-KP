@@ -166,6 +166,8 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                 paramEditText.setVisibility(View.INVISIBLE);
                 unlockCheckBox.setVisibility(View.INVISIBLE);
 
+
+                //If pulses then Prompt REGULAR
                 if((promptTypeSpin.getSelectedItem().toString().equals("MTWE")) || (promptTypeSpin.getSelectedItem().toString().equals("MTWP")))
                     MeganetInstances.getInstance().GetMeganetEngine().Prompt(MeganetEngine.ePromptType.REGULAR, PromptConvert(promptTypeSpin.getSelectedItem().toString()));
                 else if (promptTypeSpin.getSelectedItem().toString().equals("E"))

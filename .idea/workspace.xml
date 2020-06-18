@@ -6,12 +6,23 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8fd4a1cd-c918-4810-82d0-a55a62b9785c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/MeganetEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/MeganetEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ProgrammActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ProgrammActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,6 +71,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -139,13 +151,21 @@
       <option name="project" value="LOCAL" />
       <updated>1591882701681</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Work at home 15/06/20&#10;**Changes**&#10;- Add convertToByte function in MeganetEngine">
+      <created>1592227578740</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1592227578740</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Work at home 11/06/20&#10;**Changes**&#10;- Change number of messages to 4000 in History_Log_2 &#10;- Change in ProgrammActivity Node word to MTU word" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work at home 11/06/20&#10;**Changes**&#10;- Change number of messages to 4000 in History_Log_2 &#10;- Change in ProgrammActivity Node word to MTU word" />
+    <MESSAGE value="Work at home 15/06/20&#10;**Changes**&#10;- Add convertToByte function in MeganetEngine" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work at home 15/06/20&#10;**Changes**&#10;- Add convertToByte function in MeganetEngine" />
   </component>
   <component name="WindowStateProjectService">
     <state x="434" y="199" width="413" height="289" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1591862215783">
@@ -164,54 +184,54 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="496" y="106" key="AndroidProcessChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1592226941679" />
-    <state x="211" y="0" key="CommitChangelistDialog2" timestamp="1591882699950">
+    <state x="211" y="0" key="CommitChangelistDialog2" timestamp="1592227577256">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="211" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1591882699950" />
+    <state x="211" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1592227577256" />
     <state width="444" height="438" key="DebuggerActiveHint" timestamp="1592216991592">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="444" height="438" key="DebuggerActiveHint/0.0.1280.680@0.0.1280.680" timestamp="1592216991592" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1591861976518">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1592465547532">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1591861976518" />
-    <state width="1236" height="142" key="GridCell.Tab.0.bottom" timestamp="1592226738612">
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1592465547532" />
+    <state width="1236" height="134" key="GridCell.Tab.0.bottom" timestamp="1592371285780">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="142" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592226738612" />
-    <state width="1236" height="142" key="GridCell.Tab.0.center" timestamp="1592226738612">
+    <state width="1236" height="134" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592371285780" />
+    <state width="1236" height="134" key="GridCell.Tab.0.center" timestamp="1592371285780">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="142" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1592226738612" />
-    <state width="1236" height="142" key="GridCell.Tab.0.left" timestamp="1592226738612">
+    <state width="1236" height="134" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1592371285780" />
+    <state width="1236" height="134" key="GridCell.Tab.0.left" timestamp="1592371285780">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="142" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1592226738612" />
-    <state width="1236" height="142" key="GridCell.Tab.0.right" timestamp="1592226738612">
+    <state width="1236" height="134" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1592371285780" />
+    <state width="1236" height="134" key="GridCell.Tab.0.right" timestamp="1592371285780">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="142" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1592226738612" />
-    <state width="1236" height="142" key="GridCell.Tab.1.bottom" timestamp="1592226738612">
+    <state width="1236" height="134" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1592371285780" />
+    <state width="1236" height="134" key="GridCell.Tab.1.bottom" timestamp="1592371285780">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="142" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592226738612" />
-    <state width="1236" height="142" key="GridCell.Tab.1.center" timestamp="1592226738612">
+    <state width="1236" height="134" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592371285780" />
+    <state width="1236" height="134" key="GridCell.Tab.1.center" timestamp="1592371285780">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="142" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1592226738612" />
-    <state width="1236" height="142" key="GridCell.Tab.1.left" timestamp="1592226738612">
+    <state width="1236" height="134" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1592371285780" />
+    <state width="1236" height="134" key="GridCell.Tab.1.left" timestamp="1592371285780">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="142" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1592226738612" />
-    <state width="1236" height="142" key="GridCell.Tab.1.right" timestamp="1592226738612">
+    <state width="1236" height="134" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1592371285780" />
+    <state width="1236" height="134" key="GridCell.Tab.1.right" timestamp="1592371285780">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="142" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1592226738612" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1591882707105">
+    <state width="1236" height="134" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1592371285780" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1592227591456">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1591882707105" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1592227591456" />
     <state x="93" y="93" width="1095" height="495" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1591684917206">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -226,18 +246,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ProgrammActivity.java</url>
-          <line>474</line>
+          <line>476</line>
           <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/MeganetEngine.java</url>
-          <line>1684</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/MeganetEngine.java</url>
-          <line>1682</line>
-          <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/DataAnalizer.java</url>
@@ -246,13 +256,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ProgrammActivity.java</url>
-          <line>451</line>
+          <line>453</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/MeganetEngine.java</url>
           <line>2343</line>
           <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_2.java</url>
+          <line>111</line>
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

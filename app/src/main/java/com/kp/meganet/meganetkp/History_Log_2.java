@@ -238,8 +238,7 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
                     .setNegativeButton("No", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             // some code if you want
-                            toast.makeText(getApplicationContext(), "UNPAIR FROM UNIT",
-                                    Toast.LENGTH_SHORT).show();
+                            toast.makeText(getApplicationContext(), "UNPAIR FROM UNIT", Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
                             _pairDialogIsON = false;
                             MeganetInstances.getInstance().GetMeganetEngine().Disconnect();
@@ -368,8 +367,7 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
 
                 SimpleDateFormat formatter = new SimpleDateFormat("MMddyy_HHmmss");
                 Date now_date = new Date(System.currentTimeMillis());
-                new_fileName = MeganetInstances.getInstance().GetMeganetEngine().GetLastAccSN() + "_" +
-                        MeganetInstances.getInstance().GetMeganetEngine().GetUnitAddress() + "_" + formatter.format(now_date) + ".csv";
+                new_fileName = MeganetInstances.getInstance().GetMeganetEngine().GetUnitAddress() + "_" + formatter.format(now_date) + ".csv";
                 MeganetInstances.getInstance().GetMeganetEngine().Disconnect();
 
 /*
