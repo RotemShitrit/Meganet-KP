@@ -24,7 +24,7 @@
         android:layout_above="@+id/textViewID"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="-89dp"
-        android:text="Node ID" />
+        android:text="MTU ID" />
 
     <TextView
         android:id="@+id/textViewID"

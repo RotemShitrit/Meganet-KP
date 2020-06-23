@@ -69,7 +69,7 @@ public class MeganetDB extends SQLiteOpenHelper {
 
         data.SetID(1);
         data.SetKeyName("hh_id");
-        data.SetKeyValue("00001");
+        data.SetKeyValue("00000");
         if(getSettingsCount(data) <= 0)
             AddProperty(data);
 
@@ -111,7 +111,7 @@ public class MeganetDB extends SQLiteOpenHelper {
 
         data.SetID(8);
         data.SetKeyName("use_kpack");
-        data.SetKeyValue("0");
+        data.SetKeyValue("1");
         if(getSettingsCount(data) <= 0)
             AddProperty(data);
 

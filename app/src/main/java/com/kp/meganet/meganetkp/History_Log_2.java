@@ -128,7 +128,7 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
         tv16 = (TextView) findViewById(R.id.textView16);
         getLogBtn = (Button) findViewById(R.id.getLogBtn);
         pb = (ProgressBar) findViewById(R.id.progressBar);
-        pb.getIndeterminateDrawable().setColorFilter(Color.RED,android.graphics.PorterDuff.Mode.SRC_ATOP);
+        pb.getIndeterminateDrawable().setColorFilter(Color.parseColor("#e66807"),android.graphics.PorterDuff.Mode.SRC_ATOP);
         last_read = Calendar.getInstance(); // get the current date
 
         pb.setVisibility(View.INVISIBLE);

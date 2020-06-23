@@ -385,7 +385,7 @@ public class RDM_Controll extends AppCompatActivity implements iCallback {
 
     private void PairingDialot() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Connect to Node ID: " + MeganetInstances.getInstance().GetMeganetEngine().GetUnitAddress() + " ?")
+        builder.setMessage("Connect to MTU ID: " + MeganetInstances.getInstance().GetMeganetEngine().GetUnitAddress() + " ?")
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -397,7 +397,7 @@ public class RDM_Controll extends AppCompatActivity implements iCallback {
                         openButton.setVisibility(View.VISIBLE);
                         closefButton.setVisibility(View.VISIBLE);
                         MeganetInstances.getInstance().GetMeganetEngine().PairingDevice(true, true);
-                        connectedMTUTextView.setText("Connected To Node: " + MeganetInstances.getInstance().GetMeganetEngine().GetUnitAddress());
+                        connectedMTUTextView.setText("Connected To MTU: " + MeganetInstances.getInstance().GetMeganetEngine().GetUnitAddress());
                         dialog.dismiss();
                         _pairDialogIsON = false;
                         _timerFlag = true;

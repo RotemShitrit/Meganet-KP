@@ -48,7 +48,7 @@ public class ChooseDeviceActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent;
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
-                MeganetInstances.getInstance().GetMeganetEngine().SetCurrentProgrammType(44);
+                MeganetInstances.getInstance().GetMeganetEngine().SetCurrentProgrammType(7);
                 intent = new Intent(ChooseDeviceActivity.this, ProgrammActivity.class);
                 startActivity(intent);
             }

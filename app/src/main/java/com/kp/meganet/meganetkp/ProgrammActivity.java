@@ -149,9 +149,18 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("MTWP")));
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("MTWP")));
         }
+        else if (MeganetInstances.getInstance().GetMeganetEngine().GetCurrentProgrammType() == 7)
+        {
+            dev_name_txt = "WER";
+
+            promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("E")));
+            promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("E")));
+
+        }
 
 
-        // Replace "Please magnet swipe node"
+
+            // Replace "Please magnet swipe node"
         // to "Please Click on READ button and Swipe a magnet on the Node"
         // on 21.11.2019.
         dev_name_txt += "\n\nPlease Click on READ button \nand Swipe a magnet on the MTU";
@@ -241,6 +250,10 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                 else if(MeganetInstances.getInstance().GetMeganetEngine().GetCurrentProgrammType() == 6)
                 {
                     MeganetInstances.getInstance().GetMeganetEngine().Prompt(MeganetEngine.ePromptType.REGULAR, PromptConvert("MTWP"));
+                }
+                else if(MeganetInstances.getInstance().GetMeganetEngine().GetCurrentProgrammType() == 7)
+                {
+                    MeganetInstances.getInstance().GetMeganetEngine().Prompt(MeganetEngine.ePromptType.TEN_CHR_PAIRING, PromptConvert("E"));
                 }
 
 
@@ -437,10 +450,15 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
             }
             else
             {
-                if(paramCheckBox.isChecked())
-                    _currentReadData.get(_selectedItem).TabName = "1";
-                else
-                    _currentReadData.get(_selectedItem).TabName = "0";
+                if(paramCheckBox.isChecked()) {
+                    _currentReadData.get(_selectedItem).TabName =
+                            String.valueOf((int)_currentReadData.get(_selectedItem).MaxValue);
+
+                }
+                else {
+                    _currentReadData.get(_selectedItem).TabName =
+                            String.valueOf((int)_currentReadData.get(_selectedItem).MinValue);
+                }
             }
         }
     }
