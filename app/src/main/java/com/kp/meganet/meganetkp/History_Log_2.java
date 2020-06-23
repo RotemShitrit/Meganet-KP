@@ -403,6 +403,7 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+
                 } else {
                     Toast.makeText(this, "Cannot save file on external storage!",Toast.LENGTH_LONG);
                 }
