@@ -398,7 +398,7 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
                         out.write(dataFile.getBytes());
                         out.close();
 
-                        Toast.makeText(this, "File saved in saved_logs folder" , Toast.LENGTH_LONG);
+                       // Toast.makeText(this, "File saved in saved_logs folder" , Toast.LENGTH_LONG);
 
                     } catch (Exception e) {
                         e.printStackTrace();

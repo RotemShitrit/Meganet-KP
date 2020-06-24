@@ -19,6 +19,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/app-release.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +69,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Old Meganet/MeganetKP" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -176,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592911791710</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="23/06/20">
+      <created>1592915417101</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1592915417101</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -186,7 +194,8 @@
     <MESSAGE value="18/06/20" />
     <MESSAGE value="18/06/20&#10;Changes:&#10;1. add MTWP button in Wall Mount &#10;2. change name of buttons to significant names in activity_pit.xml , activity_qr_code.xml and activity_wall_mount.xml" />
     <MESSAGE value="23/06/20&#10;                                                                                                                     Changes:&#10;                                                                                                                     1. Kpack checked as default in settings&#10;                                                                                                                     2. kp image moved to the middle in main activity&#10;                                                                                                                     3. change word Node to MTU in History_Log_2" />
-    <option name="LAST_COMMIT_MESSAGE" value="23/06/20&#10;                                                                                                                     Changes:&#10;                                                                                                                     1. Kpack checked as default in settings&#10;                                                                                                                     2. kp image moved to the middle in main activity&#10;                                                                                                                     3. change word Node to MTU in History_Log_2" />
+    <MESSAGE value="23/06/20" />
+    <option name="LAST_COMMIT_MESSAGE" value="23/06/20" />
   </component>
   <component name="WindowStateProjectService">
     <state x="434" y="199" width="413" height="289" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1591862215783">
@@ -209,10 +218,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="496" y="106" key="AndroidProcessChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1592226941679" />
-    <state x="110" y="0" key="CommitChangelistDialog2" timestamp="1592911790009">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1592915415949">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="110" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1592911790009" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1592915415949" />
     <state width="444" height="438" key="DebuggerActiveHint" timestamp="1592216991592">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -221,42 +230,42 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="176" y="50" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1592911757136" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1592465547532">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1592981766455">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1592465547532" />
-    <state width="1236" height="164" key="GridCell.Tab.0.bottom" timestamp="1592913986764">
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1592981766455" />
+    <state width="1236" height="164" key="GridCell.Tab.0.bottom" timestamp="1592916842249">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="164" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592913986764" />
-    <state width="1236" height="164" key="GridCell.Tab.0.center" timestamp="1592913986764">
+    <state width="1236" height="164" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592916842249" />
+    <state width="1236" height="164" key="GridCell.Tab.0.center" timestamp="1592916842249">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="164" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1592913986764" />
-    <state width="1236" height="164" key="GridCell.Tab.0.left" timestamp="1592913986764">
+    <state width="1236" height="164" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1592916842249" />
+    <state width="1236" height="164" key="GridCell.Tab.0.left" timestamp="1592916842249">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="164" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1592913986764" />
-    <state width="1236" height="164" key="GridCell.Tab.0.right" timestamp="1592913986764">
+    <state width="1236" height="164" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1592916842249" />
+    <state width="1236" height="164" key="GridCell.Tab.0.right" timestamp="1592916842249">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="164" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1592913986764" />
-    <state width="1236" height="164" key="GridCell.Tab.1.bottom" timestamp="1592913986764">
+    <state width="1236" height="164" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1592916842249" />
+    <state width="1236" height="164" key="GridCell.Tab.1.bottom" timestamp="1592916840501">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="164" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592913986764" />
-    <state width="1236" height="164" key="GridCell.Tab.1.center" timestamp="1592913986764">
+    <state width="1236" height="164" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592916840501" />
+    <state width="1236" height="164" key="GridCell.Tab.1.center" timestamp="1592916840501">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="164" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1592913986764" />
-    <state width="1236" height="164" key="GridCell.Tab.1.left" timestamp="1592913986764">
+    <state width="1236" height="164" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1592916840501" />
+    <state width="1236" height="164" key="GridCell.Tab.1.left" timestamp="1592916840501">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="164" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1592913986764" />
-    <state width="1236" height="164" key="GridCell.Tab.1.right" timestamp="1592913986764">
+    <state width="1236" height="164" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1592916840501" />
+    <state width="1236" height="164" key="GridCell.Tab.1.right" timestamp="1592916840501">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="164" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1592913986764" />
+    <state width="1236" height="164" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1592916840501" />
     <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1592227591456">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -265,10 +274,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="93" y="93" width="1095" height="495" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1280.680@0.0.1280.680" timestamp="1591684917206" />
-    <state x="353" y="131" key="git4idea.merge.GitPullDialog" timestamp="1592911797885">
+    <state x="353" y="131" key="git4idea.merge.GitPullDialog" timestamp="1592915420772">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="353" y="131" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1592911797885" />
+    <state x="353" y="131" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1592915420772" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1592729438645">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -286,6 +295,16 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_2.java</url>
           <line>82</line>
           <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_2.java</url>
+          <line>409</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_2.java</url>
+          <line>292</line>
+          <option name="timeStamp" value="103" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
