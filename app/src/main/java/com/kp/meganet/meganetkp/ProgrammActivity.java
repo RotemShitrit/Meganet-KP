@@ -38,6 +38,7 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
     private boolean _pairDialogIsON;
     private Spinner promptTypeSpin;
     private Spinner paramSpiner;
+    private Button inputBtn;
     private Button promptButton;
     private Button promptTempButton;
     private Button powerOffButton;
@@ -63,6 +64,7 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
         _pairDialogIsON = false;
         _isLocked = true;
 
+        inputBtn = (Button) findViewById(R.id.buttonInput);
         txtView = (TextView)findViewById(R.id.textView11);
         promptButton  = (Button) findViewById(R.id.buttonPrompt);
         promptTempButton = (Button) findViewById(R.id.button_read_temp);
@@ -173,6 +175,7 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                 paramsListView.setAdapter(null);
                 _selectedItem = "";
                 paramEditText.setText("");
+                inputBtn.setVisibility(View.INVISIBLE);
                 sleepButton.setVisibility(View.INVISIBLE);
                 programmButton.setVisibility(View.INVISIBLE);
                 promptTempButton.setVisibility(View.VISIBLE);
@@ -208,6 +211,7 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                 paramsListView.setAdapter(null);
                 _selectedItem = "";
                 paramEditText.setText("");
+                inputBtn.setVisibility(View.INVISIBLE);
                 sleepButton.setVisibility(View.INVISIBLE);
                 programmButton.setVisibility(View.INVISIBLE);
                 promptTempButton.setVisibility(View.VISIBLE);
@@ -249,7 +253,7 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                 }
                 else if(MeganetInstances.getInstance().GetMeganetEngine().GetCurrentProgrammType() == 6)
                 {
-                    MeganetInstances.getInstance().GetMeganetEngine().Prompt(MeganetEngine.ePromptType.REGULAR, PromptConvert("MTWP"));
+                   MeganetInstances.getInstance().GetMeganetEngine().Prompt(MeganetEngine.ePromptType.REGULAR, PromptConvert("MTWP"));
                 }
                 else if(MeganetInstances.getInstance().GetMeganetEngine().GetCurrentProgrammType() == 7)
                 {
@@ -262,6 +266,14 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                 CommonSettingsData data = new CommonSettingsData(6, "last_programm_prompt_type", PromptConvert(promptTypeSpin.getSelectedItem().toString()));
 
                 MeganetInstances.getInstance().GetMeganetDb().updateProperty(data);
+            }
+        });
+
+        inputBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProgrammActivity.this, PulseActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -283,6 +295,7 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                     paramSpiner.setVisibility(View.INVISIBLE);
                     paramEditText.setVisibility(View.INVISIBLE);
                     unlockCheckBox.setVisibility(View.INVISIBLE);
+                    inputBtn.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -327,6 +340,8 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                     paramSpiner.setVisibility(View.INVISIBLE);
                     paramEditText.setVisibility(View.INVISIBLE);
                     unlockCheckBox.setVisibility(View.INVISIBLE);
+                    inputBtn.setVisibility(View.INVISIBLE);
+
                 }
             }
         });
@@ -388,6 +403,8 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                     //MeterProtocolConverter
                     if(p.ParameterName.equals("Meter Protocol"))
                         InitSpinnParam(p.MinValue, p.MaxValue, MeterProtocolConverter(p.TabName));
+                    else if(p.ParameterName.equals("Power") && p.NDevice == 249)
+                        InitSpinnParam(p.MinValue ,p.MaxValue,PowerConvert(Double.valueOf(p.TabName)));
                     else
                         InitSpinnParam(p.MinValue, p.MaxValue, p.TabName);
                 }
@@ -445,6 +462,8 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
             {
                 if( _currentReadData.get(_selectedItem).ParameterName.equals("Meter Protocol"))
                     _currentReadData.get(_selectedItem).TabName = MeterProtocolConverter(paramSpiner.getSelectedItem().toString());
+                else if(_currentReadData.get(_selectedItem).ParameterName.equals("Power") && _currentReadData.get(_selectedItem).NDevice==249)
+                    _currentReadData.get(_selectedItem).TabName = PowerConvert(Double.valueOf(paramSpiner.getSelectedItem().toString()));
                 else
                     _currentReadData.get(_selectedItem).TabName = paramSpiner.getSelectedItem().toString();
             }
@@ -540,6 +559,11 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
         programmButton.setVisibility(View.VISIBLE);
         promptTempButton.setVisibility(View.INVISIBLE);
         powerOffButton.setVisibility(View.VISIBLE);
+
+        if(MeganetInstances.getInstance().GetMeganetEngine().GetCurrentProgrammType() == 6)
+            inputBtn.setVisibility(View.VISIBLE);
+        else
+            inputBtn.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -754,6 +778,112 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
 
         return val;
     }
+
+    private String PowerConvert(Double power)
+    {
+        String ret = "";
+        switch (power.toString()) {
+            case "93.0":
+                ret = "0";
+                break;
+            case "95.0":
+                ret = "1";
+                break;
+            case "98.0":
+                ret = "2";
+                break;
+            case "100.0":
+                ret = "3";
+                break;
+            case "102.0":
+                ret = "4";
+                break;
+            case "105.0":
+                ret = "5";
+                break;
+            case "107.0":
+                ret = "6";
+                break;
+            case "109.0":
+                ret = "7";
+                break;
+            case "111.0":
+                ret = "8";
+                break;
+            case "114.0":
+                ret = "9";
+                break;
+            case "116.0":
+                ret = "10";
+                break;
+            case "119.0":
+                ret = "11";
+                break;
+            case "121.0":
+                ret = "12";
+                break;
+            case "123.0":
+                ret = "13";
+                break;
+            case "125.0":
+                ret = "14`";
+                break;
+            case "127.0":
+                ret = "15";
+                break;
+
+            case "0.0":
+                ret =  "93";
+                break;
+            case "1.0":
+                ret =  "95";
+                break;
+            case "2.0":
+                ret =  "98";
+                break;
+            case "3.0":
+                ret =  "100";
+                break;
+            case "4.0":
+                ret =  "102";
+                break;
+            case "5.0":
+                ret =  "105";
+                break;
+            case "6.0":
+                ret =  "107";
+                break;
+            case "7.0":
+                ret =  "109";
+                break;
+            case "8.0":
+                ret =  "111";
+                break;
+            case "9.0":
+                ret =  "114";
+                break;
+            case "10.0":
+                ret =  "116";
+                break;
+            case "11.0":
+                ret =  "119";
+                break;
+            case "12.0":
+                ret =  "121";
+                break;
+            case "13.0":
+                ret =  "123";
+                break;
+            case "14.0":
+                ret =  "125";
+                break;
+            case "15.0":
+                ret =  "127";
+                break;
+        }
+        return ret;
+    }
+
 
     private String MeterProtocolConverter(String type_prm)
     {

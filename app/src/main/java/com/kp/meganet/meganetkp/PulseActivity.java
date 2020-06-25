@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class PulseActivity extends AppCompatActivity implements iPulseCallback{
@@ -18,6 +19,7 @@ public class PulseActivity extends AppCompatActivity implements iPulseCallback{
 
     private EditText portSNeditText;
     private EditText portReadeditText;
+    private RadioGroup radioGroup;
 
     private RadioButton Port1rbo;
     private RadioButton Port2rbo;
@@ -25,6 +27,7 @@ public class PulseActivity extends AppCompatActivity implements iPulseCallback{
     private RadioButton Port4rbo;
 
     private String _toastMessageToDisplay;
+    private int port = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +41,12 @@ public class PulseActivity extends AppCompatActivity implements iPulseCallback{
 
         portSNeditText  = (EditText) findViewById(R.id.editTextPortSN);
         portReadeditText  = (EditText) findViewById(R.id.editTextPortRead);
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroupPort);
 
-        Port1rbo  = (RadioButton) findViewById(R.id.rboPort1);
+        /*Port1rbo  = (RadioButton) findViewById(R.id.rboPort1);
         Port2rbo  = (RadioButton) findViewById(R.id.rboPort2);
         Port3rbo  = (RadioButton) findViewById(R.id.rboPort3);
-        Port4rbo  = (RadioButton) findViewById(R.id.rboPort4);
+        Port4rbo  = (RadioButton) findViewById(R.id.rboPort4);*/
 
 
         MeganetInstances.getInstance().GetMeganetEngine().InitPulse(this);
@@ -51,7 +55,7 @@ public class PulseActivity extends AppCompatActivity implements iPulseCallback{
             @Override
             public void onClick(View v) {
 
-                int portNumVal = 1;
+                /*int portNumVal = 1;
                 if (Port1rbo.isChecked())
                 {
                     portNumVal = 1;
@@ -67,11 +71,9 @@ public class PulseActivity extends AppCompatActivity implements iPulseCallback{
                 else
                 {
                     portNumVal = 4;
-                }
+                }*/
 
-
-                MeganetInstances.getInstance().GetMeganetEngine().ReadPulsePort(portNumVal);
-
+                MeganetInstances.getInstance().GetMeganetEngine().ReadPulsePort(port);
             }
         });
 
@@ -79,7 +81,7 @@ public class PulseActivity extends AppCompatActivity implements iPulseCallback{
             @Override
             public void onClick(View v) {
 
-                int portNumVal = 1;
+                /*int portNumVal = 1;
                 if (Port1rbo.isChecked())
                 {
                     portNumVal = 1;
@@ -95,22 +97,33 @@ public class PulseActivity extends AppCompatActivity implements iPulseCallback{
                 else
                 {
                     portNumVal = 4;
-                }
+                }*/
 
-                MeganetInstances.getInstance().GetMeganetEngine().WritePulsePort(portNumVal, Integer.valueOf(portSNeditText.getText().toString()), Integer.valueOf(portReadeditText.getText().toString()));
-
+                MeganetInstances.getInstance().GetMeganetEngine().WritePulsePort(port, Integer.valueOf(portSNeditText.getText().toString()), Integer.valueOf(portReadeditText.getText().toString()));
             }
         });
 
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
+                finish();
             }
         });
     }
+
+    public void checkPort(View v) // check which input port of device
+    {
+        int radioID = radioGroup.getCheckedRadioButtonId();
+        if(radioID==R.id.rboPort1)
+            port = 1;
+        else if(radioID==R.id.rboPort2)
+            port = 2;
+        else if(radioID==R.id.rboPort3)
+            port = 3;
+        else
+            port=4;
+    }
+
 
     @Override
     public void OnRead(String serial_num, String reading)

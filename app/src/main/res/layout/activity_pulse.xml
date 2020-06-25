@@ -9,114 +9,145 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.kp.meganet.meganetkp.PulseActivity">
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1"
-        android:id="@+id/rboPort1"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:buttonTint="@color/colorButtonText"
-        android:checked="true" />
+    <RadioGroup
+        android:id="@+id/radioGroupPort"
+        android:layout_width="395dp"
+        android:layout_height="46dp"
+        android:orientation="horizontal"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp">
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="2"
-        android:id="@+id/rboPort2"
-        android:layout_alignTop="@+id/rboPort1"
-        android:layout_toEndOf="@+id/rboPort1"
-        android:layout_marginStart="67dp"
-        android:buttonTint="@color/colorButtonText" />
+        <RadioButton
+            android:id="@+id/rboPort1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:onClick="checkPort"
+            android:buttonTint="@color/colorButtonText"
+            android:checked="true"
+            android:text="1" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="3"
-        android:id="@+id/rboPort3"
-        android:layout_toStartOf="@+id/rboPort4"
-        android:layout_marginEnd="40dp"
-        android:buttonTint="@color/colorButtonText" />
+        <RadioButton
+            android:id="@+id/rboPort2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:onClick="checkPort"
+            android:buttonTint="@color/colorButtonText"
+            android:text="2" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="4"
-        android:id="@+id/rboPort4"
-        android:layout_alignParentEnd="true"
-        android:buttonTint="@color/colorButtonText" />
+        <RadioButton
+            android:id="@+id/rboPort3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:onClick="checkPort"
+            android:buttonTint="@color/colorButtonText"
+            android:text="3" />
+
+
+        <RadioButton
+            android:id="@+id/rboPort4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:onClick="checkPort"
+            android:buttonTint="@color/colorButtonText"
+            android:text="4" />
+
+    </RadioGroup>
 
     <Button
+        android:id="@+id/buttonReadPort"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="READ PORT"
-        android:id="@+id/buttonReadPort"
-        android:textColor="@color/colorButtonText"
-        android:layout_below="@+id/rboPort1"
+        android:layout_below="@+id/radioGroupPort"
+        android:layout_alignEnd="@+id/radioGroupPort"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/rboPort4" />
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginTop="15dp"
+        android:text="READ PORT"
+        android:textColor="@color/colorButtonText" />
 
     <TextView
+        android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Port S. N."
-        android:id="@+id/textView9"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp"
         android:layout_below="@+id/buttonReadPort"
+        android:layout_alignEnd="@+id/radioGroupPort"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/rboPort4" />
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginTop="15dp"
+        android:text="Port S. N."
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp" />
 
     <EditText
+        android:id="@+id/editTextPortSN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextPortSN"
+        android:layout_below="@+id/textView9"
+        android:layout_alignEnd="@+id/radioGroupPort"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
         android:digits="0123456789."
         android:inputType="numberDecimal"
-        android:textCursorDrawable="@drawable/cursor_drawable"
         android:textColorHighlight="@color/primary_material_dark"
-        android:textSize="14sp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView9"
-        android:layout_alignParentLeft="true"
-        android:layout_alignEnd="@+id/rboPort4" />
+        android:textCursorDrawable="@drawable/cursor_drawable"
+        android:textSize="14sp" />
 
     <TextView
+        android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Port Reading"
-        android:id="@+id/textView10"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp"
         android:layout_below="@+id/editTextPortSN"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginTop="20dp"
+        android:text="Port Reading"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp" />
 
     <EditText
+        android:id="@+id/editTextPortRead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextPortRead"
+        android:layout_below="@+id/textView10"
+        android:layout_alignEnd="@+id/radioGroupPort"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
         android:digits="0123456789."
         android:inputType="numberDecimal"
-        android:textCursorDrawable="@drawable/cursor_drawable"
         android:textColorHighlight="@color/primary_material_dark"
-        android:textSize="14sp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView10"
-        android:layout_alignParentLeft="true"
-        android:layout_alignEnd="@+id/rboPort4" />
+        android:textCursorDrawable="@drawable/cursor_drawable"
+        android:textSize="14sp" />
 
     <Button
+        android:id="@+id/buttonWretePort"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="WRITE PORT"
-        android:id="@+id/buttonWretePort"
-        android:textColor="@color/colorButtonText"
         android:layout_below="@+id/editTextPortRead"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="WRITE PORT"
+        android:textColor="@color/colorButtonText" />
 
     <Button
         android:layout_width="wrap_content"
@@ -124,8 +155,10 @@
         android:text="CLOSE"
         android:id="@+id/buttonClose"
         android:textColor="@color/colorButtonText"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/rboPort4" />
+        android:layout_alignEnd="@+id/radioGroupPort" />
 
 </RelativeLayout>
