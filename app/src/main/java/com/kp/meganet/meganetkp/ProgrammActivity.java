@@ -415,10 +415,19 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                     paramEditText.setVisibility(View.INVISIBLE);
 
                     paramCheckBox.setText(s1);
-                    if(p.TabName.equals("0"))
-                        paramCheckBox.setChecked(false);
-                    else
-                        paramCheckBox.setChecked(true);
+                    if(p.ParameterName.equals("Shabat mode"))
+                    {
+                        if (p.TabName.equals("170"))
+                            paramCheckBox.setChecked(false);
+                        else if(p.TabName.equals("204"))
+                            paramCheckBox.setChecked(true);
+                    }
+                    else {
+                        if (p.TabName.equals("0"))
+                            paramCheckBox.setChecked(false);
+                        else
+                            paramCheckBox.setChecked(true);
+                    }
                 }
             }
         });
@@ -471,12 +480,11 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
             {
                 if(paramCheckBox.isChecked()) {
                     _currentReadData.get(_selectedItem).TabName =
-                            String.valueOf((int)_currentReadData.get(_selectedItem).MaxValue);
-
+                            String.valueOf(_currentReadData.get(_selectedItem).MaxValue);
                 }
                 else {
                     _currentReadData.get(_selectedItem).TabName =
-                            String.valueOf((int)_currentReadData.get(_selectedItem).MinValue);
+                            String.valueOf(_currentReadData.get(_selectedItem).MinValue);
                 }
             }
         }
