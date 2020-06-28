@@ -84,8 +84,10 @@ public class History_Log_1 extends AppCompatActivity {
         uploadFiles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Uri uri = Uri.parse(Environment.getExternalStorageDirectory().getPath()
+                        + "/saved_logs/");
                 Intent fileintent = new Intent(Intent.ACTION_GET_CONTENT);
-                fileintent.setType("*/*");
+                fileintent.setDataAndType(uri,"*/*");
                 try {
                     startActivityForResult(fileintent, 10);
                 } catch (ActivityNotFoundException e) {

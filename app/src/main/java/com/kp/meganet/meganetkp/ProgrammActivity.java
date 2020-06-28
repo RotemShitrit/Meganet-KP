@@ -350,8 +350,7 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
         paramsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
-            public void onItemClick(AdapterView<?> adapter, View view, int position,
-                                    long id) {
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
                 // TODO Auto-generated method stub
 
                 UpdateParamValue();
@@ -480,11 +479,11 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
             {
                 if(paramCheckBox.isChecked()) {
                     _currentReadData.get(_selectedItem).TabName =
-                            String.valueOf(_currentReadData.get(_selectedItem).MaxValue);
+                            String.valueOf((int)_currentReadData.get(_selectedItem).MaxValue);
                 }
                 else {
                     _currentReadData.get(_selectedItem).TabName =
-                            String.valueOf(_currentReadData.get(_selectedItem).MinValue);
+                            String.valueOf((int)_currentReadData.get(_selectedItem).MinValue);
                 }
             }
         }

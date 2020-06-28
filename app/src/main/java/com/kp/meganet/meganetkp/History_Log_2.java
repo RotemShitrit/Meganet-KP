@@ -25,6 +25,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -146,9 +147,12 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
 
         MeganetInstances.getInstance().GetMeganetEngine().InitReadMeter(this);
         MeganetInstances.getInstance().GetMeganetEngine().InitProgramming(this, MeganetInstances.getInstance().GetMeganetDb().getSetting(1).GetKeyValue());
-        MeganetInstances.getInstance().GetMeganetEngine().SetCurrentProgrammType(44);
+        //MeganetInstances.getInstance().GetMeganetEngine().SetCurrentProgrammType(44);
         MeganetInstances.getInstance().GetMeganetEngine().Prompt(MeganetEngine.ePromptType.TEN_CHR_PAIRING, PromptConvert("E"));
         toast.makeText(getApplicationContext(),"Waiting For MTU Response",Toast.LENGTH_LONG).show();
+
+        CommonSettingsData data = new CommonSettingsData(6, "last_programm_prompt_type", PromptConvert("E"));
+        MeganetInstances.getInstance().GetMeganetDb().updateProperty(data);
 
         nodeID = (TextView) findViewById(R.id.textViewID);
 
@@ -216,9 +220,23 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
                             toast.makeText(getApplicationContext(), "Unit Paired",
                                     Toast.LENGTH_SHORT).show();
 
-                            getLogBtn.setVisibility(View.VISIBLE);
-                            tv16.setVisibility(View.VISIBLE);
-                            input.setVisibility(View.VISIBLE);
+                            int ndevice = Integer.decode("0x" +  MeganetInstances.getInstance().GetMeganetEngine().GetNdevice())-1;
+                            if(ndevice == 249)
+                            {
+                                getLogBtn.setVisibility(View.INVISIBLE);
+                                tv16.setVisibility(View.INVISIBLE);
+                                input.setVisibility(View.INVISIBLE);
+                                pb.setVisibility(View.VISIBLE);
+                                MeganetInstances.getInstance().GetMeganetEngine().TimeRequest(); // send time request
+                            }
+                            else {
+                                getLogBtn.setVisibility(View.VISIBLE);
+                                tv16.setVisibility(View.VISIBLE);
+                                input.setVisibility(View.VISIBLE);
+                            }
+
+
+
 
                             getLogBtn.setOnClickListener(new View.OnClickListener() {
                                 @Override
@@ -370,19 +388,6 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
                 new_fileName = MeganetInstances.getInstance().GetMeganetEngine().GetUnitAddress() + "_" + formatter.format(now_date) + ".csv";
                 MeganetInstances.getInstance().GetMeganetEngine().Disconnect();
 
-/*
-                FileOutputStream outputStream;
-                try {
-                    outputStream = openFileOutput(new_fileName, Context.MODE_PRIVATE);
-                    outputStream.write(dataFile.getBytes());
-                    Toast.makeText(this,"Saved to " + getFilesDir() + "/" + new_fileName, Toast.LENGTH_LONG);
-                    outputStream.flush();
-                    outputStream.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-*/
-
                 if(isExternalStorageWritable() && checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
                     String root = Environment.getExternalStorageDirectory().toString();
                     File myDir = new File(root + "/saved_logs");
@@ -397,8 +402,7 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
                         FileOutputStream out = new FileOutputStream(file);
                         out.write(dataFile.getBytes());
                         out.close();
-
-                       // Toast.makeText(this, "File saved in saved_logs folder" , Toast.LENGTH_LONG);
+                        Toast.makeText(this, "File saved in saved_logs folder" , Toast.LENGTH_LONG);
 
                     } catch (Exception e) {
                         e.printStackTrace();

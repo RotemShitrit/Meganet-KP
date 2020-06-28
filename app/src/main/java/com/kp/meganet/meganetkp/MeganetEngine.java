@@ -2394,6 +2394,8 @@ public class MeganetEngine extends BTengine {
         _unitAddress = unitAddress_prm;
     }
 
+    public String GetNdevice() { return _ndevice;}
+
 
     protected void NewPulsePairingDevice(boolean yesno_prm, boolean rdm_prm)///////////////////////////////////////////////////////////////////////////////////////////
     {
