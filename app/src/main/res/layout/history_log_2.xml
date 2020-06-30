@@ -9,10 +9,12 @@
         android:id="@+id/textView1"
         android:layout_width="92dp"
         android:layout_height="30dp"
-        android:layout_above="@+id/textViewID"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="-89dp"
-        android:text="MTU ID" />
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="54dp"
+        android:text="MTU ID"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textViewID"
@@ -20,29 +22,9 @@
         android:layout_height="48dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="89dp" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="298dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="212dp"
-        android:layout_weight="1"
-        android:scrollbars="none">
-
-
-        <TableLayout
-            android:id="@+id/table1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="0dp"
-            android:stretchColumns="0,1,2">
-
-        </TableLayout>
-    </ScrollView>
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="89dp"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/getLogBtn"

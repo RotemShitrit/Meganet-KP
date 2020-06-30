@@ -10,7 +10,16 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fd4a1cd-c918-4810-82d0-a55a62b9785c" name="Default Changelist" comment="">
+    <list default="true" id="8fd4a1cd-c918-4810-82d0-a55a62b9785c" name="Default Changelist" comment="28/06/20&#10;**Changes**&#10;1. remove edit text of barcode scan in history_log_2.xml">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/app-release.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ProgrammActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ProgrammActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/history_log_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/history_log_2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -208,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593349433302</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="28/06/20&#10;**Changes**&#10;1. remove edit text of barcode scan in history_log_2.xml">
+      <created>1593349657929</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1593349657929</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -223,7 +239,8 @@
     <MESSAGE value="25/06/20&#10;**Changes**&#10;Added a button to ProgrammActivity when we prompt to a MTWP device, in order to access to the PulseActivity" />
     <MESSAGE value="25/06/20&#10;**Changes**&#10;Shabat mode on ProgrammActivity" />
     <MESSAGE value="28/06/20&#10;**Changes**&#10;1. set root to chooser file for upload files to FTP in History_Log_1&#10;2. Invisible input number for wer devices in History_Log_2&#10;3. add a function to MeganetEngine that return ndevice&#10;4. casting (int) to checkbox values" />
-    <option name="LAST_COMMIT_MESSAGE" value="28/06/20&#10;**Changes**&#10;1. set root to chooser file for upload files to FTP in History_Log_1&#10;2. Invisible input number for wer devices in History_Log_2&#10;3. add a function to MeganetEngine that return ndevice&#10;4. casting (int) to checkbox values" />
+    <MESSAGE value="28/06/20&#10;**Changes**&#10;1. remove edit text of barcode scan in history_log_2.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="28/06/20&#10;**Changes**&#10;1. remove edit text of barcode scan in history_log_2.xml" />
   </component>
   <component name="WindowStateProjectService">
     <state x="434" y="199" width="413" height="289" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1591862215783">
@@ -234,10 +251,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="541" y="94" key="#xdebugger.XInspectDialog/0.0.1280.680@0.0.1280.680" timestamp="1592224047376" />
-    <state x="0" y="69" key="#xdebugger.evaluate" timestamp="1593345242552">
+    <state x="0" y="35" key="#xdebugger.evaluate" timestamp="1593501203134">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="0" y="69" key="#xdebugger.evaluate/0.0.1280.680@0.0.1280.680" timestamp="1593345242552" />
+    <state x="0" y="35" key="#xdebugger.evaluate/0.0.1280.680@0.0.1280.680" timestamp="1593501203134" />
     <state x="221" y="96" key="AndroidCreateResourceFileDialog" timestamp="1592483295207">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -246,10 +263,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="496" y="106" key="AndroidProcessChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1592226941679" />
-    <state x="0" y="0" width="1208" height="680" key="CommitChangelistDialog2" timestamp="1593349431697">
+    <state x="0" y="0" width="1212" height="680" key="CommitChangelistDialog2" timestamp="1593360314681">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="0" y="0" width="1208" height="680" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1593349431697" />
+    <state x="0" y="0" width="1212" height="680" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1593360314681" />
     <state width="444" height="438" key="DebuggerActiveHint" timestamp="1592216991592">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -262,38 +279,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1592981798199" />
-    <state width="1236" height="205" key="GridCell.Tab.0.bottom" timestamp="1593347320264">
+    <state width="1236" height="231" key="GridCell.Tab.0.bottom" timestamp="1593501026661">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="205" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593347320264" />
-    <state width="1236" height="205" key="GridCell.Tab.0.center" timestamp="1593347320264">
+    <state width="1236" height="231" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593501026661" />
+    <state width="1236" height="231" key="GridCell.Tab.0.center" timestamp="1593501026661">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="205" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1593347320264" />
-    <state width="1236" height="205" key="GridCell.Tab.0.left" timestamp="1593347320264">
+    <state width="1236" height="231" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1593501026661" />
+    <state width="1236" height="231" key="GridCell.Tab.0.left" timestamp="1593501026661">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="205" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1593347320264" />
-    <state width="1236" height="205" key="GridCell.Tab.0.right" timestamp="1593347320264">
+    <state width="1236" height="231" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1593501026661" />
+    <state width="1236" height="231" key="GridCell.Tab.0.right" timestamp="1593501026661">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="205" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1593347320264" />
-    <state width="1236" height="205" key="GridCell.Tab.1.bottom" timestamp="1593347320264">
+    <state width="1236" height="231" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1593501026661" />
+    <state width="1236" height="231" key="GridCell.Tab.1.bottom" timestamp="1593501071215">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="205" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593347320264" />
-    <state width="1236" height="205" key="GridCell.Tab.1.center" timestamp="1593347320264">
+    <state width="1236" height="231" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593501071215" />
+    <state width="1236" height="231" key="GridCell.Tab.1.center" timestamp="1593501071215">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="205" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1593347320264" />
-    <state width="1236" height="205" key="GridCell.Tab.1.left" timestamp="1593347320264">
+    <state width="1236" height="231" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1593501071215" />
+    <state width="1236" height="231" key="GridCell.Tab.1.left" timestamp="1593501071215">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="205" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1593347320264" />
-    <state width="1236" height="205" key="GridCell.Tab.1.right" timestamp="1593347320264">
+    <state width="1236" height="231" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1593501071215" />
+    <state width="1236" height="231" key="GridCell.Tab.1.right" timestamp="1593501071215">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="205" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1593347320264" />
+    <state width="1236" height="231" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1593501071215" />
     <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1592227591456">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -302,10 +319,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="93" y="93" width="1095" height="495" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1280.680@0.0.1280.680" timestamp="1591684917206" />
-    <state x="353" y="131" key="git4idea.merge.GitPullDialog" timestamp="1593349510027">
+    <state x="353" y="131" key="git4idea.merge.GitPullDialog" timestamp="1593349664489">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="353" y="131" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1593349510027" />
+    <state x="353" y="131" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1593349664489" />
+    <state x="298" y="151" key="run.anything.popup" timestamp="1593433328004">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="298" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1593433328004" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1592729438645">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -320,14 +341,14 @@
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_2.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="101" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/MeganetEngine.java</url>
           <line>1905</line>
           <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_2.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="145" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

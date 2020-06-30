@@ -432,6 +432,8 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
         });
     }
 
+
+
     private void UpdateParamValue()
     {
         if(_selectedItem.length() > 0)
@@ -472,6 +474,13 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                     _currentReadData.get(_selectedItem).TabName = MeterProtocolConverter(paramSpiner.getSelectedItem().toString());
                 else if(_currentReadData.get(_selectedItem).ParameterName.equals("Power") && _currentReadData.get(_selectedItem).NDevice==249)
                     _currentReadData.get(_selectedItem).TabName = PowerConvert(Double.valueOf(paramSpiner.getSelectedItem().toString()));
+                else if(_currentReadData.get(_selectedItem).ParameterName.equals("Divider") && _currentReadData.get(_selectedItem).NDevice== 173)
+                {
+                    if(paramSpiner.getSelectedItem().toString().equals("No division"))
+                        _currentReadData.get(_selectedItem).TabName = "0";
+                    else if(paramSpiner.getSelectedItem().toString().equals("Division by 10"))
+                        _currentReadData.get(_selectedItem).TabName = "1";
+                }
                 else
                     _currentReadData.get(_selectedItem).TabName = paramSpiner.getSelectedItem().toString();
             }
@@ -510,10 +519,26 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
         Integer range = maxValue.intValue() - minValue.intValue();
         String[] params = new String [range+1];
         Integer arrVal;
+        int ndevice = Integer.decode("0x" +  MeganetInstances.getInstance().GetMeganetEngine().GetNdevice())-1;
+
         for(Integer i =0; i < range+1; i++)
         {
             arrVal = minValue.intValue()+i;
-            params[i] = arrVal.toString();
+
+            if(_selectedItem.equals("Pulses per revolution") && (ndevice == 105 || ndevice == 173) &&
+                    arrVal == maxValue.intValue())
+            {
+                    params[i] = "10";
+            }
+            else if(_selectedItem.equals("Divider") &&  ndevice == 173)
+            {
+                if (arrVal == 0)
+                    params[i] = "No division";
+                else if(arrVal == 1)
+                    params[i] = "Division by 10";
+            }
+            else
+                params[i] = arrVal.toString();
         }
 
         // Create a List from String Array elements

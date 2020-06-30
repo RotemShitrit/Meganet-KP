@@ -402,26 +402,22 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
                         FileOutputStream out = new FileOutputStream(file);
                         out.write(dataFile.getBytes());
                         out.close();
-                        Toast.makeText(this, "File saved in saved_logs folder" , Toast.LENGTH_LONG);
+                        toast.makeText(getApplicationContext(), "File saved in saved_logs folder" , Toast.LENGTH_LONG).show();
 
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
 
                 } else {
-                    Toast.makeText(this, "Cannot save file on external storage!",Toast.LENGTH_LONG);
+                    toast.makeText(getApplicationContext(), "Cannot save file on external storage!",Toast.LENGTH_LONG).show();
                 }
                 finish();
-
-
-
                 /*
                 //added history_log_3 layout and activity with button upload to ftp after muller reject
                 Intent intent = new Intent(History_Log_2.this, History_Log_3.class);
                 intent.putExtra("data file", dataFile);
                 startActivity(intent);
                 */
-
             }
 
             this.runOnUiThread(getLogRunnable);
