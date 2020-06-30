@@ -19,6 +19,7 @@
             android:id="@+id/nav_rdm"
             android:icon="@drawable/ic_rdm"
             android:title="RDM Control" />
+
         <!-- <item
             android:id="@+id/nav_orders"
             android:icon="@drawable/ic_wo"
@@ -28,11 +29,12 @@
             android:id="@+id/nav_log"
             android:icon="@drawable/ic_history"
             android:title="History Log" />
-        <item
+
+       <!-- <item
             android:id="@+id/nav_consumption"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_consumption"
-            android:title="Consumption" />
+            android:title="Consumption" /> -->
 
     </group>
     <item android:title="Advanced">
