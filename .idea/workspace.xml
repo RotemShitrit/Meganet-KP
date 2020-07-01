@@ -10,7 +10,8 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fd4a1cd-c918-4810-82d0-a55a62b9785c" name="Default Changelist" comment="30/06/20&#10;**Changes**&#10;1. remove consumption from the menu">
+    <list default="true" id="8fd4a1cd-c918-4810-82d0-a55a62b9785c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/weruz.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
@@ -21,7 +22,13 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/app-release.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ProgrammActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ProgrammActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/RDM_Controll.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/RDM_Controll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_choose_device.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_choose_device.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_rdm__controll.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_rdm__controll.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_wall_mount.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_wall_mount.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +52,14 @@
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="layoutResourceFile" />
+      </list>
+    </option>
   </component>
   <component name="GenerateSignedApkSettings">
     <option name="KEY_STORE_PATH" value="C:\Users\rotem\Documents\keystore.jks" />
@@ -239,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593506551599</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="30/06/20&#10;**Changes**&#10;1. fix the problem with the divider im ProgrammActivity">
+      <created>1593595115708</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1593595115708</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -257,33 +279,42 @@
     <MESSAGE value="28/06/20&#10;**Changes**&#10;1. remove edit text of barcode scan in history_log_2.xml" />
     <MESSAGE value="30/06/20&#10;**Changes**&#10;1. change the layout history_log_2.xml&#10;2. fix the problem with the toast message in History_Log_2&#10;3. in ProgrammActivity change the Pulses per revolution parameter for ndevice 173 and ndevice 105&#10;4. in ProgrammActivity change the divider parameter for ndevice 173" />
     <MESSAGE value="30/06/20&#10;**Changes**&#10;1. remove consumption from the menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="30/06/20&#10;**Changes**&#10;1. remove consumption from the menu" />
+    <MESSAGE value="30/06/20&#10;**Changes**&#10;1. fix the problem with the divider im ProgrammActivity" />
+    <option name="LAST_COMMIT_MESSAGE" value="30/06/20&#10;**Changes**&#10;1. fix the problem with the divider im ProgrammActivity" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="446" y="49" key="#com.intellij.ide.util.MemberChooser" timestamp="1593604229405">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="49" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1593604229405" />
     <state x="434" y="199" width="413" height="289" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1591862215783">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="434" y="199" width="413" height="289" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680@0.0.1280.680" timestamp="1591862215783" />
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593606328053">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1593606328053" />
     <state x="541" y="94" key="#xdebugger.XInspectDialog" timestamp="1592224047376">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="541" y="94" key="#xdebugger.XInspectDialog/0.0.1280.680@0.0.1280.680" timestamp="1592224047376" />
-    <state x="0" y="35" key="#xdebugger.evaluate" timestamp="1593594367630">
+    <state x="98" y="58" key="#xdebugger.evaluate" timestamp="1593603521492">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="0" y="35" key="#xdebugger.evaluate/0.0.1280.680@0.0.1280.680" timestamp="1593594367630" />
-    <state x="221" y="96" key="AndroidCreateResourceFileDialog" timestamp="1592483295207">
+    <state x="98" y="58" key="#xdebugger.evaluate/0.0.1280.680@0.0.1280.680" timestamp="1593603521492" />
+    <state x="221" y="96" key="AndroidCreateResourceFileDialog" timestamp="1593604495527">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="221" y="96" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1592483295207" />
+    <state x="221" y="96" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1593604495527" />
     <state x="496" y="106" key="AndroidProcessChooserDialog" timestamp="1592226941679">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="496" y="106" key="AndroidProcessChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1592226941679" />
-    <state x="0" y="0" width="1212" height="680" key="CommitChangelistDialog2" timestamp="1593506656448">
+    <state x="0" y="0" width="1212" height="680" key="CommitChangelistDialog2" timestamp="1593606541704">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="0" y="0" width="1212" height="680" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1593506656448" />
+    <state x="0" y="0" width="1212" height="680" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1593606541704" />
     <state width="444" height="438" key="DebuggerActiveHint" timestamp="1592216991592">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -296,38 +327,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1592981798199" />
-    <state width="870" height="108" key="GridCell.Tab.0.bottom" timestamp="1593594873385">
+    <state width="1236" height="195" key="GridCell.Tab.0.bottom" timestamp="1593606484166">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="870" height="108" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593594873385" />
-    <state width="870" height="108" key="GridCell.Tab.0.center" timestamp="1593594873385">
+    <state width="1236" height="195" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593606484166" />
+    <state width="1236" height="195" key="GridCell.Tab.0.center" timestamp="1593606484166">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="870" height="108" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1593594873385" />
-    <state width="870" height="108" key="GridCell.Tab.0.left" timestamp="1593594873385">
+    <state width="1236" height="195" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1593606484166" />
+    <state width="1236" height="195" key="GridCell.Tab.0.left" timestamp="1593606484166">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="870" height="108" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1593594873385" />
-    <state width="870" height="108" key="GridCell.Tab.0.right" timestamp="1593594873385">
+    <state width="1236" height="195" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1593606484166" />
+    <state width="1236" height="195" key="GridCell.Tab.0.right" timestamp="1593606484166">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="870" height="108" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1593594873385" />
-    <state width="870" height="108" key="GridCell.Tab.1.bottom" timestamp="1593594873386">
+    <state width="1236" height="195" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1593606484166" />
+    <state width="1236" height="195" key="GridCell.Tab.1.bottom" timestamp="1593606451133">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="870" height="108" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593594873386" />
-    <state width="870" height="108" key="GridCell.Tab.1.center" timestamp="1593594873386">
+    <state width="1236" height="195" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593606451133" />
+    <state width="1236" height="195" key="GridCell.Tab.1.center" timestamp="1593606451133">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="870" height="108" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1593594873386" />
-    <state width="870" height="108" key="GridCell.Tab.1.left" timestamp="1593594873386">
+    <state width="1236" height="195" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1593606451133" />
+    <state width="1236" height="195" key="GridCell.Tab.1.left" timestamp="1593606451133">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="870" height="108" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1593594873386" />
-    <state width="870" height="108" key="GridCell.Tab.1.right" timestamp="1593594873386">
+    <state width="1236" height="195" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1593606451133" />
+    <state width="1236" height="195" key="GridCell.Tab.1.right" timestamp="1593606451133">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="870" height="108" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1593594873386" />
+    <state width="1236" height="195" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1593606451133" />
     <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1592227591456">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -336,18 +367,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="93" y="93" width="1095" height="495" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1280.680@0.0.1280.680" timestamp="1591684917206" />
-    <state x="353" y="131" key="git4idea.merge.GitPullDialog" timestamp="1593506637300">
+    <state x="353" y="131" key="git4idea.merge.GitPullDialog" timestamp="1593595121137">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="353" y="131" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1593506637300" />
-    <state x="298" y="151" key="run.anything.popup" timestamp="1593433328004">
+    <state x="353" y="131" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1593595121137" />
+    <state x="298" y="151" key="run.anything.popup" timestamp="1593604802298">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="298" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1593433328004" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1593594573762">
+    <state x="298" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1593604802298" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1593603343027">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1593594573762" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1593603343027" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -371,6 +402,11 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ProgrammActivity.java</url>
           <line>485</line>
           <option name="timeStamp" value="175" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/MainActivity.java</url>
+          <line>281</line>
+          <option name="timeStamp" value="183" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

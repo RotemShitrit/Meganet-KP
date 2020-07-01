@@ -70,7 +70,7 @@ public class RDM_Controll extends AppCompatActivity implements iCallback {
 
         openButton = (Button) findViewById(R.id.buttonOpen);
         closefButton = (Button) findViewById(R.id.buttonClose);
-        kpeCheckBox = (CheckBox) findViewById(R.id.checkBoxKPE) ;
+        kpeCheckBox = (CheckBox) findViewById(R.id.checkBoxKPE);
 
         openImageView = (ImageView) findViewById(R.id.imageViewOpen);
         closeImageView = (ImageView) findViewById(R.id.imageViewClose);

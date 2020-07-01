@@ -153,7 +153,7 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
         }
         else if (MeganetInstances.getInstance().GetMeganetEngine().GetCurrentProgrammType() == 7)
         {
-            dev_name_txt = "WER";
+            dev_name_txt = "Registers";
 
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("E")));
             promptTypeSpin.setSelection(((ArrayAdapter<String>) promptTypeSpin.getAdapter()).getPosition(PromptConvert("E")));

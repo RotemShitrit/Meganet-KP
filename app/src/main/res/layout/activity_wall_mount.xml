@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Wall" />
+        android:text="Wall Mount" />
 
     <Button
         android:id="@+id/button_mt2w10"

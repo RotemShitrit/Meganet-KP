@@ -107,6 +107,7 @@
         android:layout_alignBottom="@+id/buttonOpen"
         android:layout_toEndOf="@+id/buttonOpen"
         android:buttonTint="@color/colorButtonText"
+        android:checked="true"
         android:text="Extended" /> <!--Replace KPE to Extended on 21.11.2019-->
 
 
