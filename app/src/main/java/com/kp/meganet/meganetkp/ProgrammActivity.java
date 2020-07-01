@@ -406,6 +406,14 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                         InitSpinnParam(p.MinValue ,p.MaxValue,PowerConvert(Double.valueOf(p.TabName)));
                     else
                         InitSpinnParam(p.MinValue, p.MaxValue, p.TabName);
+
+                    if(p.ParameterName.equals("Divider") && p.NDevice == 173)
+                    {
+                        if(p.TabName.equals("0"))
+                            paramSpiner.setSelection(0);
+                        else if(p.TabName.equals("1"))
+                            paramSpiner.setSelection(1);
+                    }
                 }
                 else
                 {
