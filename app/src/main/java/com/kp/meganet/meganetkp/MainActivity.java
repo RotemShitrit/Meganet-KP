@@ -267,9 +267,9 @@ public class MainActivity extends AppCompatActivity
                 OpenNewActivity(7);
             } else if (id == R.id.nav_log) {
                 OpenNewActivity(10);
+            } else if (id == R.id.nav_consumption) {
+                OpenNewActivity(11);
             }
-            /*else if (id == R.id.nav_consumption) {
-                OpenNewActivity(7);}
             //else if (id == R.id.nav_orders) {
             //  OpenNewActivity(8);}*/
         }
@@ -425,6 +425,13 @@ public class MainActivity extends AppCompatActivity
             case 10:
                 Toast.makeText(getApplicationContext(), "History Log", Toast.LENGTH_LONG).show();
                 intent = new Intent(MainActivity.this, History_Log_1.class);
+                startActivity(intent);
+                // TODO Something
+                break;
+
+            case 11:
+                Toast.makeText(getApplicationContext(), "Consumption", Toast.LENGTH_LONG).show();
+                intent = new Intent(MainActivity.this, ConsumptionActivity.class);
                 startActivity(intent);
                 // TODO Something
                 break;

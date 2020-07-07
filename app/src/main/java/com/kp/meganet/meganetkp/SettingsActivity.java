@@ -233,6 +233,14 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(intent);
                 // TODO Something
                 break;
+
+            case R.id.menu_settings_consumption:
+                Toast.makeText(getApplicationContext(), "Consumption", Toast.LENGTH_LONG).show();
+
+                MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
+                intent = new Intent(SettingsActivity.this, ConsumptionActivity.class);
+                startActivity(intent);
+                break;
         }
 
         return super.onOptionsItemSelected(item);

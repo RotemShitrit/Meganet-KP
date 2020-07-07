@@ -507,6 +507,15 @@ public class RDM_Controll extends AppCompatActivity implements iCallback {
                 startActivity(intent);
                 // TODO Something
                 break;
+
+            case R.id.menu_rdm_consumption:
+                Toast.makeText(getApplicationContext(), "Consumption", Toast.LENGTH_LONG).show();
+
+                MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
+                intent = new Intent(RDM_Controll.this, ConsumptionActivity.class);
+                startActivity(intent);
+                // TODO Something
+                break;
         }
 
         return super.onOptionsItemSelected(item);

@@ -196,6 +196,15 @@ public class History_Log_1 extends AppCompatActivity {
                 startActivity(intent);
                 // TODO Something
                 break;
+
+            case R.id.menu_getlog_consumption:
+                Toast.makeText(getApplicationContext(), "Consumption", Toast.LENGTH_LONG).show();
+
+                MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
+                intent = new Intent(History_Log_1.this, ConsumptionActivity.class);
+                startActivity(intent);
+                // TODO Something
+                break;
         }
 
         return super.onOptionsItemSelected(item);

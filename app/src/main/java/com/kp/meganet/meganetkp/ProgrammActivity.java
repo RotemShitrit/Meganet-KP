@@ -1058,6 +1058,15 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                 intent = new Intent(ProgrammActivity.this, QrCodeActivity.class);
                 startActivity(intent);
                 break;
+
+            case R.id.menu_program_consumption:
+                Toast.makeText(getApplicationContext(), "Consumption", Toast.LENGTH_LONG).show();
+
+                MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
+                intent = new Intent(ProgrammActivity.this, ConsumptionActivity.class);
+                startActivity(intent);
+                // TODO Something
+                break;
         }
 
         return super.onOptionsItemSelected(item);

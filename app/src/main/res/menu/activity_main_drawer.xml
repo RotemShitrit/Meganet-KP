@@ -30,11 +30,11 @@
             android:icon="@drawable/ic_history"
             android:title="History Log" />
 
-       <!-- <item
+        <item
             android:id="@+id/nav_consumption"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_consumption"
-            android:title="Consumption" /> -->
+            android:title="Consumption" />
 
     </group>
     <item android:title="Advanced">

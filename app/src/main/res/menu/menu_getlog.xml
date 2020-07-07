@@ -12,6 +12,8 @@
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/menu_getlog_rdm" android:title="RDM Control"
         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/menu_getlog_consumption" android:title="Consumption"
+        android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/menu_getlog_ftp" android:title="FTP"
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/menu_getlog_program" android:title="Program"

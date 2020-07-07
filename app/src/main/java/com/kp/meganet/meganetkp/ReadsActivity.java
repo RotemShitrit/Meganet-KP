@@ -330,6 +330,15 @@ public class ReadsActivity extends AppCompatActivity implements iReadMeterCallBa
                 startActivity(intent);
                 // TODO Something
                 break;
+
+            case R.id.menu_receive_consumption:
+                Toast.makeText(getApplicationContext(), "Consumption", Toast.LENGTH_LONG).show();
+
+                MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
+                intent = new Intent(ReadsActivity.this, ConsumptionActivity.class);
+                startActivity(intent);
+                // TODO Something
+                break;
         }
 
 

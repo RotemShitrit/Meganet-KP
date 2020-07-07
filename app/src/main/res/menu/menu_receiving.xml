@@ -6,6 +6,8 @@
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/menu_receive_rdm" android:title="RDM Control"
         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/menu_receive_consumption" android:title="Consumption"
+        android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/menu_receive_ftp" android:title="FTP"
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/menu_receive_getlog" android:title="Get Log"

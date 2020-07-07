@@ -8,6 +8,8 @@
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/menu_rdm_read_meter" android:title="Read Meter"
         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/menu_rdm_consumption" android:title="Consumption"
+        android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/menu_rdm_ftp" android:title="FTP"
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/menu_rdm_getlog" android:title="Get Log"

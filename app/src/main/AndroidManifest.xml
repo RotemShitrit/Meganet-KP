@@ -131,6 +131,9 @@
         <activity android:name=".ChooseDeviceActivity"
             android:label="Choose device"
             android:screenOrientation="portrait"/>
+        <activity android:name=".ConsumptionActivity"
+            android:label="Consumption Read"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
