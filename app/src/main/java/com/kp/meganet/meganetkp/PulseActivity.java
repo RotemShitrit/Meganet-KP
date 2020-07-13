@@ -20,8 +20,6 @@ public class PulseActivity extends AppCompatActivity implements iPulseCallback{
 
     private EditText portSNeditText;
     private EditText portReadeditText;
-    private EditText portTransmissioneditText;
-    private TextView transmissionTV;
     private RadioGroup radioGroup;
 
     private RadioButton Port1rbo;
@@ -45,16 +43,10 @@ public class PulseActivity extends AppCompatActivity implements iPulseCallback{
 
         portSNeditText  = (EditText) findViewById(R.id.editTextPortSN);
         portReadeditText  = (EditText) findViewById(R.id.editTextPortRead);
-        portTransmissioneditText = (EditText) findViewById(R.id.editTextTransmission);
-        transmissionTV = (TextView) findViewById(R.id.textView11);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroupPort);
 
         ndevice = getIntent().getIntExtra("ndevice",0);
-        if(ndevice != 168)
-        {
-            portTransmissioneditText.setVisibility(View.INVISIBLE);
-            transmissionTV.setVisibility(View.INVISIBLE);
-        }
+
 
         /*Port1rbo  = (RadioButton) findViewById(R.id.rboPort1);
         Port2rbo  = (RadioButton) findViewById(R.id.rboPort2);
