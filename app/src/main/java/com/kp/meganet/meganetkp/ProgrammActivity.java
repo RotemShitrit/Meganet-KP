@@ -272,7 +272,9 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
         inputBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int ndevice = Integer.decode("0x" +  MeganetInstances.getInstance().GetMeganetEngine().GetNdevice())-1;
                 Intent intent = new Intent(ProgrammActivity.this, PulseActivity.class);
+                intent.putExtra("ndevice", ndevice);
                 startActivity(intent);
             }
         });
