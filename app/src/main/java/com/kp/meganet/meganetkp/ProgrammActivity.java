@@ -407,7 +407,7 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                     else
                         InitSpinnParam(p.MinValue, p.MaxValue, p.TabName);
 
-                    if(p.ParameterName.equals("Divider") && p.NDevice == 173)
+                    if(p.ParameterName.equals("Divider") && (p.NDevice == 173 || p.NDevice == 168))
                     {
                         if(p.TabName.equals("0"))
                             paramSpiner.setSelection(0);
@@ -482,7 +482,8 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                     _currentReadData.get(_selectedItem).TabName = MeterProtocolConverter(paramSpiner.getSelectedItem().toString());
                 else if(_currentReadData.get(_selectedItem).ParameterName.equals("Power") && _currentReadData.get(_selectedItem).NDevice==249)
                     _currentReadData.get(_selectedItem).TabName = PowerConvert(Double.valueOf(paramSpiner.getSelectedItem().toString()));
-                else if(_currentReadData.get(_selectedItem).ParameterName.equals("Divider") && _currentReadData.get(_selectedItem).NDevice== 173)
+                else if(_currentReadData.get(_selectedItem).ParameterName.equals("Divider") &&
+                        (_currentReadData.get(_selectedItem).NDevice== 173) || _currentReadData.get(_selectedItem).NDevice== 168)
                 {
                     if(paramSpiner.getSelectedItem().toString().equals("No division"))
                         _currentReadData.get(_selectedItem).TabName = "0";
@@ -533,12 +534,12 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
         {
             arrVal = minValue.intValue()+i;
 
-            if(_selectedItem.equals("Pulses per revolution") && (ndevice == 105 || ndevice == 173) &&
+            if(_selectedItem.equals("Pulses per revolution") && (ndevice == 105 || ndevice == 173 || ndevice == 168) &&
                     arrVal == maxValue.intValue())
             {
                     params[i] = "10";
             }
-            else if(_selectedItem.equals("Divider") &&  ndevice == 173)
+            else if(_selectedItem.equals("Divider") &&  (ndevice == 173 || ndevice == 168))
             {
                 if (arrVal == 0)
                     params[i] = "No division";
