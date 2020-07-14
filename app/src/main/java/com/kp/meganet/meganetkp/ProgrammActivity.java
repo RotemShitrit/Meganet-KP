@@ -974,19 +974,20 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         Intent intent;
-        switch (item.getItemId()) {
+        switch (item.getItemId())
+        {
             case R.id.menu_meter_protocol:
                 Toast.makeText(getApplicationContext(), R.string.meter_protocol_value,
                         Toast.LENGTH_LONG).show();
                 break;
-
+/*
             case R.id.menu_program_field_verif:
                 super.onBackPressed();
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.FIELD_VERIF_1);
                 intent = new Intent(ProgrammActivity.this, ReadsActivity.class);
                 startActivity(intent);
                 break;
-
+*/
             case R.id.menu_program_ranman:
                 super.onBackPressed();
                 Toast.makeText(getApplicationContext(), "RANMAN RSSI", Toast.LENGTH_LONG).show();

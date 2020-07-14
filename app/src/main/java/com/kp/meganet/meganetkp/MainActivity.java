@@ -254,10 +254,12 @@ public class MainActivity extends AppCompatActivity
             }
 
             Intent intent;
-
+/*
             if (id == R.id.nav_field_verif_1) {
                 OpenNewActivity(1);
-            } else if (id == R.id.nav_read_meter) {
+            } else
+*/
+            if (id == R.id.nav_read_meter) {
                 OpenNewActivity(3);
             } else if (id == R.id.nav_programm) {
                 OpenNewActivity(5);

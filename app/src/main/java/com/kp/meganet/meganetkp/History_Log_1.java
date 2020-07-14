@@ -133,14 +133,14 @@ public class History_Log_1 extends AppCompatActivity {
         int id = item.getItemId();
         Intent intent;
         switch (item.getItemId()) {
-
+/*
             case R.id.menu_getlog_field_verif:
                 super.onBackPressed();
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.FIELD_VERIF_1);
                 intent = new Intent(History_Log_1.this, ReadsActivity.class);
                 startActivity(intent);
                 break;
-
+*/
             case R.id.menu_getlog_ranman:
                 super.onBackPressed();
                 Toast.makeText(getApplicationContext(), "RANMAN RSSI", Toast.LENGTH_LONG).show();

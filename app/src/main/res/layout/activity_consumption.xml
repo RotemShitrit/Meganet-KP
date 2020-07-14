@@ -15,9 +15,10 @@
         android:layout_height="wrap_content"
         android:text="Connect"
         android:id="@+id/btnConnect"
+        android:layout_marginStart="5dp"
         android:layout_alignParentStart="true"
         android:textColor="@color/colorButtonText"
-        android:textSize="30sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textViewConnect"
@@ -26,59 +27,26 @@
         android:layout_below="@+id/btnConnect"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
         android:text="Please click CONNECT and swipe a magnet on the MTU"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="26sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DISCONNECT"
-        android:id="@+id/btnDisconnect"
-        android:textColor="@color/colorButtonText"
-        android:visibility="invisible"
-        android:layout_above="@+id/textViewConnect"
-        android:layout_alignEnd="@+id/textViewConnect" />
-
-    <TextView
-        android:id="@+id/textViewAdd1"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewConnect"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="27dp"
-        android:text="Add1"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/editTextAdd1"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewConnect"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_toEndOf="@+id/textViewAdd1"
-        android:editable="false"
-        android:text="123456789"
-        android:textColorHighlight="@color/primary_material_dark"
-        android:textCursorDrawable="@drawable/cursor_drawable"
-        android:textSize="14sp" />
 
     <RadioGroup
         android:id="@+id/convertRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/btnDisconnect"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal">
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
 
         <RadioButton
             android:id="@+id/radioButtonM3h"
@@ -95,6 +63,66 @@
             android:buttonTint="@color/colorButtonText"
             android:text="L/min" />
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/inputTextView"
+        android:layout_width="76dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewConnect"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="7dp"
+        android:text="Input"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/inputSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewConnect"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="5dp"
+        android:layout_toEndOf="@+id/inputTextView" />
+
+    <Button
+        android:id="@+id/btnDisconnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="5dp"
+        android:text="Disconnect"
+        android:textColor="@color/colorButtonText"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/getConsuptBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/inputSpinner"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/colorButtonText"
+        android:text="Get Consumption"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/dataTextView"
+        android:layout_width="234dp"
+        android:layout_height="92dp"
+        android:layout_below="@+id/getConsuptBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:text=""
+        android:textSize="25sp" />
 
 
 </RelativeLayout>

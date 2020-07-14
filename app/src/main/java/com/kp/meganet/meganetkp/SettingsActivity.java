@@ -172,14 +172,14 @@ public class SettingsActivity extends AppCompatActivity {
         int id = item.getItemId();
         Intent intent;
         switch (item.getItemId()) {
-
+/*
             case R.id.menu_settings_field_verif:
                 super.onBackPressed();
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.FIELD_VERIF_1);
                 intent = new Intent(SettingsActivity.this, ReadsActivity.class);
                 startActivity(intent);
                 break;
-
+*/
             case R.id.menu_settings_ranman:
                 super.onBackPressed();
                 Toast.makeText(getApplicationContext(), "RANMAN RSSI", Toast.LENGTH_LONG).show();

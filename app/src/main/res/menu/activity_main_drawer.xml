@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <group android:checkableBehavior="single">
-        <item
+        <!-- <item
             android:id="@+id/nav_field_verif_1"
             android:icon="@drawable/ic_field_verif"
-            android:title="Field Verification" />
+            android:title="Field Verification" /> -->
         <item
             android:id="@+id/nav_rssi"
             android:icon="@drawable/ic_ranman"

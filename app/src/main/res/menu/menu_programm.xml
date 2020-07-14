@@ -5,8 +5,8 @@
     <item android:id="@+id/menu_pulse" android:title="@string/menu_pulse"
         android:orderInCategory="100" app:showAsAction="never" />
 
-    <item android:id="@+id/menu_program_field_verif" android:title="Field Verification"
-        android:orderInCategory="100" app:showAsAction="never" />
+    <!-- <item android:id="@+id/menu_program_field_verif" android:title="Field Verification"
+        android:orderInCategory="100" app:showAsAction="never" />  -->
     <item android:id="@+id/menu_program_ranman" android:title="RANMAN - Online RSSI"
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/menu_program_read_meter" android:title="Read Meter"

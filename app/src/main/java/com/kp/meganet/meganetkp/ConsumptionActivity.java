@@ -13,11 +13,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,16 +37,19 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
     private boolean _pairDialogIsON;
 
     private Button connectBtn;
-    private TextView connectTextView;
     private Button disconnectBtn;
-    private TextView add1TV;
-    private EditText add1ET;
+    private Button getConsumptionBtn;
+    private TextView dataTextView;
+    private TextView connectTextView;
     private RadioGroup dataConvert;
+    private Spinner inputSpinner;
+    private TextView inputTV;
 
     private Timer _downCountTimer;
     private Integer _timerCount;
     private boolean _timerFlag = false;
     private boolean lastCommandIsOpen = false;
+
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -59,16 +64,21 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
 
         _pairDialogIsON = false;
         setTitle("Consumption Read");
+        getConsumptionBtn = (Button) findViewById(R.id.getConsuptBtn);
         connectBtn = (Button) findViewById(R.id.btnConnect);
         disconnectBtn = (Button) findViewById(R.id.btnDisconnect);
         connectTextView = (TextView) findViewById(R.id.textViewConnect);
-        add1TV = (TextView) findViewById(R.id.textViewAdd1);
-        add1ET = (EditText) findViewById(R.id.editTextAdd1);
         dataConvert = (RadioGroup) findViewById(R.id.convertRadioGroup);
+        inputSpinner = (Spinner) findViewById(R.id.inputSpinner);
+        inputTV = (TextView) findViewById(R.id.inputTextView);
+        dataTextView = (TextView) findViewById(R.id.dataTextView);
 
-        add1TV.setVisibility(View.INVISIBLE);
-        add1ET.setVisibility(View.INVISIBLE);
+        getConsumptionBtn.setVisibility(View.INVISIBLE);
         dataConvert.setVisibility(View.INVISIBLE);
+        inputTV.setVisibility(View.INVISIBLE);
+        inputSpinner.setVisibility(View.INVISIBLE);
+        disconnectBtn.setVisibility(View.INVISIBLE);
+        dataTextView.setVisibility(View.INVISIBLE);
 
         _downCountTimer = new Timer();
         _downCountTimer.schedule(new TimerTask() {
@@ -78,6 +88,15 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
             }
 
         }, 0, 1000);
+
+        String[] arraySpinner = new String[] {
+                "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
+        };
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, arraySpinner);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        inputSpinner.setAdapter(adapter);
 
         MeganetInstances.getInstance().GetMeganetEngine().SetReadMetersRSNT(true);
         MeganetInstances.getInstance().GetMeganetEngine().InitProgramming(this, MeganetInstances.getInstance().GetMeganetDb().getSetting(1).GetKeyValue());
@@ -104,6 +123,14 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
                 }
 
 
+            }
+        });
+
+        getConsumptionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                _timerFlag = true;
+                _timerCount = 0;
             }
         });
 
@@ -147,16 +174,22 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
                 this.runOnUiThread(new Runnable() {
                     public void run() {
                         // Access/update UI here
-                        Integer val = 15 - _timerCount;
-                        if(_timerCount > 15)
+                        Integer val = 70 - _timerCount;
+                        dataTextView.setText(val.toString());
+                        if(_timerCount > 70)
                         {
                             Toast.makeText(getApplicationContext(), _toastMessageToDisplay,
                                     Toast.LENGTH_SHORT).show();
                             connectTextView.setText("Not Connected");
                             //powerOffButton.setVisibility(View.INVISIBLE);
-                            add1ET.setVisibility(View.INVISIBLE);
-                            add1TV.setVisibility(View.INVISIBLE);
+
+                            getConsumptionBtn.setVisibility(View.INVISIBLE);
                             dataConvert.setVisibility(View.INVISIBLE);
+                            inputTV.setVisibility(View.INVISIBLE);
+                            inputSpinner.setVisibility(View.INVISIBLE);
+                            disconnectBtn.setVisibility(View.INVISIBLE);
+                            dataTextView.setVisibility(View.INVISIBLE);
+
 
                             _timerFlag = false;
                             _timerCount = 0;
@@ -315,16 +348,18 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
                         Toast.makeText(getApplicationContext(), "Unit Paired",
                                 Toast.LENGTH_SHORT).show();
                         //powerOffButton.setVisibility(View.VISIBLE);
-                        MeganetInstances.getInstance().GetMeganetEngine().PairingDevice(true, true);
+                        MeganetInstances.getInstance().GetMeganetEngine().PairingDevice(true, false);
                         connectTextView.setText("Connected To MTU: " + MeganetInstances.getInstance().GetMeganetEngine().GetUnitAddress());
                         dialog.dismiss();
-                        add1TV.setVisibility(View.VISIBLE);
-                        add1ET.setVisibility(View.VISIBLE);
+
+                        getConsumptionBtn.setVisibility(View.VISIBLE);
                         dataConvert.setVisibility(View.VISIBLE);
+                        inputTV.setVisibility(View.VISIBLE);
+                        inputSpinner.setVisibility(View.VISIBLE);
+                        disconnectBtn.setVisibility(View.VISIBLE);
+                        dataTextView.setVisibility(View.VISIBLE);
 
                         _pairDialogIsON = false;
-                        _timerFlag = true;
-                        _timerCount = 0;
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -368,14 +403,14 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
         int id = item.getItemId();
         Intent intent;
         switch (item.getItemId()) {
-
+/*
             case R.id.menu_consumption_field_verif:
                 super.onBackPressed();
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.FIELD_VERIF_1);
                 intent = new Intent(ConsumptionActivity.this, ReadsActivity.class);
                 startActivity(intent);
                 break;
-
+*/
             case R.id.menu_consumption_ranman:
                 super.onBackPressed();
                 Toast.makeText(getApplicationContext(), "RANMAN RSSI", Toast.LENGTH_LONG).show();

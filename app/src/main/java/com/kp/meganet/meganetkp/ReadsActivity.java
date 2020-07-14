@@ -233,11 +233,11 @@ public class ReadsActivity extends AppCompatActivity implements iReadMeterCallBa
             case FIELD_VERIF_2:
                 menu.add(0, 1, 0, "Read Meter").setShortcut('3', 'c');
                 break;
-
+/*
             case READ_METER:
                 menu.add(0, 2, 0, "Field Verification").setShortcut('3', 'c');
                 break;
-
+*/
         }
         return true;
     }
@@ -359,7 +359,9 @@ public class ReadsActivity extends AppCompatActivity implements iReadMeterCallBa
             intent = new Intent(ReadsActivity.this, ReadsActivity.class);
             startActivity(intent);
             // TODO Something
-        } else if (item.getItemId() == 2) {
+        }
+        /*
+        else if (item.getItemId() == 2) {
             super.onBackPressed();
             Toast.makeText(getApplicationContext(), "Field Verification", Toast.LENGTH_LONG).show();
 
@@ -367,7 +369,7 @@ public class ReadsActivity extends AppCompatActivity implements iReadMeterCallBa
             intent = new Intent(ReadsActivity.this, ReadsActivity.class);
             startActivity(intent);
         }
-
+         */
 
         return super.onOptionsItemSelected(item);
     }
