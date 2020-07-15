@@ -7,7 +7,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-23.4.0.aar/78b700cac416ea2eb47e87ba9fa8dc4a/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-23.4.0.aar/78b700cac416ea2eb47e87ba9fa8dc4a/res" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/recyclerview-v7/23.4.0/7aa3b8f3a52e5eaeebdd2c9c699370ae1d912cce/recyclerview-v7-23.4.0-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/recyclerview-v7/23.4.0/64b91551440e985da44c0815ee22654f8374bb48/recyclerview-v7-23.4.0-sources.jar!/" />
     </SOURCES>
