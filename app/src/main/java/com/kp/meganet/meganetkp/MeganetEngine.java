@@ -3,7 +3,6 @@ package com.kp.meganet.meganetkp;
 import android.bluetooth.BluetoothAdapter;
 import android.util.Log;
 
-import java.io.Console;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -1689,7 +1688,7 @@ public class MeganetEngine extends BTengine {
                     case CONSUMPTION:
                         _startCollectDateTag = System.currentTimeMillis();
                         StartCollectData(true, false);
-                        _consumer.ReadLog(dataArr_prm);
+                        _consumer.ReadData(dataArr_prm);
                         break;
 
                     case TIME_REQUEST:
@@ -1701,13 +1700,13 @@ public class MeganetEngine extends BTengine {
                     case GET_LOG:
                         _startCollectDateTag = System.currentTimeMillis();
                         StartCollectData(true, false);
-                        _consumer.ReadLog(dataArr_prm);
+                        _consumer.ReadData(dataArr_prm);
                         break;
 
                     case REQ_LOG:
                         _startCollectDateTag = System.currentTimeMillis();
                         StartCollectData(true, false);
-                        _consumer.ReadLog(dataArr_prm);
+                        _consumer.ReadData(dataArr_prm);
                         break;
 
                     case GET_METER_SN: {

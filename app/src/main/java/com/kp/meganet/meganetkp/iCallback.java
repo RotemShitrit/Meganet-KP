@@ -9,7 +9,7 @@ import java.util.Map;
 public interface iCallback {
 
     public abstract void SetReadData(Map<String, QryParams> data_prm);
-    public abstract void ReadLog(byte[] dataArr_prm);
+    public abstract void ReadData(byte[] dataArr_prm);
     public  abstract void GetTime(byte[] dataArr_prm);
     public abstract boolean PairData(String deviceName_prm, String ndevice_pam, boolean titleOnly);
     public abstract void OnParameters(String deviceName_prm, List<QryParams> parameters);

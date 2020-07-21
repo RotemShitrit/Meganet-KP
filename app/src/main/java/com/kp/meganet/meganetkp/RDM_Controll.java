@@ -181,7 +181,7 @@ public class RDM_Controll extends AppCompatActivity implements iCallback {
     }
 
     @Override
-    public void ReadLog(byte[] dataArr_prm) {
+    public void ReadData(byte[] dataArr_prm) {
 
     }
 

@@ -292,7 +292,7 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
     }
 
     @Override
-    public void ReadLog(byte[] dataArr_prm) { //
+    public void ReadData(byte[] dataArr_prm) { //
         int len, num_of_msgs;
         long first_index, read;
         byte[] msg;

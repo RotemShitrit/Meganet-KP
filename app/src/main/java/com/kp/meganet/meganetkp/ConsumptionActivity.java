@@ -15,9 +15,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -27,6 +24,7 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Timer;
@@ -44,11 +42,13 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
     private RadioGroup dataConvert;
     private Spinner inputSpinner;
     private TextView inputTV;
+    private TextView unitTV;
 
     private Timer _downCountTimer;
     private Integer _timerCount;
     private boolean _timerFlag = false;
     private boolean lastCommandIsOpen = false;
+    long consumption = 0;
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -72,6 +72,8 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
         inputSpinner = (Spinner) findViewById(R.id.inputSpinner);
         inputTV = (TextView) findViewById(R.id.inputTextView);
         dataTextView = (TextView) findViewById(R.id.dataTextView);
+        unitTV = (TextView) findViewById(R.id.unit_textView);
+        unitTV.setText("");
 
         getConsumptionBtn.setVisibility(View.INVISIBLE);
         dataConvert.setVisibility(View.INVISIBLE);
@@ -79,6 +81,7 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
         inputSpinner.setVisibility(View.INVISIBLE);
         disconnectBtn.setVisibility(View.INVISIBLE);
         dataTextView.setVisibility(View.INVISIBLE);
+        unitTV.setVisibility(View.INVISIBLE);
 
         _downCountTimer = new Timer();
         _downCountTimer.schedule(new TimerTask() {
@@ -117,12 +120,20 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
         disconnectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (MeganetInstances.getInstance().GetMeganetEngine().MeterPowerOff()) {
                     disconnectBtn.setVisibility(View.INVISIBLE);
+                    getConsumptionBtn.setVisibility(View.INVISIBLE);
+                    dataConvert.setVisibility(View.INVISIBLE);
+                    inputTV.setVisibility(View.INVISIBLE);
+                    inputSpinner.setVisibility(View.INVISIBLE);
+                    disconnectBtn.setVisibility(View.INVISIBLE);
+                    dataTextView.setVisibility(View.INVISIBLE);
+                    unitTV.setVisibility(View.INVISIBLE);
+
+                    connectTextView.setText("Not Connected");
+                    _timerFlag = false;
+                    _timerCount = 0;
                 }
-
-
             }
         });
 
@@ -155,6 +166,7 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
                 }
 
                 MeganetInstances.getInstance().GetMeganetEngine().getConsumption(input);
+                unitTV.setText("");
                 _timerFlag = true;
                 _timerCount = 0;
             }
@@ -163,6 +175,38 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+    }
+
+    public long ConvertByteToNumber(byte[] bytes)
+    {
+        long number = 0;
+        for(int i = 0; i<bytes.length; i++)
+        {
+            number += number * 255 + (bytes[i] & 0xFF);
+        }
+
+        return number;
+    }
+
+    public void ConvertConsumption(long num)
+    {
+        double ret;
+        String unit = "";
+        if(dataConvert.getCheckedRadioButtonId() == R.id.radioButtonLmin) {
+            ret = num;
+            unit = "  L/min";
+        }
+        else {
+            ret = num/16.67;
+            unit = "  m³/h";
+        }
+        dataTextView.setText(String.format("%.02f", ret));
+        unitTV.setText(unit);
+    }
+
+    public void Oncheck(View v)
+    {
+        ConvertConsumption(consumption);
     }
 
     private String PromptConvert(String displayPrompt) {
@@ -183,13 +227,15 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
     }
 
     @Override
-    public void ReadLog(byte[] dataArr_prm) {
-        if(dataArr_prm == null)
+    public void ReadData(byte[] dataArr_prm) {
+        if(dataArr_prm != null)
         {
-
+            byte[] subArray = Arrays.copyOfRange(dataArr_prm, 7, 11);
+            consumption = ConvertByteToNumber(subArray);
+            _timerFlag = false;
+            ConvertConsumption(consumption);
         }
-
-    }
+     }
 
     @Override
     public void GetTime(byte[] dataArr_prm) {
@@ -204,9 +250,10 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
                 this.runOnUiThread(new Runnable() {
                     public void run() {
                         // Access/update UI here
-                        Integer val = 70 - _timerCount;
+                        Integer val = 15 - _timerCount;
                         dataTextView.setText(val.toString());
-                        if(_timerCount > 70)
+                        consumption = 0;
+                        if(_timerCount > 15)
                         {
                             Toast.makeText(getApplicationContext(), _toastMessageToDisplay,
                                     Toast.LENGTH_SHORT).show();
@@ -219,7 +266,7 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
                             inputSpinner.setVisibility(View.INVISIBLE);
                             disconnectBtn.setVisibility(View.INVISIBLE);
                             dataTextView.setVisibility(View.INVISIBLE);
-
+                            unitTV.setVisibility(View.INVISIBLE);
 
                             _timerFlag = false;
                             _timerCount = 0;
@@ -388,6 +435,7 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
                         inputSpinner.setVisibility(View.VISIBLE);
                         disconnectBtn.setVisibility(View.VISIBLE);
                         dataTextView.setVisibility(View.VISIBLE);
+                        unitTV.setVisibility(View.VISIBLE);
 
                         _pairDialogIsON = false;
                     }
