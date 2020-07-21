@@ -129,6 +129,32 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
         getConsumptionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int input = 0;
+
+                Object selectedItem = inputSpinner.getSelectedItem();
+                if ("1".equals(selectedItem)) {
+                    input = 0;
+                } else if ("2".equals(selectedItem)) {
+                    input = 1;
+                } else if ("3".equals(selectedItem)) {
+                    input = 2;
+                } else if ("4".equals(selectedItem)) {
+                    input = 3;
+                } else if ("5".equals(selectedItem)) {
+                    input = 4;
+                } else if ("6".equals(selectedItem)) {
+                    input = 5;
+                } else if ("7".equals(selectedItem)) {
+                    input = 6;
+                } else if ("8".equals(selectedItem)) {
+                    input = 7;
+                } else if ("9".equals(selectedItem)) {
+                    input = 8;
+                } else if ("10".equals(selectedItem)) {
+                    input = 9;
+                }
+
+                MeganetInstances.getInstance().GetMeganetEngine().getConsumption(input);
                 _timerFlag = true;
                 _timerCount = 0;
             }
@@ -158,6 +184,10 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
 
     @Override
     public void ReadLog(byte[] dataArr_prm) {
+        if(dataArr_prm == null)
+        {
+
+        }
 
     }
 
@@ -368,7 +398,7 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
                         Toast.makeText(getApplicationContext(), "UNPAIR FROM UNIT",
                                 Toast.LENGTH_SHORT).show();
                         connectTextView.setText("Not Connected");
-                        MeganetInstances.getInstance().GetMeganetEngine().PairingDevice(false, true);
+                        MeganetInstances.getInstance().GetMeganetEngine().Disconnect();
                         dialog.dismiss();
                         _pairDialogIsON = false;
 

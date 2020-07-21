@@ -58,7 +58,8 @@ public class MeganetEngine extends BTengine {
         GET_LOG,
         REQ_LOG,
         GET_METER_SN,
-        TIME_REQUEST
+        TIME_REQUEST,
+        CONSUMPTION
     }
 
     public enum eReadType
@@ -1685,6 +1686,12 @@ public class MeganetEngine extends BTengine {
                         _consumer.SetReadData(_unitParams);
                         break;
 
+                    case CONSUMPTION:
+                        _startCollectDateTag = System.currentTimeMillis();
+                        StartCollectData(true, false);
+                        _consumer.ReadLog(dataArr_prm);
+                        break;
+
                     case TIME_REQUEST:
                         _startCollectDateTag = System.currentTimeMillis();
                         StartCollectData(true, false);
@@ -2082,6 +2089,50 @@ public class MeganetEngine extends BTengine {
             _currentCommand = commandType.NONE;
             SendData(ReadArr);
         }
+    }
+
+    protected void getConsumption(int input_num) {
+        byte[] ReadArr;
+        if (_allowReceiveFlg) {
+            // Get device data by _ndevice - device - _deviceVersion - virsion
+            byte[] promptNameArr = _promptName.getBytes();
+            ReadArr = new byte[2 + _promptName.length() + 6];
+            // 1 - stx
+            // 2 - length
+            // 3 - type MT
+            // 4,5,6 - unit address
+            // 7 - my address
+            // 8 - type command
+            // 9 - input number
+            ReadArr[0] = (byte) 0xe02; // Start sign
+            ReadArr[1] = (byte) 0xe07; // Length of message
+            for (int i = 0; i < promptNameArr.length; i++) {
+                ReadArr[i + 2] = promptNameArr[i];
+            }
+
+            String hexAddress;
+            hexAddress = Integer.toHexString(Integer.parseInt(_unitAddress));
+            hexAddress = Utilities.StringCompleter(hexAddress, 6, "0", true);
+            ReadArr[2 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+            ReadArr[3 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(2, 4), 16));
+            ReadArr[4 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(4, 6), 16));
+            /////////////////
+            hexAddress = Integer.toHexString(Integer.parseInt(_myAddress));
+            hexAddress = Utilities.StringCompleter(hexAddress, 2, "0", true);
+
+            ReadArr[5 + promptNameArr.length] = convertToByte(Integer.parseInt(hexAddress.substring(0, 2), 16));
+
+            android.os.SystemClock.sleep(500);
+            ReadArr[6 + promptNameArr.length] = (byte) 0xe50; // Consumption type
+            ReadArr[7 + promptNameArr.length] = (byte) input_num; // input number
+
+            _startCollectDateTag = System.currentTimeMillis();
+            StartCollectData(true,true);
+            _currentCommand = commandType.CONSUMPTION;
+            _msgArr = ReadArr;
+            SendData(ReadArr);
+        }
+
     }
 
     protected void TimeRequest() {
