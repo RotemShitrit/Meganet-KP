@@ -25,6 +25,7 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Timer;
@@ -113,6 +114,8 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
         connectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                unitTV.setText("");
+                dataTextView.setText("");
                 MeganetInstances.getInstance().GetMeganetEngine().Prompt(MeganetEngine.ePromptType.TEN_CHR_PAIRING, "E");
             }
         });
@@ -177,6 +180,22 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
+    public void reverseArray(byte[] arr)
+    {
+        int i=0, j=arr.length-1;
+        byte temp;
+
+        while(i<j)
+        {
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+
+            i++;
+            j--;
+        }
+    }
+
     public long ConvertByteToNumber(byte[] bytes)
     {
         long number = 0;
@@ -190,18 +209,59 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
 
     public void ConvertConsumption(long num)
     {
-        double ret;
-        String unit = "";
-        if(dataConvert.getCheckedRadioButtonId() == R.id.radioButtonLmin) {
+        double ret = num;
+        //String unit = "";
+        /*if(dataConvert.getCheckedRadioButtonId() == R.id.radioButtonLmin) {
             ret = num;
             unit = "  L/min";
         }
         else {
             ret = num/16.67;
             unit = "  m³/h";
-        }
+        }*/
+        //unitTV.setText(unit);
         dataTextView.setText(String.format("%.02f", ret));
-        unitTV.setText(unit);
+    }
+
+    public int dataType(byte x)
+    {
+        int num;
+        String str = String.format("%8s", Integer.toBinaryString(x & 0xFF)).replace(' ', '0');
+        num = Integer.parseInt(str.substring(4), 2);
+        if (num == 5) return 4;
+        return num;
+    }
+
+    public void unitConsumption(byte b)
+    {
+        String str = String.format("%8s", Integer.toBinaryString(b & 0xFF)).replace(' ', '0');
+        switch (str.substring(5))
+        {
+            case "000":
+                unitTV.setText(" mL/h");
+                break;
+            case "001":
+                unitTV.setText("10 mL/h");
+                break;
+            case "010":
+                unitTV.setText("100 mL/h");
+                break;
+            case "011":
+                unitTV.setText("L/h");
+                break;
+            case "100":
+                unitTV.setText("10 L/h");
+                break;
+            case "101":
+                unitTV.setText("100 L/h");
+                break;
+            case "110":
+                unitTV.setText("m³/h");
+                break;
+            case "111":
+                unitTV.setText("10 m³/h");
+                break;
+        }
     }
 
     public void Oncheck(View v)
@@ -230,10 +290,20 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
     public void ReadData(byte[] dataArr_prm) {
         if(dataArr_prm != null)
         {
-            byte[] subArray = Arrays.copyOfRange(dataArr_prm, 7, 11);
-            consumption = ConvertByteToNumber(subArray);
+            int num = dataType(dataArr_prm[7]);
+            unitConsumption(dataArr_prm[8]);
+            if (num>0)
+            {
+                byte[] subArray = Arrays.copyOfRange(dataArr_prm, dataArr_prm.length-num, dataArr_prm.length);
+                reverseArray(subArray);
+                consumption = ConvertByteToNumber(subArray);
+                ConvertConsumption(consumption);
+            }
+            else {
+                dataTextView.setText("No data!");
+                unitTV.setText("");
+            }
             _timerFlag = false;
-            ConvertConsumption(consumption);
         }
      }
 
@@ -430,7 +500,7 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
                         dialog.dismiss();
 
                         getConsumptionBtn.setVisibility(View.VISIBLE);
-                        dataConvert.setVisibility(View.VISIBLE);
+                        //dataConvert.setVisibility(View.VISIBLE);
                         inputTV.setVisibility(View.VISIBLE);
                         inputSpinner.setVisibility(View.VISIBLE);
                         disconnectBtn.setVisibility(View.VISIBLE);

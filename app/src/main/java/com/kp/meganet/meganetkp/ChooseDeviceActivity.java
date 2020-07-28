@@ -49,7 +49,7 @@ public class ChooseDeviceActivity extends AppCompatActivity {
                 Intent intent;
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentProgrammType(7);
-                intent = new Intent(ChooseDeviceActivity.this, ProgrammActivity.class);
+                intent = new Intent(ChooseDeviceActivity.this, ChooseRegisterActivity.class);
                 startActivity(intent);
             }
         });

@@ -134,6 +134,14 @@
         <activity android:name=".ConsumptionActivity"
             android:label="Consumption Read"
             android:screenOrientation="portrait"/>
+        <activity android:name=".Ber1Activity"
+            android:label="Ber1"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ChooseRegisterActivity"
+            android:label="Choose Register"
+            android:screenOrientation="portrait"/>
+
+
     </application>
 
 </manifest>

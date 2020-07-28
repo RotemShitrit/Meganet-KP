@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="fill_horizontal"
+    tools:context=".Ber1Activity">
+
+    <TextView
+        android:id="@+id/idTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="ID: "
+        android:textSize="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/editTextID"
+        android:layout_width="157dp"
+        android:layout_height="31dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/idTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/meterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idTextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:text="Meter: "
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/MeterSpinner"
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextID"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/spinner2"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/meterTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/FactorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:text="Factor: "
+        android:textSize="20dp"
+        android:layout_below="@+id/meterTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/meterTextView" />
+
+
+    <EditText
+        android:id="@+id/editTextFactor"
+        android:layout_width="157dp"
+        android:layout_height="31dp"
+        android:layout_below="@+id/MeterSpinner"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:textSize="20dp"
+        android:backgroundTint="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/FactorTextView"
+        app:layout_constraintTop_toBottomOf="@+id/MeterSpinner" />
+
+    <TextView
+        android:id="@+id/SizeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="27dp"
+        android:text="Size: "
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_below="@+id/FactorTextView"
+        app:layout_constraintTop_toBottomOf="@+id/FactorTextView" />
+
+    <Spinner
+        android:id="@+id/SpinnerSize"
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:textSize="20dp"
+        android:background="@drawable/spinner2"
+        android:layout_below="@+id/editTextFactor"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/SizeTextView"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFactor" />
+
+    <TextView
+        android:id="@+id/consumptionUnitTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:text="Consumption unit: "
+        android:textSize="20dp"
+        android:layout_below="@+id/SizeTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SizeTextView" />
+
+    <Spinner
+        android:id="@+id/SpinnerConsumptionUnit"
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:textSize="20dp"
+        android:background="@drawable/spinner2"
+        android:layout_below="@+id/SpinnerSize"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/consumptionUnitTextView"
+        app:layout_constraintTop_toBottomOf="@+id/SpinnerSize" />
+
+    <TextView
+        android:id="@+id/accomulationUnitTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:text="Accomulation unit: "
+        android:textSize="20dp"
+        android:layout_below="@+id/consumptionUnitTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/consumptionUnitTextView" />
+
+    <Spinner
+        android:id="@+id/SpinnerAccomulationUnit"
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:textSize="20dp"
+        android:background="@drawable/spinner2"
+        android:layout_below="@+id/SpinnerConsumptionUnit"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/accomulationUnitTextView"
+        app:layout_constraintTop_toBottomOf="@+id/SpinnerConsumptionUnit" />
+
+       <TextView
+        android:id="@+id/accomulateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/accomulationUnitTextView"
+        android:text="Accomulation view: "
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accomulationUnitTextView" />
+
+    <Spinner
+        android:id="@+id/SpinnerAccomulate"
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:textSize="20dp"
+        android:background="@drawable/spinner2"
+        android:layout_below="@+id/SpinnerAccomulationUnit"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/accomulateTextView"
+        app:layout_constraintTop_toBottomOf="@+id/SpinnerAccomulationUnit" />
+
+    <TextView
+        android:id="@+id/pulseWidthTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:text="Pulse width: "
+        android:textSize="20dp"
+        android:layout_below="@+id/accomulateTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accomulateTextView" />
+
+    <Spinner
+        android:id="@+id/SpinnerPulseWidth"
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:layout_below="@+id/SpinnerAccomulate"
+        android:textSize="20dp"
+        android:background="@drawable/spinner2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pulseWidthTextView"
+        app:layout_constraintTop_toBottomOf="@+id/SpinnerAccomulate" />
+
+
+    <TextView
+        android:id="@+id/PositiveTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:text="Positive accrual: "
+        android:layout_below="@+id/pulseWidthTextView"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pulseWidthTextView" />
+
+
+    <EditText
+        android:id="@+id/editTextPositive"
+        android:layout_width="157dp"
+        android:layout_height="31dp"
+        android:layout_below="@+id/SpinnerPulseWidth"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:textSize="20dp"
+        android:backgroundTint="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/PositiveTextView"
+        app:layout_constraintTop_toBottomOf="@+id/SpinnerPulseWidth" />
+
+    <TextView
+        android:id="@+id/NegativeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:text="Negative accrual: "
+        android:textSize="20dp"
+        android:layout_below="@+id/PositiveTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PositiveTextView" />
+
+
+    <EditText
+        android:id="@+id/editTextNegative"
+        android:layout_width="157dp"
+        android:layout_height="31dp"
+        android:layout_below="@+id/editTextPositive"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:textSize="20dp"
+        android:backgroundTint="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/NegativeTextView"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPositive" />
+
+
+</RelativeLayout>
