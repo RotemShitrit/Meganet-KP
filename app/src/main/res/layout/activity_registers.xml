@@ -15,7 +15,7 @@
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="15dp"
         android:layout_above="@+id/button_ber1"
-        android:text="WER" />
+        android:text="WER3 / UZ1" />
 
     <Button
         android:id="@+id/button_ber1"
