@@ -26,13 +26,20 @@ public class ChooseRegisterActivity extends AppCompatActivity {
                 Intent intent;
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentProgrammType(44);
-
                 intent = new Intent(ChooseRegisterActivity.this, Ber1Activity.class);
                 startActivity(intent);
             }
         });
 
-
+        wer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent;
+                MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
+                MeganetInstances.getInstance().GetMeganetEngine().SetCurrentProgrammType(7);
+                intent = new Intent(ChooseRegisterActivity.this, ProgrammActivity.class);
+                startActivity(intent);
+            }
+        });
     }
-
 }
