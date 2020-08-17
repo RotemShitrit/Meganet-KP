@@ -16,8 +16,7 @@ public class ChooseRegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registers);
 
-        wer = (Button) findViewById(R.id.button_wer);
-        uz1 = (Button) findViewById(R.id.button_uz1);
+        wer = (Button) findViewById(R.id.button_werUz1);
         ber1 = (Button) findViewById(R.id.button_ber1);
 
         ber1.setOnClickListener(new View.OnClickListener() {
