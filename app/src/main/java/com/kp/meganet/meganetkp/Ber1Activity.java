@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -13,6 +14,7 @@ public class Ber1Activity extends AppCompatActivity {
 
     private Spinner meterSpinner, sizeSpinner, flowUnitSpinner, volumeTypeSpinner, pulseVolumeSpinner, pulseWidthSpinner;
     private EditText id, factor, Q3, Q03, Q2, Q1, positive, negative, Accomulation;
+    private Button programBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,7 @@ public class Ber1Activity extends AppCompatActivity {
         volumeTypeSpinner = (Spinner) findViewById(R.id.SpinnerVolumeType);
         pulseVolumeSpinner = (Spinner) findViewById(R.id.SpinnerPulseVolume);
         pulseWidthSpinner = (Spinner) findViewById(R.id.SpinnerPulseWidth);
+        programBtn = (Button) findViewById(R.id.programBtn);
 
         id = (EditText) findViewById(R.id.editTextID);
         factor = (EditText) findViewById(R.id.editTextFactor);
@@ -132,5 +135,12 @@ public class Ber1Activity extends AppCompatActivity {
                 (getApplicationContext(), R.layout.checked, pulseWidths);
         pulseWidthSpinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
         pulseWidthSpinner.setAdapter(pulseWidthSpinnerArrayAdapter);
+
+        programBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 }

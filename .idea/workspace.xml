@@ -10,24 +10,10 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fd4a1cd-c918-4810-82d0-a55a62b9785c" name="Default Changelist" comment="07/07/20&#10;**Changes**&#10;1. Consumption - reverse data array function added&#10;2. Consumption - data type function added&#10;3. Ber1 Activity and choose register activity added&#10;4. ConsumptionActivity - changes in read data function&#10;5. Consumption - disable dataConvert radio group">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/checked.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="8fd4a1cd-c918-4810-82d0-a55a62b9785c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/Ber1Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/Ber1Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ChooseDeviceActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ChooseDeviceActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ChooseRegisterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ChooseRegisterActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/spinner1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/spinner1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_choose_device.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_choose_device.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ber1_programming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ber1_programming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_registers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_registers.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -338,12 +324,18 @@
       <option name="project" value="LOCAL" />
       <updated>1595935162626</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="17/08/20&#10;**Changes**&#10;1. Ber1 device">
+      <created>1597643605783</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1597643605783</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Work at home 11/06/20&#10;**Changes**&#10;- Change number of messages to 4000 in History_Log_2 &#10;- Change in ProgrammActivity Node word to MTU word" />
     <MESSAGE value="Work at home 15/06/20&#10;**Changes**&#10;- Add convertToByte function in MeganetEngine" />
     <MESSAGE value="18/06/20" />
     <MESSAGE value="18/06/20&#10;Changes:&#10;1. add MTWP button in Wall Mount &#10;2. change name of buttons to significant names in activity_pit.xml , activity_qr_code.xml and activity_wall_mount.xml" />
@@ -368,7 +360,8 @@
     <MESSAGE value="07/07/20&#10;**Changes**&#10;1. Consumption input 1-10&#10;2. add Consumption option in MeganetEngine class" />
     <MESSAGE value="07/07/20&#10;**Changes**&#10;1. Consumption - display data&#10;2. change name of function ReadLog to ReadData" />
     <MESSAGE value="07/07/20&#10;**Changes**&#10;1. Consumption - reverse data array function added&#10;2. Consumption - data type function added&#10;3. Ber1 Activity and choose register activity added&#10;4. ConsumptionActivity - changes in read data function&#10;5. Consumption - disable dataConvert radio group" />
-    <option name="LAST_COMMIT_MESSAGE" value="07/07/20&#10;**Changes**&#10;1. Consumption - reverse data array function added&#10;2. Consumption - data type function added&#10;3. Ber1 Activity and choose register activity added&#10;4. ConsumptionActivity - changes in read data function&#10;5. Consumption - disable dataConvert radio group" />
+    <MESSAGE value="17/08/20&#10;**Changes**&#10;1. Ber1 device" />
+    <option name="LAST_COMMIT_MESSAGE" value="17/08/20&#10;**Changes**&#10;1. Ber1 device" />
   </component>
   <component name="WindowStateProjectService">
     <state x="446" y="49" key="#com.intellij.ide.util.MemberChooser" timestamp="1596453097477">
@@ -403,10 +396,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="496" y="106" key="AndroidProcessChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1596441767553" />
-    <state x="53" y="0" width="1212" height="680" key="CommitChangelistDialog2" timestamp="1596086133435">
+    <state x="53" y="0" width="1212" height="680" key="CommitChangelistDialog2" timestamp="1597643604293">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="53" y="0" width="1212" height="680" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1596086133435" />
+    <state x="53" y="0" width="1212" height="680" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1597643604293" />
     <state width="444" height="438" key="DebuggerActiveHint" timestamp="1592216991592">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
