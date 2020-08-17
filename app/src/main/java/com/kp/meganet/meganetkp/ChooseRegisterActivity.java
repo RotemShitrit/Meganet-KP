@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class ChooseRegisterActivity extends AppCompatActivity {
 
-    private Button wer,uz1,ber1;
+    private Button wer,ber1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

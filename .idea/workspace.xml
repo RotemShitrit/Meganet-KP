@@ -12,8 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8fd4a1cd-c918-4810-82d0-a55a62b9785c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/Ber1Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/Ber1Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_registers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_registers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ChooseRegisterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ChooseRegisterActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -331,12 +331,25 @@
       <option name="project" value="LOCAL" />
       <updated>1597643605783</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="17/08/20&#10;**Changes**&#10;1. merge wer and uz1 to one button">
+      <created>1597644017213</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1597644017213</updated>
+    </task>
+    <task id="LOCAL-00028" summary="17/08/20&#10;**Changes**&#10;1. merge wer and uz1 to one button">
+      <created>1597644080203</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1597644080203</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Work at home 15/06/20&#10;**Changes**&#10;- Add convertToByte function in MeganetEngine" />
     <MESSAGE value="18/06/20" />
     <MESSAGE value="18/06/20&#10;Changes:&#10;1. add MTWP button in Wall Mount &#10;2. change name of buttons to significant names in activity_pit.xml , activity_qr_code.xml and activity_wall_mount.xml" />
     <MESSAGE value="23/06/20&#10;                                                                                                                     Changes:&#10;                                                                                                                     1. Kpack checked as default in settings&#10;                                                                                                                     2. kp image moved to the middle in main activity&#10;                                                                                                                     3. change word Node to MTU in History_Log_2" />
@@ -361,7 +374,8 @@
     <MESSAGE value="07/07/20&#10;**Changes**&#10;1. Consumption - display data&#10;2. change name of function ReadLog to ReadData" />
     <MESSAGE value="07/07/20&#10;**Changes**&#10;1. Consumption - reverse data array function added&#10;2. Consumption - data type function added&#10;3. Ber1 Activity and choose register activity added&#10;4. ConsumptionActivity - changes in read data function&#10;5. Consumption - disable dataConvert radio group" />
     <MESSAGE value="17/08/20&#10;**Changes**&#10;1. Ber1 device" />
-    <option name="LAST_COMMIT_MESSAGE" value="17/08/20&#10;**Changes**&#10;1. Ber1 device" />
+    <MESSAGE value="17/08/20&#10;**Changes**&#10;1. merge wer and uz1 to one button" />
+    <option name="LAST_COMMIT_MESSAGE" value="17/08/20&#10;**Changes**&#10;1. merge wer and uz1 to one button" />
   </component>
   <component name="WindowStateProjectService">
     <state x="446" y="49" key="#com.intellij.ide.util.MemberChooser" timestamp="1596453097477">
@@ -396,10 +410,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="496" y="106" key="AndroidProcessChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1596441767553" />
-    <state x="53" y="0" width="1212" height="680" key="CommitChangelistDialog2" timestamp="1597644016803">
+    <state x="53" y="0" width="1212" height="680" key="CommitChangelistDialog2" timestamp="1597645487858">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="53" y="0" width="1212" height="680" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1597644016803" />
+    <state x="53" y="0" width="1212" height="680" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1597645487858" />
     <state width="444" height="438" key="DebuggerActiveHint" timestamp="1592216991592">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -456,10 +470,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="93" y="93" width="1095" height="495" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1280.680@0.0.1280.680" timestamp="1591684917206" />
-    <state x="353" y="131" key="git4idea.merge.GitPullDialog" timestamp="1595935165369">
+    <state x="353" y="131" key="git4idea.merge.GitPullDialog" timestamp="1597644094027">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="353" y="131" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1595935165369" />
+    <state x="353" y="131" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1597644094027" />
     <state x="298" y="151" key="run.anything.popup" timestamp="1593604802298">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

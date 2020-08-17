@@ -136,6 +136,7 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".Ber1Activity"
             android:label="Ber1"
+            android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"/>
         <activity android:name=".ChooseRegisterActivity"
             android:label="Choose Register"
