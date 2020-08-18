@@ -414,6 +414,13 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                         else if(p.TabName.equals("1"))
                             paramSpiner.setSelection(1);
                     }
+                    else if(p.ParameterName.equals("Protocol For The Next Inputs") && p.NDevice == 45)
+                    {
+                        if(p.TabName.equals("1"))
+                            paramSpiner.setSelection(0);
+                        else if(p.TabName.equals("2"))
+                            paramSpiner.setSelection(1);
+                    }
                 }
                 else
                 {
@@ -490,6 +497,14 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                     else if(paramSpiner.getSelectedItem().toString().equals("Division by 10"))
                         _currentReadData.get(_selectedItem).TabName = "1";
                 }
+                else if(_currentReadData.get(_selectedItem).ParameterName.equals("Protocol For The Next Inputs") &&
+                        _currentReadData.get(_selectedItem).NDevice== 45)
+                {
+                    if(paramSpiner.getSelectedItem().toString().equals("MBUS"))
+                        _currentReadData.get(_selectedItem).TabName = "1";
+                    else if(paramSpiner.getSelectedItem().toString().equals("MODBUS"))
+                        _currentReadData.get(_selectedItem).TabName = "2";
+                }
                 else
                     _currentReadData.get(_selectedItem).TabName = paramSpiner.getSelectedItem().toString();
             }
@@ -539,12 +554,19 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
             {
                     params[i] = "10";
             }
-            else if(_selectedItem.equals("Divider") &&  (ndevice == 173 || ndevice == 168))
+            else if(_selectedItem.equals("Divider") && (ndevice == 173 || ndevice == 168))
             {
                 if (arrVal == 0)
                     params[i] = "No division";
                 else if(arrVal == 1)
                     params[i] = "Division by 10";
+            }
+            else if(_selectedItem.equals("Protocol For The Next Inputs") && (ndevice == 45))
+            {
+                if(arrVal == 1)
+                    params[i] = "MBUS";
+                else if(arrVal == 2)
+                    params[i] = "MODBUS";
             }
             else
                 params[i] = arrVal.toString();

@@ -8,6 +8,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -509,7 +510,7 @@ public class DataAnalizer {
     public Map<String, QryParams> AnalizeData(byte[] data_prm, String ndevice_prm, int promptNameLen_prm, boolean isPair_prm) {
         // type 0 - LARS, 1 = LARS1, 4 = LARS2
 
-        Map<String, QryParams> paramsMap = new HashMap<String, QryParams>();
+        LinkedHashMap<String, QryParams> paramsMap = new LinkedHashMap<String, QryParams>();
         QryParams tmpParam;
         int dataShift;
         if(isPair_prm)
@@ -543,8 +544,8 @@ public class DataAnalizer {
             tmpParam = DecodeDataArr(paramArr, param);
             if(tmpParam != null)
                 paramsMap.put(tmpParam.ParameterName, tmpParam);
-
         }
+
         for(Map.Entry<String, QryParams> itemFreq : paramsMap.entrySet())
         {
             if(itemFreq.getValue().ParameterType.contains("FREQUENCY"))

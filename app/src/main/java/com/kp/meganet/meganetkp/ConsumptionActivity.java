@@ -31,6 +31,8 @@ import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static java.lang.Math.pow;
+
 public class ConsumptionActivity extends AppCompatActivity implements iCallback {
     private String _toastMessageToDisplay;
     private boolean _pairDialogIsON;
@@ -49,7 +51,7 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
     private Integer _timerCount;
     private boolean _timerFlag = false;
     private boolean lastCommandIsOpen = false;
-    long consumption = 0;
+    double consumption = 0;
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -94,7 +96,7 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
         }, 0, 1000);
 
         String[] arraySpinner = new String[] {
-                "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
+                "3", "4", "5", "6", "7", "8", "9", "10"
         };
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -143,32 +145,8 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
         getConsumptionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int input = 0;
-
                 Object selectedItem = inputSpinner.getSelectedItem();
-                if ("1".equals(selectedItem)) {
-                    input = 0;
-                } else if ("2".equals(selectedItem)) {
-                    input = 1;
-                } else if ("3".equals(selectedItem)) {
-                    input = 2;
-                } else if ("4".equals(selectedItem)) {
-                    input = 3;
-                } else if ("5".equals(selectedItem)) {
-                    input = 4;
-                } else if ("6".equals(selectedItem)) {
-                    input = 5;
-                } else if ("7".equals(selectedItem)) {
-                    input = 6;
-                } else if ("8".equals(selectedItem)) {
-                    input = 7;
-                } else if ("9".equals(selectedItem)) {
-                    input = 8;
-                } else if ("10".equals(selectedItem)) {
-                    input = 9;
-                }
-
-                MeganetInstances.getInstance().GetMeganetEngine().getConsumption(input);
+                MeganetInstances.getInstance().GetMeganetEngine().getConsumption(Integer.parseInt(selectedItem.toString()));
                 unitTV.setText("");
                 _timerFlag = true;
                 _timerCount = 0;
@@ -196,31 +174,15 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
         }
     }
 
-    public long ConvertByteToNumber(byte[] bytes)
+    public double ConvertByteToNumber(byte[] bytes)
     {
-        long number = 0;
+        double number = 0;
         for(int i = 0; i<bytes.length; i++)
         {
             number += number * 255 + (bytes[i] & 0xFF);
         }
 
         return number;
-    }
-
-    public void ConvertConsumption(long num)
-    {
-        double ret = num;
-        //String unit = "";
-        /*if(dataConvert.getCheckedRadioButtonId() == R.id.radioButtonLmin) {
-            ret = num;
-            unit = "  L/min";
-        }
-        else {
-            ret = num/16.67;
-            unit = "  m³/h";
-        }*/
-        //unitTV.setText(unit);
-        dataTextView.setText(String.format("%.02f", ret));
     }
 
     public int dataType(byte x)
@@ -232,41 +194,50 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
         return num;
     }
 
-    public void unitConsumption(byte b)
+    public double unitConsumption(byte b, double consumption)
     {
         String str = String.format("%8s", Integer.toBinaryString(b & 0xFF)).replace(' ', '0');
         switch (str.substring(5))
         {
             case "000":
-                unitTV.setText(" mL/h");
+                consumption = consumption * pow(10,-6);
+                //unitTV.setText(" mL/h");
                 break;
             case "001":
-                unitTV.setText("10 mL/h");
+                consumption = consumption * pow(10,-5);
+                //unitTV.setText("10 mL/h");
                 break;
             case "010":
-                unitTV.setText("100 mL/h");
+                consumption = consumption * pow(10,-4);
+                //unitTV.setText("100 mL/h");
                 break;
             case "011":
-                unitTV.setText("L/h");
+                consumption = consumption * pow(10,-3);
+                //unitTV.setText("L/h");
                 break;
             case "100":
-                unitTV.setText("10 L/h");
+                consumption = consumption * pow(10,-2);
+                //unitTV.setText("10 L/h");
                 break;
             case "101":
-                unitTV.setText("100 L/h");
+                consumption = consumption * pow(10,-1);
+                //unitTV.setText("100 L/h");
                 break;
             case "110":
-                unitTV.setText("m³/h");
+                consumption = consumption * pow(10,0);
+                //unitTV.setText("m³/h");
                 break;
             case "111":
-                unitTV.setText("10 m³/h");
+                consumption = consumption * pow(10,1);
+                //unitTV.setText("10 m³/h");
                 break;
         }
+        unitTV.setText("m³/h");
+        dataTextView.setText(String.format("%.02f", consumption));
+        return consumption;
     }
 
-    public void Oncheck(View v)
-    {
-        ConvertConsumption(consumption);
+    public void Oncheck(View v){
     }
 
     private String PromptConvert(String displayPrompt) {
@@ -291,13 +262,12 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
         if(dataArr_prm != null)
         {
             int num = dataType(dataArr_prm[7]);
-            unitConsumption(dataArr_prm[8]);
             if (num>0)
             {
-                byte[] subArray = Arrays.copyOfRange(dataArr_prm, dataArr_prm.length-num, dataArr_prm.length);
+                byte[] subArray = Arrays.copyOfRange(dataArr_prm, dataArr_prm.length-4, dataArr_prm.length-4+num);
                 reverseArray(subArray);
                 consumption = ConvertByteToNumber(subArray);
-                ConvertConsumption(consumption);
+                consumption = unitConsumption(dataArr_prm[8], consumption);
             }
             else {
                 dataTextView.setText("No data!");
