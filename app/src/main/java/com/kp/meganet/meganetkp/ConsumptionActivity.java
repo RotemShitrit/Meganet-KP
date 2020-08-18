@@ -66,7 +66,7 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         _pairDialogIsON = false;
-        setTitle("Consumption Read");
+        setTitle("Flow Rate");
         getConsumptionBtn = (Button) findViewById(R.id.getConsuptBtn);
         connectBtn = (Button) findViewById(R.id.btnConnect);
         disconnectBtn = (Button) findViewById(R.id.btnDisconnect);

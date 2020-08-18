@@ -132,7 +132,7 @@
             android:label="Choose device"
             android:screenOrientation="portrait"/>
         <activity android:name=".ConsumptionActivity"
-            android:label="Consumption Read"
+            android:label="Flow Rate"
             android:screenOrientation="portrait"/>
         <activity android:name=".Ber1Activity"
             android:label="Ber1"

@@ -432,7 +432,7 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case 11:
-                Toast.makeText(getApplicationContext(), "Consumption", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Flow Rate", Toast.LENGTH_LONG).show();
                 intent = new Intent(MainActivity.this, ConsumptionActivity.class);
                 startActivity(intent);
                 // TODO Something
