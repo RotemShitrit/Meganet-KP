@@ -315,14 +315,13 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
                 msg = Arrays.copyOfRange(dataArr_prm, 0, len + 2);
                 dataArr_prm = Arrays.copyOfRange(dataArr_prm, len + 2, dataArr_prm.length);
 
-                if(len==6)
+                if(len == 6)
                 {
                     if(msg[7] == 9) {
                         total = (int) curr_index;
                         break;
                     }
                 }
-
                 else {
                     first_index = ConvertByteToNumber(Arrays.copyOfRange(msg, 7, 9)); // first index indicate the number of the first read in a message
                     curr_index = first_index-1;
@@ -339,9 +338,7 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
             }
             current_length = messages.size();
             System.out.println("Current length is: " + current_length);
-
             MeganetInstances.getInstance().GetMeganetEngine().reset_timerCount();
-
 
             if (current_length == total) { // If we received all reads we need to upload the history log to FTP
                 byte[] tamper_msg = {-1, -1, -1, -1, -1};

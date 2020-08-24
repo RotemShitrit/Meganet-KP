@@ -698,7 +698,7 @@ public class MeganetEngine extends BTengine {
             }
         }
         else if ((_currentCommand == commandType.GET_METER_SN || _currentCommand == commandType.TIME_REQUEST ||
-                    _currentCommand == commandType.REQ_LOG ||  _currentCommand == commandType.GET_LOG))
+                    _currentCommand == commandType.REQ_LOG))
         {
             if( _timerCount <= 5) {
                 _startCollectDateTag = System.currentTimeMillis();
@@ -2313,10 +2313,11 @@ public class MeganetEngine extends BTengine {
 
             if(request) {
                 _currentCommand = commandType.REQ_LOG;
-                _msgArr = ReadArr;
+                _msgArr = ReadArr; // send the same msg if not received
             }
             else {
                 _currentCommand = commandType.GET_LOG;
+                _msgArr = null;
             }
             SendData(ReadArr);
         }
