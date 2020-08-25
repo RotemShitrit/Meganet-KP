@@ -59,9 +59,7 @@ public class History_Log_1 extends AppCompatActivity {
             // Click on get history button open the option to choose the device and insert unitID manually or scan QR code
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(History_Log_1.this, History_Log_1_1.class);
-                //startActivity(intent);
-                LayoutInflater layoutInflater = LayoutInflater.from(History_Log_1.this);
+                /*LayoutInflater layoutInflater = LayoutInflater.from(History_Log_1.this);
                 View promptView = layoutInflater.inflate(R.layout.enter_id, null);
                 final EditText input = (EditText) promptView.findViewById(R.id.edittext); // Set an EditText view to get the user input
                 input.getBackground().setColorFilter(Color.GRAY, PorterDuff.Mode.SRC_IN);
@@ -77,7 +75,10 @@ public class History_Log_1 extends AppCompatActivity {
                                 startActivity(intent);
                             }
                         }).show();
-                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.RED);
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.RED);*/
+                MeganetInstances.getInstance().GetMeganetEngine().SetCurrentProgrammType(44); // ???????
+                Intent intent = new Intent(History_Log_1.this, History_Log_2.class);
+                startActivity(intent);
             }
         });
 

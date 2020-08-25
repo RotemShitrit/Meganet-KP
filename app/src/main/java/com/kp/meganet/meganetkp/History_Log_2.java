@@ -25,12 +25,14 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -61,9 +63,10 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
     private boolean _pairDialogIsON;
     Map<Long,Long> messages;
 
-    private TextView nodeID,tv16;
+    private TextView nodeID,tv16,tv1;
     private RadioGroup input;
-    private Button getLogBtn;
+    private Spinner inputSpinner;
+    private Button getLogBtn,promptBtn;
     private ProgressBar pb;
 
     Toast toast;
@@ -73,7 +76,9 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
     String dataFile = ""; //all data that file include
 
     long curr_index;
+    int msgSize;
     int current_length, input_num, length, total, start;
+    String[] inputs = {"1","2","3","4","5","6","7","8","9","10"};
     String[] columns = {"ID", "Hour", "Message", "Address"}; //Columns of table that will saved in CSV file in FTP
     Calendar last_read; // date of the last read
 
@@ -125,18 +130,78 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         toast = new Toast(this);
-        input = (RadioGroup) findViewById(R.id.inputRadio);
+        //input = (RadioGroup) findViewById(R.id.inputRadio);
+        inputSpinner = (Spinner) findViewById(R.id.spinnerInputs);
         tv16 = (TextView) findViewById(R.id.textView16);
+        tv1 = (TextView) findViewById(R.id.textViewMain);
         getLogBtn = (Button) findViewById(R.id.getLogBtn);
+        promptBtn = (Button) findViewById(R.id.promptbtn);
         pb = (ProgressBar) findViewById(R.id.progressBar);
+        nodeID = (TextView) findViewById(R.id.textViewID);
+
         pb.getIndeterminateDrawable().setColorFilter(Color.parseColor("#e66807"),android.graphics.PorterDuff.Mode.SRC_ATOP);
         last_read = Calendar.getInstance(); // get the current date
+        input_num = 0;
 
         pb.setVisibility(View.INVISIBLE);
         getLogBtn.setVisibility(View.INVISIBLE);
         tv16.setVisibility(View.INVISIBLE);
-        input.setVisibility(View.INVISIBLE);
+        //input.setVisibility(View.INVISIBLE);
+        inputSpinner.setVisibility(View.INVISIBLE);
 
+        // Initializing an ArrayAdapter
+        ArrayAdapter<String> inputsSpinnerArrayAdapter = new ArrayAdapter<String>(
+                this, R.layout.checked, inputs
+        );
+        inputsSpinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
+        inputSpinner.setAdapter(inputsSpinnerArrayAdapter);
+
+        inputSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String input = (String) inputSpinner.getSelectedItem();
+                switch (input)
+                {
+                    case "1":
+                        input_num = 1;
+                        break;
+                    case "2":
+                        input_num = 2;
+                        break;
+                    case "3":
+                        input_num = 3;
+                        break;
+                    case "4":
+                        input_num = 4;
+                        break;
+                    case "5":
+                        input_num = 5;
+                        break;
+                    case "6":
+                        input_num = 6;
+                        break;
+                    case "7":
+                        input_num = 7;
+                        break;
+                    case "8":
+                        input_num = 8;
+                        break;
+                    case "9":
+                        input_num = 9;
+                        break;
+                    case "10":
+                        input_num = 10;
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        tv1.setText("Click on prompt button and \nmagnet swipe MTU");
         messages = new HashMap<Long, Long>();
 
         _pairDialogIsON = false;
@@ -145,22 +210,24 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
         total = 4000; // total of reads
         length = 360; // quantity of reads in one package
 
-        MeganetInstances.getInstance().GetMeganetEngine().InitReadMeter(this);
-        MeganetInstances.getInstance().GetMeganetEngine().InitProgramming(this, MeganetInstances.getInstance().GetMeganetDb().getSetting(1).GetKeyValue());
-        //MeganetInstances.getInstance().GetMeganetEngine().SetCurrentProgrammType(44);
-        MeganetInstances.getInstance().GetMeganetEngine().Prompt(MeganetEngine.ePromptType.TEN_CHR_PAIRING, PromptConvert("E"));
-        toast.makeText(getApplicationContext(),"Waiting For MTU Response",Toast.LENGTH_LONG).show();
-
-        CommonSettingsData data = new CommonSettingsData(6, "last_programm_prompt_type", PromptConvert("E"));
-        MeganetInstances.getInstance().GetMeganetDb().updateProperty(data);
-
-        nodeID = (TextView) findViewById(R.id.textViewID);
-
         TableRow tr_head = new TableRow(History_Log_2.this);
         for (String col : columns) {
             dataFile += col + ", ";
         }
         dataFile += "\n ";
+
+        MeganetInstances.getInstance().GetMeganetEngine().InitReadMeter(this);
+        MeganetInstances.getInstance().GetMeganetEngine().InitProgramming(this, MeganetInstances.getInstance().GetMeganetDb().getSetting(1).GetKeyValue());
+
+        promptBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MeganetInstances.getInstance().GetMeganetEngine().Prompt(MeganetEngine.ePromptType.TEN_CHR_PAIRING, PromptConvert("E"));
+                toast.makeText(getApplicationContext(),"Waiting For MTU Response",Toast.LENGTH_LONG).show();
+                CommonSettingsData data = new CommonSettingsData(6, "last_programm_prompt_type", PromptConvert("E"));
+                MeganetInstances.getInstance().GetMeganetDb().updateProperty(data);
+            }
+        });
     }
 
     private String PromptConvert(String displayPrompt)
@@ -205,77 +272,72 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
 
     private void PairingDialog()
     {
-        String addr_pair = MeganetInstances.getInstance().GetMeganetEngine().GetQrAddress();
-        if (addr_pair.equalsIgnoreCase(MeganetInstances.getInstance().GetMeganetEngine().GetUnitAddress()))
-        {
-            MeganetInstances.getInstance().GetMeganetEngine().NewPulsePairingDevice(true, false);
-            nodeID.setText(MeganetInstances.getInstance().GetMeganetEngine().GetUnitAddress());
-        }
-        else {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this); // Alert dialog for connecting to device
-            builder.setMessage("Connect to MTU ID: " + MeganetInstances.getInstance().GetMeganetEngine().GetUnitAddress() + " ?")
-                    .setCancelable(false)
-                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            toast.makeText(getApplicationContext(), "Unit Paired",
-                                    Toast.LENGTH_SHORT).show();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this); // Alert dialog for connecting to device
+        builder.setMessage("Connect to MTU ID: " + MeganetInstances.getInstance().GetMeganetEngine().GetUnitAddress() + " ?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        toast.makeText(getApplicationContext(), "Unit Paired",
+                        Toast.LENGTH_SHORT).show();
 
-                            int ndevice = Integer.decode("0x" +  MeganetInstances.getInstance().GetMeganetEngine().GetNdevice())-1;
-                            if(ndevice == 249)
-                            {
+                        promptBtn.setVisibility(View.INVISIBLE);
+                        tv1.setText("Connected to MTU ID");
+                        nodeID.setText(MeganetInstances.getInstance().GetMeganetEngine().GetUnitAddress());
+                        int ndevice = Integer.decode("0x" +  MeganetInstances.getInstance().GetMeganetEngine().GetNdevice())-1;
+                        if(ndevice == 45) {
+                            getLogBtn.setVisibility(View.VISIBLE);
+                            tv16.setVisibility(View.VISIBLE);
+                            //input.setVisibility(View.VISIBLE);
+                            inputSpinner.setVisibility(View.VISIBLE);
+                            msgSize = 4;
+                        }
+                        else {
+                            getLogBtn.setVisibility(View.INVISIBLE);
+                            tv16.setVisibility(View.INVISIBLE);
+                            //input.setVisibility(View.INVISIBLE);
+                            inputSpinner.setVisibility(View.INVISIBLE);
+                            pb.setVisibility(View.VISIBLE);
+                            msgSize = 5;
+                            MeganetInstances.getInstance().GetMeganetEngine().TimeRequest(); // send time request
+                        }
+
+                        getLogBtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
                                 getLogBtn.setVisibility(View.INVISIBLE);
                                 tv16.setVisibility(View.INVISIBLE);
-                                input.setVisibility(View.INVISIBLE);
+                                //input.setVisibility(View.INVISIBLE);
+                                inputSpinner.setVisibility(View.INVISIBLE);
                                 pb.setVisibility(View.VISIBLE);
+                                //MeganetInstances.getInstance().GetMeganetEngine().GetMeterSN(input_num);
                                 MeganetInstances.getInstance().GetMeganetEngine().TimeRequest(); // send time request
                             }
-                            else {
-                                getLogBtn.setVisibility(View.VISIBLE);
-                                tv16.setVisibility(View.VISIBLE);
-                                input.setVisibility(View.VISIBLE);
-                            }
+                        });
+                        dialog.dismiss();
+                        //_pairDialogIsON = false;
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // some code if you want
+                        toast.makeText(getApplicationContext(), "UNPAIR FROM UNIT", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                        nodeID.setText("");
+                        _pairDialogIsON = false;
+                        MeganetInstances.getInstance().GetMeganetEngine().Disconnect();
+                        finish();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+        Button bq = alert.getButton(DialogInterface.BUTTON_NEGATIVE);
+        bq.setBackgroundColor(Color.WHITE);
+        bq.setTextColor(Color.BLUE);
 
-
-
-
-                            getLogBtn.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    getLogBtn.setVisibility(View.INVISIBLE);
-                                    tv16.setVisibility(View.INVISIBLE);
-                                    input.setVisibility(View.INVISIBLE);
-                                    pb.setVisibility(View.VISIBLE);
-                                    //MeganetInstances.getInstance().GetMeganetEngine().GetMeterSN(input_num);
-                                    MeganetInstances.getInstance().GetMeganetEngine().TimeRequest(); // send time request
-                                }
-                            });
-                            dialog.dismiss();
-                            //_pairDialogIsON = false;
-                        }
-                    })
-                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            // some code if you want
-                            toast.makeText(getApplicationContext(), "UNPAIR FROM UNIT", Toast.LENGTH_SHORT).show();
-                            dialog.dismiss();
-                            _pairDialogIsON = false;
-                            MeganetInstances.getInstance().GetMeganetEngine().Disconnect();
-                            finish();
-                        }
-                    });
-
-            AlertDialog alert = builder.create();
-            alert.show();
-            Button bq = alert.getButton(DialogInterface.BUTTON_NEGATIVE);
-            bq.setBackgroundColor(Color.WHITE);
-            bq.setTextColor(Color.BLUE);
-
-            bq = alert.getButton(DialogInterface.BUTTON_POSITIVE);
-            bq.setBackgroundColor(Color.WHITE);
-            bq.setTextColor(Color.BLUE);
-            //bq.setBackgroundColor(Color.BLUE);
-            nodeID.setText(MeganetInstances.getInstance().GetMeganetEngine().GetUnitAddress());
-        }
+        bq = alert.getButton(DialogInterface.BUTTON_POSITIVE);
+        bq.setBackgroundColor(Color.WHITE);
+        bq.setTextColor(Color.BLUE);
+        //bq.setBackgroundColor(Color.BLUE);
     }
 
     public void checkButton(View v) // check which input number of device
@@ -326,7 +388,7 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
                     first_index = ConvertByteToNumber(Arrays.copyOfRange(msg, 7, 9)); // first index indicate the number of the first read in a message
                     curr_index = first_index-1;
 
-                    num_of_msgs = (len - 7) / 5;
+                    num_of_msgs = (len - 7) / msgSize;
 
                     for (int i = 0; i < num_of_msgs; i++) {
                         read = ConvertByteToNumber(Arrays.copyOfRange(msg, 9 + 5 * i, 14 + 5 * i));

@@ -6,13 +6,13 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="92dp"
-        android:layout_height="30dp"
+        android:id="@+id/textViewMain"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="40dp"
         android:text="MTU ID"
         android:textSize="18sp" />
 
@@ -22,30 +22,31 @@
         android:layout_height="48dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="89dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="72dp"
         android:textSize="18sp" />
 
     <Button
         android:id="@+id/getLogBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/promptbtn"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="110dp"
+        android:layout_marginBottom="10dp"
         android:text="Get Log" />
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="287dp"
+        android:layout_width="229dp"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/textView1"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="150dp"
         android:layout_marginEnd="-229dp"
         android:text="Choose an input number:"
         android:textSize="18sp" />
 
+    <!--
     <RadioGroup
         android:id="@+id/inputRadio"
         android:layout_width="158dp"
@@ -74,6 +75,17 @@
 
 
     </RadioGroup>
+    -->
+
+    <Spinner
+        android:id="@+id/spinnerInputs"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="145dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/spinner2" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -84,5 +96,18 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="141dp" />
+
+    <Button
+        android:id="@+id/promptbtn"
+        android:layout_width="159dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="20dp"
+        android:text="Prompt" />
 
 </RelativeLayout>
