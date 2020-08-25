@@ -141,7 +141,6 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
 
         pb.getIndeterminateDrawable().setColorFilter(Color.parseColor("#e66807"),android.graphics.PorterDuff.Mode.SRC_ATOP);
         last_read = Calendar.getInstance(); // get the current date
-        input_num = 0;
 
         pb.setVisibility(View.INVISIBLE);
         getLogBtn.setVisibility(View.INVISIBLE);
@@ -298,6 +297,7 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
                             inputSpinner.setVisibility(View.INVISIBLE);
                             pb.setVisibility(View.VISIBLE);
                             msgSize = 5;
+                            input_num = 0;
                             MeganetInstances.getInstance().GetMeganetEngine().TimeRequest(); // send time request
                         }
 
