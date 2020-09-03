@@ -111,7 +111,7 @@
         android:layout_below="@+id/inputSpinner"
         android:layout_marginTop="30dp"
         android:textColor="@color/colorButtonText"
-        android:text="Get Consumption"
+        android:text="Get Flow Rate"
         android:textSize="20sp"/>
 
     <TextView

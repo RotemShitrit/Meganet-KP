@@ -16,9 +16,10 @@
         android:layout_height="wrap_content"
         android:text="Connect"
         android:id="@+id/buttonConnect"
+        android:layout_marginStart="5dp"
         android:layout_alignParentStart="true"
         android:textColor="@color/colorButtonText"
-        android:textSize="30sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textViewConnectedMTU"
@@ -27,10 +28,12 @@
         android:layout_below="@+id/buttonConnect"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
         android:text="Please click CONNECT and swipe a magnet on the MTU"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="26sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <ImageView

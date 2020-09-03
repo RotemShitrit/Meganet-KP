@@ -6,33 +6,59 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
-    <Button
-        android:id="@+id/programBtn"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayoutButtons"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="130dp"
-        android:layout_marginEnd="130dp"
-        android:layout_marginBottom="20dp"
-        android:text="Program"
-        android:textColor="@color/colorButtonText" />
+        android:layout_marginBottom="5dp"
+        android:gravity="center_horizontal"
+        android:weightSum="1.0">
 
+        <Button
+            android:id="@+id/programBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:text="Program"
+            android:textColor="@color/colorButtonText" />
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@+id/loadBtn"
+            android:layout_toEndOf="@+id/programBtn"
+            android:text="Save File"
+            android:textColor="@color/colorButtonText" />
+
+        <Button
+            android:id="@+id/loadBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:text="Load file"
+            android:textColor="@color/colorButtonText" />
+    </LinearLayout>
     <ScrollView
         android:id="@+id/scrollViewRegisters"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/programBtn"
+        android:layout_height="518dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="7dp"
-        android:layout_marginBottom="7dp"
+        android:layout_weight="1"
         android:fadeScrollbars="false"
         android:scrollbarSize="6dp"
-        android:scrollbarTrackVertical="@color/scrollbarTrack"
+        android:layout_above="@+id/linearLayoutButtons"
+        android:layout_marginBottom="5dp"
         android:scrollbarThumbVertical="@color/scrollbarThumb"
-        android:layout_weight="1">
+        android:scrollbarTrackVertical="@color/scrollbarTrack">
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -78,7 +104,7 @@
                 android:layout_below="@+id/idTextView"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:text="Positive accrual: "
+                android:text="Positive: "
                 android:textSize="13dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/idTextView" />
@@ -107,7 +133,7 @@
                 android:layout_below="@+id/PositiveTextView"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:text="Negative accrual: "
+                android:text="Negative: "
                 android:textSize="13dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/PositiveTextView" />
@@ -167,7 +193,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:text="Meter: "
+                android:text="Meter Type: "
                 android:textSize="13dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -219,7 +245,7 @@
                 android:layout_below="@+id/SizeTextView"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="19dp"
-                android:text="Factor: "
+                android:text="Factor Q4: "
                 android:textSize="13dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/SizeTextView" />
@@ -234,6 +260,7 @@
                 android:layout_marginEnd="5dp"
                 android:backgroundTint="@color/colorPrimary"
                 android:inputType="number"
+                android:maxLength="5"
                 android:textSize="13dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -389,7 +416,7 @@
                 android:layout_below="@+id/flowUnitTextView"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="24dp"
-                android:text="Volume Type: "
+                android:text="Accumulation units:"
                 android:textSize="13dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/flowUnitTextView" />
@@ -415,7 +442,7 @@
                 android:layout_below="@+id/volumeTypeTextView"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="24dp"
-                android:text="Pulse Volume: "
+                android:text="Resolution: "
                 android:textSize="13dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/volumeTypeTextView" />

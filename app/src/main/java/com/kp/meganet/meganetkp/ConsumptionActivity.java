@@ -37,20 +37,14 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
     private String _toastMessageToDisplay;
     private boolean _pairDialogIsON;
 
-    private Button connectBtn;
-    private Button disconnectBtn;
-    private Button getConsumptionBtn;
-    private TextView dataTextView;
-    private TextView connectTextView;
+    private Button connectBtn, disconnectBtn, getConsumptionBtn;
+    private TextView dataTextView, connectTextView, inputTV, unitTV;
     private RadioGroup dataConvert;
     private Spinner inputSpinner;
-    private TextView inputTV;
-    private TextView unitTV;
 
     private Timer _downCountTimer;
     private Integer _timerCount;
     private boolean _timerFlag = false;
-    private boolean lastCommandIsOpen = false;
     double consumption = 0;
 
     /**
@@ -261,7 +255,7 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
     public void ReadData(byte[] dataArr_prm) {
         if(dataArr_prm != null)
         {
-            int num = dataType(dataArr_prm[7]);
+            /*int num = dataType(dataArr_prm[7]);
             if (num>0)
             {
                 byte[] subArray = Arrays.copyOfRange(dataArr_prm, dataArr_prm.length-4, dataArr_prm.length-4+num);
@@ -272,7 +266,14 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
             else {
                 dataTextView.setText("No data!");
                 unitTV.setText("");
-            }
+            }*/
+            byte[] subArray = Arrays.copyOfRange(dataArr_prm, dataArr_prm.length-4, dataArr_prm.length);
+            reverseArray(subArray);
+            consumption = ConvertByteToNumber(subArray);
+            consumption = consumption/100;
+            unitTV.setText("m³/h");
+            dataTextView.setText(String.format("%.02f", consumption));
+            //consumption = unitConsumption(dataArr_prm[8], consumption);
             _timerFlag = false;
         }
      }
@@ -290,10 +291,10 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
                 this.runOnUiThread(new Runnable() {
                     public void run() {
                         // Access/update UI here
-                        Integer val = 15 - _timerCount;
+                        Integer val = 60 - _timerCount;
                         dataTextView.setText(val.toString());
                         consumption = 0;
-                        if(_timerCount > 15)
+                        if(_timerCount > 60)
                         {
                             Toast.makeText(getApplicationContext(), _toastMessageToDisplay,
                                     Toast.LENGTH_SHORT).show();
@@ -346,97 +347,15 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
     }
 
     public void OnPowerOff(boolean result_prm, String err_prm) {
-        _timerFlag = false;
-        if (result_prm) {
 
-            _toastMessageToDisplay = "Disconnect successfully ";
-            this.runOnUiThread(new Runnable() {
-                public void run() {
-                    // Access/update UI here
-                    Toast.makeText(getApplicationContext(), _toastMessageToDisplay,
-                            Toast.LENGTH_SHORT).show();
-
-                    connectTextView.setText("Not Connected");
-                    //powerOffButton.setVisibility(View.INVISIBLE);
-
-                }
-            });
-        } else {
-            _toastMessageToDisplay = "Disconnect fail ";
-            this.runOnUiThread(new Runnable() {
-                public void run() {
-                    // Access/update UI here
-                    Toast.makeText(getApplicationContext(), _toastMessageToDisplay,
-                            Toast.LENGTH_SHORT).show();
-                    connectTextView.setText("Not Connected");
-                    //powerOffButton.setVisibility(View.INVISIBLE);
-                }
-            });
-        }
     }
 
     public void OnSleep(boolean result_prm, String err_prm) {
 
     }
 
-
     public void OnProgramm(boolean result_prm, final String err_prm) {
 
-        _timerCount = 0;
-        if (result_prm)
-        {
-            _toastMessageToDisplay = err_prm;
-            this.runOnUiThread(new Runnable() {
-                public void run() {
-                    // Access/update UI here
-                    Toast.makeText(getApplicationContext(), _toastMessageToDisplay,
-                            Toast.LENGTH_SHORT).show();
-
-                    //connectedMTUTextView.setText("Not Connected");
-                    //powerOffButton.setVisibility(View.INVISIBLE);
-
-                    _timerFlag = false;
-                    _timerCount = 0;
-                    MeganetInstances.getInstance().GetMeganetEngine().SetReadMetersRSNT(true);
-
-                    if (err_prm.equals("RDM Tamper")) {
-                        connectTextView.setText("RDM Tamper!");
-
-                    } else {
-
-                        if (lastCommandIsOpen) {
-                            connectTextView.setText("RDM Opened!");
-                        } else {
-                            connectTextView.setText("RDM Closed!");
-                        }
-                    }
-                }
-            });
-        }
-        else
-        {
-            _toastMessageToDisplay = err_prm;
-            this.runOnUiThread(new Runnable() {
-                public void run() {
-                    // Access/update UI here
-                    Toast.makeText(getApplicationContext(), _toastMessageToDisplay,
-                            Toast.LENGTH_SHORT).show();
-                    //connectedMTUTextView.setText("Not Connected");
-                    //powerOffButton.setVisibility(View.INVISIBLE);
-
-                    if(lastCommandIsOpen) {
-                        connectTextView.setText("Open failed");
-
-                    } else {
-                        connectTextView.setText("Close failed");
-                    }
-
-                    _timerFlag = false;
-                    _timerCount = 0;
-                    MeganetInstances.getInstance().GetMeganetEngine().SetReadMetersRSNT(true);
-                }
-            });
-        }
     }
 
     public void OnErrorCb(String error_prm) {

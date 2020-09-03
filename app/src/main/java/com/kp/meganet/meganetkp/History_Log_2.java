@@ -63,7 +63,7 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
     private boolean _pairDialogIsON;
     Map<Long,Long> messages;
 
-    private TextView nodeID,tv16,tv1;
+    private TextView tv16,tv1;
     private RadioGroup input;
     private Spinner inputSpinner;
     private Button getLogBtn,promptBtn;
@@ -137,7 +137,6 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
         getLogBtn = (Button) findViewById(R.id.getLogBtn);
         promptBtn = (Button) findViewById(R.id.promptbtn);
         pb = (ProgressBar) findViewById(R.id.progressBar);
-        nodeID = (TextView) findViewById(R.id.textViewID);
 
         pb.getIndeterminateDrawable().setColorFilter(Color.parseColor("#e66807"),android.graphics.PorterDuff.Mode.SRC_ATOP);
         last_read = Calendar.getInstance(); // get the current date
@@ -200,7 +199,6 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
             }
         });
 
-        tv1.setText("Click on prompt button and \nmagnet swipe MTU");
         messages = new HashMap<Long, Long>();
 
         _pairDialogIsON = false;
@@ -280,8 +278,7 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
                         Toast.LENGTH_SHORT).show();
 
                         promptBtn.setVisibility(View.INVISIBLE);
-                        tv1.setText("Connected to MTU ID");
-                        nodeID.setText(MeganetInstances.getInstance().GetMeganetEngine().GetUnitAddress());
+                        tv1.setText("Connected to MTU: " + MeganetInstances.getInstance().GetMeganetEngine().GetUnitAddress());
                         int ndevice = Integer.decode("0x" +  MeganetInstances.getInstance().GetMeganetEngine().GetNdevice())-1;
                         if(ndevice == 45) {
                             getLogBtn.setVisibility(View.VISIBLE);
@@ -322,7 +319,6 @@ public class History_Log_2 extends AppCompatActivity implements iReadMeterCallBa
                         // some code if you want
                         toast.makeText(getApplicationContext(), "UNPAIR FROM UNIT", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
-                        nodeID.setText("");
                         _pairDialogIsON = false;
                         MeganetInstances.getInstance().GetMeganetEngine().Disconnect();
                         finish();
