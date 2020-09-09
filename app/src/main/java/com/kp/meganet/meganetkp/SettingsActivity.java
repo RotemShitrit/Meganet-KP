@@ -221,13 +221,13 @@ public class SettingsActivity extends AppCompatActivity {
             case R.id.menu_settings_program:
                 Toast.makeText(getApplicationContext(), "Programming", Toast.LENGTH_LONG).show();
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
-                intent = new Intent(SettingsActivity.this, QrCodeActivity.class);
+                intent = new Intent(SettingsActivity.this, ChooseDeviceActivity.class);
                 startActivity(intent);
                 // TODO Something
                 break;
 
             case R.id.menu_settings_getlog:
-                Toast.makeText(getApplicationContext(), "Get Log", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "History Log", Toast.LENGTH_LONG).show();
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
                 intent = new Intent(SettingsActivity.this, History_Log_1.class);
                 startActivity(intent);
@@ -235,7 +235,7 @@ public class SettingsActivity extends AppCompatActivity {
                 break;
 
             case R.id.menu_settings_consumption:
-                Toast.makeText(getApplicationContext(), "Consumption", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Flow Rate", Toast.LENGTH_LONG).show();
 
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
                 intent = new Intent(SettingsActivity.this, ConsumptionActivity.class);

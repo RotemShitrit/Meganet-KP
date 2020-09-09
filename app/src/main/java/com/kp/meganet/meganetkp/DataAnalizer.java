@@ -527,7 +527,7 @@ public class DataAnalizer {
             if(param.NDevice == ndeviceTmp)// && param.ParameterName.equals("Parameters"))
             {
                 param.TabName = "";
-                parametersArr.add(param);
+                parametersArr.add(param);// check here!!
             }
         }
         // Parameter array
@@ -543,7 +543,7 @@ public class DataAnalizer {
             }
             tmpParam = DecodeDataArr(paramArr, param);
             if(tmpParam != null)
-                paramsMap.put(tmpParam.ParameterName, tmpParam);
+                paramsMap.put(tmpParam.ParameterName, tmpParam); // check here!!
         }
 
         for(Map.Entry<String, QryParams> itemFreq : paramsMap.entrySet())

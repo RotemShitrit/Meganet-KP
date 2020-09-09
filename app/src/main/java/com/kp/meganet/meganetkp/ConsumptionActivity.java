@@ -427,7 +427,7 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_rdm, menu);
+        getMenuInflater().inflate(R.menu.menu_consumption, menu);
 
         return true;
     }
@@ -476,7 +476,7 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
                 break;
 
             case R.id.menu_consumption_getlog:
-                Toast.makeText(getApplicationContext(), "Get Log", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "History Log", Toast.LENGTH_LONG).show();
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
                 intent = new Intent(ConsumptionActivity.this, History_Log_1.class);
                 startActivity(intent);
@@ -495,7 +495,7 @@ public class ConsumptionActivity extends AppCompatActivity implements iCallback 
                 Toast.makeText(getApplicationContext(), "Programming", Toast.LENGTH_LONG).show();
 
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
-                intent = new Intent(ConsumptionActivity.this, QrCodeActivity.class);
+                intent = new Intent(ConsumptionActivity.this, ChooseDeviceActivity.class);
                 startActivity(intent);
                 break;
 

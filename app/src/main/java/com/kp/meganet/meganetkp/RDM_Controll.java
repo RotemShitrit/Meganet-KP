@@ -482,7 +482,7 @@ public class RDM_Controll extends AppCompatActivity implements iCallback {
                 break;
 
             case R.id.menu_rdm_getlog:
-                Toast.makeText(getApplicationContext(), "Get Log", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "History Log", Toast.LENGTH_LONG).show();
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
                 intent = new Intent(RDM_Controll.this, History_Log_1.class);
                 startActivity(intent);
@@ -503,13 +503,13 @@ public class RDM_Controll extends AppCompatActivity implements iCallback {
                 Toast.makeText(getApplicationContext(), "Programming", Toast.LENGTH_LONG).show();
 
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
-                intent = new Intent(RDM_Controll.this, QrCodeActivity.class);
+                intent = new Intent(RDM_Controll.this, ChooseDeviceActivity.class);
                 startActivity(intent);
                 // TODO Something
                 break;
 
             case R.id.menu_rdm_consumption:
-                Toast.makeText(getApplicationContext(), "Consumption", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Flow Rate", Toast.LENGTH_LONG).show();
 
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
                 intent = new Intent(RDM_Controll.this, ConsumptionActivity.class);

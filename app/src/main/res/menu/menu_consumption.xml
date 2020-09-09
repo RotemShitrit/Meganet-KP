@@ -13,7 +13,7 @@
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/menu_consumption_ftp" android:title="FTP"
         android:orderInCategory="100" app:showAsAction="never" />
-    <item android:id="@+id/menu_consumption_getlog" android:title="Get Log"
+    <item android:id="@+id/menu_consumption_getlog" android:title="History Log"
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/menu_consumption_program" android:title="Program"
         android:orderInCategory="100" app:showAsAction="never" />

@@ -304,7 +304,7 @@ public class ReadsActivity extends AppCompatActivity implements iReadMeterCallBa
 
 
             case R.id.menu_receive_getlog:
-                Toast.makeText(getApplicationContext(), "Get Log", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "History Log", Toast.LENGTH_LONG).show();
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
                 intent = new Intent(ReadsActivity.this, History_Log_1.class);
                 startActivity(intent);
@@ -316,7 +316,7 @@ public class ReadsActivity extends AppCompatActivity implements iReadMeterCallBa
                 Toast.makeText(getApplicationContext(), "Programming", Toast.LENGTH_LONG).show();
 
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
-                intent = new Intent(ReadsActivity.this, QrCodeActivity.class);
+                intent = new Intent(ReadsActivity.this, ChooseDeviceActivity.class);
                 startActivity(intent);
                 // TODO Something
                 break;
@@ -332,7 +332,7 @@ public class ReadsActivity extends AppCompatActivity implements iReadMeterCallBa
                 break;
 
             case R.id.menu_receive_consumption:
-                Toast.makeText(getApplicationContext(), "Consumption", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Flow Rate", Toast.LENGTH_LONG).show();
 
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
                 intent = new Intent(ReadsActivity.this, ConsumptionActivity.class);

@@ -8,11 +8,11 @@
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/menu_rdm_read_meter" android:title="Read Meter"
         android:orderInCategory="100" app:showAsAction="never" />
-    <item android:id="@+id/menu_rdm_consumption" android:title="Consumption"
+    <item android:id="@+id/menu_rdm_consumption" android:title="Flow Rate"
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/menu_rdm_ftp" android:title="FTP"
         android:orderInCategory="100" app:showAsAction="never" />
-    <item android:id="@+id/menu_rdm_getlog" android:title="Get Log"
+    <item android:id="@+id/menu_rdm_getlog" android:title="History Log"
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/menu_rdm_program" android:title="Program"
         android:orderInCategory="100" app:showAsAction="never" />

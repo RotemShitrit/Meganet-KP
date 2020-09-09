@@ -281,7 +281,6 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
             @Override
             public void onClick(View v) {
 
-
                 if(MeganetInstances.getInstance().GetMeganetEngine().MeterPowerOff())
                 {
                     deviceTextView.setText("");
@@ -296,6 +295,7 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                     paramEditText.setVisibility(View.INVISIBLE);
                     unlockCheckBox.setVisibility(View.INVISIBLE);
                     inputBtn.setVisibility(View.INVISIBLE);
+                    paramsListView.setAdapter(null);
                 }
 
             }
@@ -341,7 +341,7 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                     paramEditText.setVisibility(View.INVISIBLE);
                     unlockCheckBox.setVisibility(View.INVISIBLE);
                     inputBtn.setVisibility(View.INVISIBLE);
-
+                    paramsListView.setAdapter(null);
                 }
             }
         });
@@ -586,7 +586,7 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
 
     public void SetReadData(Map<String, QryParams> data_prm)
     {
-        _currentReadData = data_prm;
+        _currentReadData = data_prm; // check here!!
 
         // Initializing a new String Array
         int i = 0;
@@ -791,7 +791,7 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Toast.makeText(getApplicationContext(), "Unit Paired", Toast.LENGTH_SHORT).show();
-                        MeganetInstances.getInstance().GetMeganetEngine().PairingDevice(true, false);
+                        MeganetInstances.getInstance().GetMeganetEngine().PairingDevice(true, false); // Check here!!!!
                         dialog.dismiss();
                         _pairDialogIsON = false;
                     }
@@ -1058,33 +1058,15 @@ public class ProgrammActivity extends AppCompatActivity implements iCallback{
                 break;
 
             case R.id.menu_program_getlog:
-                Toast.makeText(getApplicationContext(), "Get Log", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "History Log", Toast.LENGTH_LONG).show();
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
                 intent = new Intent(ProgrammActivity.this, History_Log_1.class);
                 startActivity(intent);
                 // TODO Something
                 break;
 
-            case R.id.menu_pulse:
-                super.onBackPressed();
-                Toast.makeText(getApplicationContext(), "Read Ports", Toast.LENGTH_LONG).show();
-
-                MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
-                intent = new Intent(ProgrammActivity.this, PulseActivity.class);
-                startActivity(intent);
-                break;
-
-            case R.id.menu_qr_code:
-                super.onBackPressed();
-                //Toast.makeText(getApplicationContext(), "QR Code", Toast.LENGTH_LONG).show();
-
-                MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
-                intent = new Intent(ProgrammActivity.this, QrCodeActivity.class);
-                startActivity(intent);
-                break;
-
             case R.id.menu_program_consumption:
-                Toast.makeText(getApplicationContext(), "Consumption", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Flow Rate", Toast.LENGTH_LONG).show();
 
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
                 intent = new Intent(ProgrammActivity.this, ConsumptionActivity.class);

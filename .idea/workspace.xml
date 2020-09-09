@@ -20,15 +20,20 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/app-release.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ConsumptionActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ConsumptionActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/DataAnalizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/DataAnalizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/History_Log_1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/MeganetEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/MeganetEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ProgrammActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ProgrammActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_consumption.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_consumption.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_rdm__controll.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_rdm__controll.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ber1_programming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ber1_programming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/history_log_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/history_log_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/RDM_Controll.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/RDM_Controll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ReadsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ReadsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/SettingsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/SettingsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_consumption.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_consumption.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_getlog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_getlog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_programm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_programm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_rdm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_rdm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_receiving.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_receiving.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_settings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -418,12 +423,18 @@
       <option name="project" value="LOCAL" />
       <updated>1598353257120</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="03/09/20&#10;**Changes**&#10;1. change button text in activity_consumption.xml get consumption to get flow rate&#10;2. change size of text in activity_rdm__controll.xml&#10;3. change names of parameters in ber1_programming.xml &#10;4. added save button and load button to ber1_programming.xml&#10;5. change name and location of prompt button in history_log_2.xml&#10;6. change method of calculate flow rate in ConsumptionActivity&#10;7. change text of main text view in History_Log_2">
+      <created>1599122567283</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1599122567283</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="28/06/20&#10;**Changes**&#10;1. set root to chooser file for upload files to FTP in History_Log_1&#10;2. Invisible input number for wer devices in History_Log_2&#10;3. add a function to MeganetEngine that return ndevice&#10;4. casting (int) to checkbox values" />
     <MESSAGE value="28/06/20&#10;**Changes**&#10;1. remove edit text of barcode scan in history_log_2.xml" />
     <MESSAGE value="30/06/20&#10;**Changes**&#10;1. change the layout history_log_2.xml&#10;2. fix the problem with the toast message in History_Log_2&#10;3. in ProgrammActivity change the Pulses per revolution parameter for ndevice 173 and ndevice 105&#10;4. in ProgrammActivity change the divider parameter for ndevice 173" />
     <MESSAGE value="30/06/20&#10;**Changes**&#10;1. remove consumption from the menu" />
@@ -448,7 +459,8 @@
     <MESSAGE value="24/08/20&#10;**Changes**&#10;1. Scrollbar in layout ber1_programming.xml" />
     <MESSAGE value="24/08/20&#10;**Changes**&#10;1. History_Log_1 - delete enter id window&#10;2. history_log_2.xml - added prompt button&#10;3. history_log_2.xml - added combo box for 10 inputs&#10;4. History_Log_2 - changes in pairing&#10;5. History_Log_2 - added option for ndevice 45: size msg is 4 byte and 10 inputs" />
     <MESSAGE value="25/08/20&#10;**Changes**&#10;1. History_Log_2 - input_num update" />
-    <option name="LAST_COMMIT_MESSAGE" value="25/08/20&#10;**Changes**&#10;1. History_Log_2 - input_num update" />
+    <MESSAGE value="03/09/20&#10;**Changes**&#10;1. change button text in activity_consumption.xml get consumption to get flow rate&#10;2. change size of text in activity_rdm__controll.xml&#10;3. change names of parameters in ber1_programming.xml &#10;4. added save button and load button to ber1_programming.xml&#10;5. change name and location of prompt button in history_log_2.xml&#10;6. change method of calculate flow rate in ConsumptionActivity&#10;7. change text of main text view in History_Log_2" />
+    <option name="LAST_COMMIT_MESSAGE" value="03/09/20&#10;**Changes**&#10;1. change button text in activity_consumption.xml get consumption to get flow rate&#10;2. change size of text in activity_rdm__controll.xml&#10;3. change names of parameters in ber1_programming.xml &#10;4. added save button and load button to ber1_programming.xml&#10;5. change name and location of prompt button in history_log_2.xml&#10;6. change method of calculate flow rate in ConsumptionActivity&#10;7. change text of main text view in History_Log_2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="446" y="49" key="#com.intellij.ide.util.MemberChooser" timestamp="1598350369938">
@@ -483,54 +495,54 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="496" y="106" key="AndroidProcessChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1597752629815" />
-    <state x="68" y="0" width="1212" height="680" key="CommitChangelistDialog2" timestamp="1598353414027">
+    <state x="68" y="0" width="1212" height="680" key="CommitChangelistDialog2" timestamp="1599122591683">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="68" y="0" width="1212" height="680" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1598353414027" />
+    <state x="68" y="0" width="1212" height="680" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1599122591683" />
     <state width="444" height="438" key="DebuggerActiveHint" timestamp="1597668421467">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="444" height="438" key="DebuggerActiveHint/0.0.1280.680@0.0.1280.680" timestamp="1597668421467" />
-    <state x="176" y="50" key="DiffContextDialog" timestamp="1594733584396">
+    <state x="176" y="50" key="DiffContextDialog" timestamp="1599122236833">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="176" y="50" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1594733584396" />
+    <state x="176" y="50" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1599122236833" />
     <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1598353623446">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1598353623446" />
-    <state width="1236" height="87" key="GridCell.Tab.0.bottom" timestamp="1599118467339">
+    <state width="1236" height="93" key="GridCell.Tab.0.bottom" timestamp="1599651015765">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="87" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599118467339" />
-    <state width="1236" height="87" key="GridCell.Tab.0.center" timestamp="1599118467339">
+    <state width="1236" height="93" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599651015765" />
+    <state width="1236" height="93" key="GridCell.Tab.0.center" timestamp="1599651015765">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="87" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1599118467339" />
-    <state width="1236" height="87" key="GridCell.Tab.0.left" timestamp="1599118467339">
+    <state width="1236" height="93" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1599651015765" />
+    <state width="1236" height="93" key="GridCell.Tab.0.left" timestamp="1599651015765">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="87" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1599118467339" />
-    <state width="1236" height="87" key="GridCell.Tab.0.right" timestamp="1599118467339">
+    <state width="1236" height="93" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1599651015765" />
+    <state width="1236" height="93" key="GridCell.Tab.0.right" timestamp="1599651015765">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="87" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1599118467339" />
-    <state width="1236" height="292" key="GridCell.Tab.1.bottom" timestamp="1598951681876">
+    <state width="1236" height="93" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1599651015765" />
+    <state width="1236" height="93" key="GridCell.Tab.1.bottom" timestamp="1599651038621">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="292" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1598951681876" />
-    <state width="1236" height="292" key="GridCell.Tab.1.center" timestamp="1598951681876">
+    <state width="1236" height="93" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599651038621" />
+    <state width="1236" height="93" key="GridCell.Tab.1.center" timestamp="1599651038621">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="292" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1598951681876" />
-    <state width="1236" height="292" key="GridCell.Tab.1.left" timestamp="1598951681876">
+    <state width="1236" height="93" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1599651038621" />
+    <state width="1236" height="93" key="GridCell.Tab.1.left" timestamp="1599651038621">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="292" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1598951681876" />
-    <state width="1236" height="292" key="GridCell.Tab.1.right" timestamp="1598951681876">
+    <state width="1236" height="93" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1599651038621" />
+    <state width="1236" height="93" key="GridCell.Tab.1.right" timestamp="1599651038621">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="292" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1598951681876" />
+    <state width="1236" height="93" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1599651038621" />
     <state x="452" y="51" key="RollbackChangesDialog" timestamp="1598797857270">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -551,10 +563,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="430" y="258" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1598353408541" />
-    <state x="353" y="131" key="git4idea.merge.GitPullDialog" timestamp="1598353262603">
+    <state x="353" y="131" key="git4idea.merge.GitPullDialog" timestamp="1599122573938">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="353" y="131" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1598353262603" />
+    <state x="353" y="131" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1599122573938" />
     <state x="298" y="151" key="run.anything.popup" timestamp="1593604802298">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -578,24 +590,9 @@
           <option name="timeStamp" value="216" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/MeganetEngine.java</url>
-          <line>1686</line>
-          <option name="timeStamp" value="220" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ProgrammActivity.java</url>
           <line>588</line>
           <option name="timeStamp" value="226" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/DataAnalizer.java</url>
-          <line>545</line>
-          <option name="timeStamp" value="227" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/DataAnalizer.java</url>
-          <line>529</line>
-          <option name="timeStamp" value="229" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ConsumptionActivity.java</url>
@@ -608,11 +605,21 @@
           <option name="timeStamp" value="232" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/MeganetEngine.java</url>
-          <line>1684</line>
-          <option name="timeStamp" value="233" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ConsumptionActivity.java</url>
+          <line>441</line>
+          <option name="timeStamp" value="234" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/kp/meganet/meganetkp/ProgrammActivity.java</url>
+          <line>330</line>
+          <option name="timeStamp" value="235" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="app">
+        <watch expression="this" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

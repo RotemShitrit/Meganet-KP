@@ -193,13 +193,13 @@ public class History_Log_1 extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Programming", Toast.LENGTH_LONG).show();
 
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
-                intent = new Intent(History_Log_1.this, QrCodeActivity.class);
+                intent = new Intent(History_Log_1.this, ChooseDeviceActivity.class);
                 startActivity(intent);
                 // TODO Something
                 break;
 
             case R.id.menu_getlog_consumption:
-                Toast.makeText(getApplicationContext(), "Consumption", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Flow Rate", Toast.LENGTH_LONG).show();
 
                 MeganetInstances.getInstance().GetMeganetEngine().SetCurrentReadType(MeganetEngine.eReadType.NONE);
                 intent = new Intent(History_Log_1.this, ConsumptionActivity.class);
