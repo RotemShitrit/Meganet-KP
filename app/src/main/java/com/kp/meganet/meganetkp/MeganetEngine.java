@@ -710,6 +710,18 @@ public class MeganetEngine extends BTengine {
                 _startCollect = false;
             }
         }
+        else if((_currentCommand == commandType.READ)) // for programming option - if the list not up then send again read msg 3 times at most
+        {
+            if( _timerCount <= 3)
+            {
+                _consumer.OnMessageCb("Reading parameters..");
+                SendData(_msgArr);
+                _timerCount++;
+            }
+            else {
+                _timerCount = 0;
+            }
+        }
         else
             _timerCount = 0;
 
@@ -1524,7 +1536,7 @@ public class MeganetEngine extends BTengine {
                                 StartCollectData(true, false);
                                 _consumer.PairData(deviceName.substring(0, deviceName.length()), _ndevice, false);
                             }
-                            else
+                            else //REGULAR CASE
                             {
                                 _startPrompt = false;
                                 _isPair = false;
@@ -1543,7 +1555,7 @@ public class MeganetEngine extends BTengine {
                                 _ndevice = deviceName.substring(deviceName.length()-2, deviceName.length());
                                 //_deviceVersion = deviceName.substring(0, deviceName.length() - 2);
 
-                                _currentCommand = commandType.READ;
+                                _currentCommand = commandType.READ; //READ for REGULAR prompt
                                 StartCollectData(true, false);
 
                                 byte[] promptArr;
@@ -1676,13 +1688,13 @@ public class MeganetEngine extends BTengine {
                         }
                         break;
                     case READ:
-                        _currentCommand = commandType.NONE;
-
                         _unitDataArr = null;
                         _unitDataArr = dataArr_prm;
-                        _unitParams = _dataAnalazer.AnalizeData(dataArr_prm, _ndevice, _promptName.length(), _isPair);
+                        _unitParams = _dataAnalazer.AnalizeData(dataArr_prm, _ndevice, _promptName.length(), _isPair); // check here!!
                         android.os.SystemClock.sleep(500);
-                        _consumer.SetReadData(_unitParams);
+                        _consumer.SetReadData(_unitParams); // check here!!
+                        _currentCommand = commandType.NONE;
+                        _msgArr = null;
                         break;
 
                     case CONSUMPTION:
@@ -1748,7 +1760,7 @@ public class MeganetEngine extends BTengine {
                             _currentCommand = commandType.RDM_RECEIVE;
                             StartCollectData(true, true);
                         }
-
+                        _msgArr = null;
                         break;
                     case RDM_OPEN:
                         android.os.SystemClock.sleep(500);
@@ -2390,8 +2402,10 @@ public class MeganetEngine extends BTengine {
                 if(rdm_prm)
                     _currentCommand = commandType.RDM;
                 else
-                    _currentCommand = commandType.READ;
+                    _currentCommand = commandType.READ; //READ type after pairing device
 
+                _timerCount = 0;
+                _msgArr = ReadArr;
                 SendData(ReadArr);
             }
         }
